@@ -1,0 +1,191 @@
+// 1. GRID CONTAINER
+
+// 1.1. GRID-TEMPLATE-COLUMNS / GRID-TEMPLATE-ROWS / GRID-AREA
+
+.grid {
+    display: grid;
+    background-color: bisque;
+    width: 100%;
+    height: 500px;
+    grid-template-columns: 40% 40% 20%;  //defines number and width of each column
+    grid-template-rows: 40% 40% ;  //defines number and height of each row 
+    grid-template: 40% 40% / 40% 40% 20% //Shorthand for template-rows and template-columns in that order
+}
+    // 1.1.1 Fraction - define the size of columns and rows as a fraction of the grid’s length and width.
+.grid {
+    display: grid;
+    width: 1000px;
+    height: 400px;
+    grid-template: 2fr 1fr 1fr / 1fr 3fr 1fr; // 3 rows of 200px, 100px, 100px - 3c columns 200px, 600px, 200px
+}
+
+    // 1.1.2  Repeat - will duplicate the specifications for rows or columns a given number of times
+.grid {
+    display: grid;
+    width: 300px;
+    grid-template-columns: repeat(3, 1fr); //Split the grid into 3 equal columns
+    grid-template-columns: repeat(2, 20px 50px); // creaate 4 columns, 1st & 3rd 20px - 2nd & 4th 50px
+    grid-template: repeat(3, 1fr) / 3fr 50% 1fr; //3rows 1fr each and 3 columns 
+}
+
+    //  1.1.3 minmax - prevent a row or column from getting too big or too small - if used, width has to be deleted from grid. 
+.grid {
+    display: grid;
+    grid-template-columns: 100px minmax(100px, 500px) 100px; // 1st and 3rd columns 100px wide. 2nd column will be between 100 and 500px wide
+    grid-template: repeat(3, 1fr) / 3fr minmax(50px, 300px) 1fr; // 3 rows equal size - 3 columns different sizes
+}
+
+    //  1.1.4 grid gap - shorthand row-gap and column-gap will put blank space between every row and column in the grid.
+.grid {
+    display: grid;
+    width: 320px;
+    height: 600px;
+    grid-template: repeat(3, 1fr) / repeat(3,1fr);
+    gap: 20px 10px;  //distance between rows to 20px and the distance between columns to 10px. If only 1 value given, column gap and row gap to that value.
+}
+
+
+//  1.2  GRID-TEMPLATE-AREAS -  allows to name sections of the page to use as values in the grid-row-start, grid-row-end, grid-column-start,grid-column-end, and grid-area properties
+.container {
+    display: grid;
+    max-width: 900px;
+    position: relative;
+    margin: auto;
+    grid-template-areas:"head head"
+                        "nav nav" 
+                        "info services"
+                        "footer footer";
+    grid-template-rows: 300px 120px 800px 120px;
+    grid-template-columns: 1fr 3fr; 
+}
+header {
+    grid-area: head;
+} 
+nav {
+    grid-area: nav;
+} 
+.info {
+    grid-area: info;
+} 
+.services {
+    grid-area: services;
+}
+footer {
+    grid-area: footer;
+} 
+
+
+// 1.3 JUSTIFY-ITEMS -  position elements within their columns from left to right - declared on containers
+main {
+    display: grid;
+    grid-template-columns: repeat(3, 400px);  // grid with 3 columns 400px each 
+    justify-items: center;  // items will be centered inside of their columns. 
+    justify-items: start; //  aligns grid items to the left side of the grid area
+    justify-items: end; //  aligns grid items to the right side of the grid
+    justify-items: stretch; //  stretches all items to fill the grid area
+}
+// notes: If item's witdh is not set and justify-items isn't set, the items will span the width of the column. (400px) 
+
+
+// 1.4 JUSTIFY-CONTENT  -  positions the columns horizontically within the grid. position the entire grid along the row axis - declared on containers 
+
+.container {
+    display: grid;
+    width: 1000px;   //creates a 1000px wide grid
+    grid-template-columns: 300px 300px; // creates 2 columns total width: 600px, left space: 400px
+    justify-content: center;   // positions the columns in the center of the grid, leaving 200px on the right and 200px on the left of the grid
+    justify-content: end;  //   aligns the columns to the right side of the grid container
+    justify-content: start; //  aligns the columns to the left side of the grid container
+    justify-content: stretch;  //   stretches the grid columns to increase the size of the grid to expand horizontally across the container
+    justify-content: space-around;  //  includes an equal amount of space on each side of a grid columns
+    justify-content: space-between;  //  includes an equal amount of space between grid columns and no space at either end
+    justify-content: space-evenly;  //  places an even amount of space between grid columns and at either end
+} 
+
+
+//  1.5 ALLIGN-ITEMS -  positions items from top to bottom within their rows. declared on grid containers.
+main {
+    display: grid;
+    grid-template-rows: repeat(3, 400px);  // creates a grid wit 3 rows 400px each
+    align-items: center;   //  item will be centered vertically inside of their rows. They will only be as tall as necessary
+}
+// notes: If item's height is not set and justify-items isn't set, the items will span the height of the row. (400px) 
+
+
+
+//  1.6 ALLIGN-CONTENT - positions the rows from top to bottom within the grid, and is declared on grid containers.
+main {
+    display: grid;
+    height: 600px;  
+    grid-template-rows: 200px 200px;  //  2 rows total height: 400px, 200px left
+    align-content: center;  //  positions the rows in the center of the grid, leaving 100px at the top and 100px at the bottom of the grid.
+    align-content: start;  //  aligns the rows to the top of the grid container
+    align-content: end;  //  aligns the row to the bottom of the grid container
+    align-content: space-around; //  includes an equal amount of space on each side of a grid element
+    align-content: space-between; //   includes an equal amount of space between grid rows and no space at either end
+    align-content: space-evenly;  //  places an even amount of space between grid rows and at either end
+}
+
+
+//  1.7 GRID-AUTO-ROWS / GRID-AUTO-COLUMNS  - declared on grid containers
+
+// grid-auto-rows specifies the height of implicitly added grid rows.  implicity = placement of elements when there are more than fit into the grid specified by the CSS.
+// grid-auto-columns specifies the width of implicitly added grid columns. 
+body {
+    display: grid;  // let's suppose body has 5 divs inside
+    grid: repeat(2, 100px) / repeat(2, 150px);  //specify a 2-row, 2-column grid — four grid cells.
+    grid-auto-rows: 50px;  //  The fifth <div> will be added to an implicit row that will be 50px tall.
+    grid-auto-columns: 50px;  //  The fifth <div> will be added to an implicit column that will be 50px wide.
+}
+//note: If we did not specify grid-auto-rows, the rows would be auto-adjusted to the height of the content of the grid items.
+
+
+//  1.8 GRID-AUTO-FLOW - specifies whether new elements should be added to rows or columns,  declared on grid containers.
+body {
+    display: grid;
+    grid-auto-flow: column;   //  specifies the new elements should fill rows from left to right and create new rows when there are too many elements (default)
+    grid-auto-flow: row;  //  specifies the new elements should fill columns from top to bottom and create new columns when there are too many elements
+    grid-auto-flow: dense;  //  this keyword invokes an algorithm that attempts to fill holes earlier in the grid layout if smaller elements are added
+}
+
+
+
+// 2. GRID ITEMS
+
+//  2.1  multiple row and column items - single grid items take up multiple rows or columns. 
+.item {
+    grid-row-start: 1; //item will take rows 1 and 2 
+    grid-row-end: 3;
+    grid-column-start: 4; //item will take columns 4 and 5
+    grid-column-end: 6;
+}
+
+//  2.2  GRID-COLUMN / GRID-ROW / SPAN
+.item {
+    grid-row: 1 / 3;  //shorthand for row-start and row-end
+    grid-column: 4 / span 2;  //span keyword allows to start or end a column or row, relative to its other end.
+}
+
+
+//  2.3  Grid Area - This property will set the starting and ending positions for both the rows and columns of an item.
+.item {
+    grid-row-start: 2; 
+    grid-row-end: 3;
+    grid-column-start: 3; 
+    grid-column-end: span 5;
+    grid-area: 2 / 3 / 3 / span 5;  //grid-row-start / grid-column-start / grid-row-end / grid-column-end
+}
+
+
+//  2.4  JUSTIFY-SELF / ALIGN-SELF
+
+/* justify-self specifies how an individual element should position itself with respect to the row axis. 
+This property will override justify-items for any item on which it is declared. */
+
+/* align-self specifies how an individual element should position itself with respect to the column axis. 
+This property will override align-items for any item on which it is declared. */
+.item {
+    align-self: center;
+    align-self: start;
+    align-self: end;
+}
