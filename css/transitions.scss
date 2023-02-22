@@ -1,5 +1,14 @@
 // TRANSITIONS 
 
+/* CSS Transitions have 4 components:
+
+- A property that will transition.
+- The duration which describes how long the transition takes.
+- The delay to pause before the transition will take place.
+- The timing function that describes the transition’s acceleration. */
+
+
+
 // 1. transition-duration 
 a {
     transition-property: color; // Property we want to transition
@@ -33,10 +42,17 @@ a {
 }
 
 
-// 5. Combinations 
+// 5. Combinations - describe unique transitions for multiple properties, and combine them. 
+
+a { // This code transtitions 2 properties at once. 
+    transition: color 1s linear,   //The text color transitions over 1s with linear timing and no delay
+                font-size 0.5s ease-in 0,1s;   // the font size transitions over 0.5s with an ease-in timing and a 0.1s delay. 
+}
 
 
-
-
+// 6. All - use the same duration, timing function, and delay for multiple properties. you can use all as a value for transition-property
+a {
+    transition: all 1s linear 0.5s;  //any changes will take place over 1s linear and o.5s delay. 
+}
 
 
