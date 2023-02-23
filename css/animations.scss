@@ -1,7 +1,61 @@
 // ANIMATIONS 
 
 
+
+
 // 1. Keyframes - define what the animation looks like at each stage of the animation timeline
 
+@keyframes bounceIn {
+    0% {  //  1st stage (0%), the element is at opacity 0 and scaled down to 10 percent of its default size
+    transform: scale(0.1);
+    opacity: 0;
+    }
+    60% {   // 2nd stage (60%) the element fades in to full opacity and grows to 120 percent of its default size
+    transform: scale(1.2);
+    opacity: 1;
+    }
+    100% {
+    transform: scale(1);  // final stage (100%), it scales down slightly and returns to its default size.
+    }
+}
+
+@keyframes example {  // this animation changes background-color and position of an element
+    0%   {background-color:red; left:0px; top:0px;}
+    25%  {background-color:yellow; left:200px; top:0px;}
+    50%  {background-color:blue; left:200px; top:200px;}
+    75%  {background-color:green; left:0px; top:200px;}
+    100% {background-color:red; left:0px; top:0px;}
+}
 
 
+
+// 2. Animation properties - assign the @keyframes to the elements that you want to animate, define how it is animated
+
+div {
+    animation-name: bounceIn;  //The name of the animation, defined in the @keyframes
+    animation-duration: 2s;  // duration of the animation
+}
+
+
+// 2.1 animation-timing-function - defines the speed curve or pace of the animation
+div {
+    animation-name: bounceIn;  
+    animation-duration: 2s;
+    animation-timing-function: ease;   //Specifies an animation with a slow start, then fast, then end slowly (this is default)
+    animation-timing-function: linear;  //Specifies an animation with the same speed from start to end
+    animation-timing-function: ease-in;  //Specifies an animation with a slow start
+    animation-timing-function: ease-out;  // Specifies an animation with a slow end
+    animation-timing-function: ease-in-out;  //Specifies an animation with a slow start and end
+}
+
+
+// 2.2 animation-delay - allows you to specify when the animation (or pieces of the animation) will start
+
+div {
+    animation-name: example;
+    animation-duration: 4s;
+    animation-delay: 2s;  // sets a 2 seconds delay before starting the animation
+}
+
+
+// 2.3 animation-iteration-count - specifies the number of times that the animation will play
