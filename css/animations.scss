@@ -73,3 +73,13 @@ div {
 
 // 2.4 animation-direction - specifies whether the animation should play forward, reverse, or in alternate cycles
 
+div {
+    animation-name: example;
+    animation-duration: 4s;
+    animation-delay: 2s;  
+    animation-iteration-count: 1;  
+    animation-direction: normal; // (default) - The animation plays forward
+    animation-direction: reverse; // The animation plays backwards
+    animation-direction: alternate;  // The animation reverses direction every cycle
+    animation-direction: alternate-reverse;
+}
