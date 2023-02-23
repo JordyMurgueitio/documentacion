@@ -34,4 +34,30 @@ div {
 
 
 // 1.5 scaleY() method - increases or decreases the height of an element
+div {
+    transform: scaleY(0.5);  // decreases the <div> element to be half of its original height
+}
 
+
+// 1.6 skewX() method -  skews an element along the X-axis by the given angle
+div {
+    transform: skewX(20deg);  // skews the <div> element 20 degrees along the X-axis
+}
+
+
+// 1.7 skewY() method - skews an element along the Y-axis by the given angle
+div {
+    transform: skewY(20deg); //  skews the <div> element 20 degrees along the Y-axiss
+}
+
+
+// 1.8 skew() method -  skews an element along the X and Y-axis by the given angles
+div {
+    transform: skew(20deg, 10deg);   // skews the <div> element 20 degrees along the X-axis, and 10 degrees along the Y-axis
+}
+
+
+// 1.9 matrix() method - combines all the 2D transform methods into one. The parameters are as follow: matrix(scaleX(), skewY(), skewX(), scaleY(), translateX(), translateY())
+div {
+    transform: matrix(1, -0.3, 0, 1, 0, 0);
+}
