@@ -59,3 +59,17 @@ div {
 
 
 // 2.3 animation-iteration-count - specifies the number of times that the animation will play
+
+div {
+    animation-name: example;
+    animation-duration: 4s;
+    animation-delay: 2s;  
+    animation-iteration-count: 1;  // this is default
+    animation-iteration-count: infinite; // the animation repeats forever
+    animation-iteration-count: initial; //  Sets the iteration count to default value
+    animation-iteration-count: inherit;  // inherits the value from the parent
+}
+
+
+// 2.4 animation-direction - specifies whether the animation should play forward, reverse, or in alternate cycles
+
