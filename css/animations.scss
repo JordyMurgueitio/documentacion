@@ -80,6 +80,9 @@ div {
     animation-iteration-count: 1;  
     animation-direction: normal; // (default) - The animation plays forward
     animation-direction: reverse; // The animation plays backwards
-    animation-direction: alternate;  // The animation reverses direction every cycle
-    animation-direction: alternate-reverse;
+    animation-direction: alternate;  // The animation reverses direction every cycle - odd cycle forward, even cycle backwards
+    animation-direction: alternate-reverse; // The animation reverses direction every cycle - odd cycle backwards, even cycle forward
 }
+
+
+// 2.5 
