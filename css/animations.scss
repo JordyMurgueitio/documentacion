@@ -99,5 +99,22 @@ div {
 }
 
 
-// 2.6 animation - shorthand for [animation-name] [animation-duration] [animation-timing-function][animation-delay] [animation-iteration-count] [animation-direction] [animation-fill-mode] [animation-play-state];
+// 2.6 animation-play-state -  specifies whether the animation is playing or paused
+div:hover {
+    animation-play-state: paused;  // The animation is currently paused
+    animation-play-state: running;  //The animation is currently running
+}
 
+
+// 2.7 animation - shorthand for following properties in that order
+// [animation-name] [animation-duration] [animation-timing-function][animation-delay] [animation-iteration-count] 
+// [animation-direction] [animation-fill-mode] [animation-play-state];
+div {
+    animation: example 5s ease-in 0.2s infinite normal forwards paused;
+}
+
+
+// multiple animations 
+div {
+    animation: example 5s, bounceIn 2s ease-in;
+}
