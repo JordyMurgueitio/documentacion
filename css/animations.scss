@@ -85,4 +85,19 @@ div {
 }
 
 
-// 2.5 
+// 2.5 animation-fill-mode - specifies if the animation styles are visible before or after the animation plays. 
+div {
+    animation-name: example;
+    animation-duration: 4s;
+    animation-delay: 2s;  
+    animation-iteration-count: 1;  
+    animation-direction: alternate;  
+    animation-fill-mode: backwards;  // Before the animation (during the animation delay), the styles of the initial keyframe (0%) are applied to the element
+    animation-fill-mode: forwards; // After the animation is finished, the styles defined in the final keyframe (100%) are retained by the element
+    animation-fill-mode: both; // The animation will follow the rules for both forwards and backwards, extending the animation properties before and after the animation
+    animation-fill-mode: normal; //  (default) - The animation does not apply any styles to the element, before or after the animation.
+}
+
+
+// 2.6 animation - shorthand for [animation-name] [animation-duration] [animation-timing-function][animation-delay] [animation-iteration-count] [animation-direction] [animation-fill-mode] [animation-play-state];
+
