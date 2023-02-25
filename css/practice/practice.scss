@@ -1,0 +1,48 @@
+* {
+    box-sizing: border-box;
+}
+body {
+    margin: 0;
+}
+.box1 {
+    width: 100px;
+    height: 100px;
+    background-color: aquamarine;
+    animation-name: move;
+    position: relative;
+    animation-duration: 5s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+}
+.box2 {
+    width: 100px;
+    height: 100px;
+    background-color: aquamarine;
+    animation-name: example;
+    position: relative;
+    animation-duration: 5s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+}
+
+@keyframes move { 
+    0% {
+        background-color: rgb(29, 31, 31);
+        transform: translate(20px, 0px);
+    }
+    50% {
+        background-color: rgb(6, 34, 34);
+        transform: translate(400px, 0px);
+    }
+    100% {
+        background-color: rgb(9, 23, 87);
+        width: 200px;
+    }
+}
+@keyframes example {  // this animation changes background-color and position of an element
+    0%   {background-color:red; left:0px; top:0px;}
+    25%  {background-color:yellow; left:200px; top:0px;}
+    50%  {background-color:blue; left:200px; top:200px;}
+    75%  {background-color:green; left:0px; top:200px;}
+    100% {background-color:red; left:0px; top:0px;}
+}
