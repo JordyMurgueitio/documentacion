@@ -28,6 +28,15 @@ body {
   animation-iteration-count: infinite;
 }
 
+h1 {
+  color: blue;
+  position: relative;
+  animation-name: welcome;
+  animation-duration: 9s;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+}
+
 @keyframes move {
   0% {
     background-color: rgb(29, 31, 31);
@@ -67,6 +76,28 @@ body {
     background-color: red;
     left: 0px;
     top: 0px;
+  }
+}
+@keyframes welcome {
+  0% {
+    color: aqua;
+    left: 0;
+    top: 0;
+  }
+  25% {
+    color: rgb(255, 0, 0);
+    left: 20%;
+    top: -200px;
+  }
+  75% {
+    color: rgb(89, 0, 255);
+    left: 40%;
+    top: 0;
+  }
+  100% {
+    color: rgb(44, 58, 58);
+    left: 0;
+    top: 0;
   }
 }
 
