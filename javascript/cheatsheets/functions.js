@@ -25,3 +25,13 @@ sayGracias("Erik");
 
 
 // 4. default parameters - allow parameters to have a predetermined value in case there is no argument passed into the function when called.
+function greeting (name = 'stranger') {
+    console.log(`Hello, ${name}!`)
+}
+
+greeting('Nick') // Output: Hello, Nick!
+greeting() // Output: Hello, stranger!
+
+
+// 5. return 
+
