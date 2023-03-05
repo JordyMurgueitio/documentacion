@@ -33,5 +33,10 @@ greeting('Nick') // Output: Hello, Nick!
 greeting() // Output: Hello, stranger!
 
 
-// 5. return 
+// 5. return - allows functions to produce an output. We can then save the output to a variable for later use
+function monitorCount(rows, columns) {
+    return rows * columns;
+}
+const numOfMonitors = monitorCount(5, 4);
+console.log(numOfMonitors);
 
