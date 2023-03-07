@@ -40,3 +40,17 @@ function monitorCount(rows, columns) {
 const numOfMonitors = monitorCount(5, 4);
 console.log(numOfMonitors);
 
+
+// 6. Helper Function - functions being called within another function
+function multiplyByNineFifths(number) {
+    return number * (9/5);
+}
+
+function fahrenheit (celsius) {
+    return multiplyByNineFifths(celsius) + 32;
+}
+fahrenheit(26);
+
+
+// 7. Function expressions - the function name is usually omitted. - often stored in a variable in order to refer to it.
+
