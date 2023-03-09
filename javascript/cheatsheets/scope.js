@@ -24,3 +24,25 @@ function callMyNightSky () {
 }
 
 console.log(callMyNightSky());
+
+
+// 3. BLOCK SCOPE - Variables with block scope are known as local variables because they are only available to the code that is part of the same block.
+const logVisibleLightWaves = () => {
+    const lightWaves = 'Moonlight';
+    console.log(lightWaves);  //prints "Moonlight"
+}
+
+logVisibleLightWaves ();  // prints "Moonlight"
+// console.log(lightWaves); // throws reference error 
+
+
+// 4. SCOPE POLLUTION - too many global variables that exist in the global namespace, or when we reuse variables across different scopes
+let num = 50;
+
+const logNum = () => {
+    num = 100;    // The global variable num was reassigned to 100
+    return num;   // Even though the reassignment is allowed and we won’t get an error, if we decided to use num later, we’ll unknowingly use the new value of num.
+};
+console.log(logNum()); // Prints 100
+console.log(num); // Prints 100
+
