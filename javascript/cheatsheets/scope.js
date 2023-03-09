@@ -12,6 +12,7 @@ function logCitySkyline () {
 console.log(logCitySkyline()); // function is able to access both variables without any problems.
 
 
+
 // 2. GLOBAL SCOPE - variables are declared outside of blocks. These variables are called global variables.
 // they can be accessed by any code in the program, including code in blocks.
 
@@ -26,6 +27,7 @@ function callMyNightSky () {
 console.log(callMyNightSky());
 
 
+
 // 3. BLOCK SCOPE - Variables with block scope are known as local variables because they are only available to the code that is part of the same block.
 const logVisibleLightWaves = () => {
     const lightWaves = 'Moonlight';
@@ -34,6 +36,7 @@ const logVisibleLightWaves = () => {
 
 logVisibleLightWaves ();  // prints "Moonlight"
 // console.log(lightWaves); // throws reference error 
+
 
 
 // 4. SCOPE POLLUTION - too many global variables that exist in the global namespace, or when we reuse variables across different scopes
@@ -45,4 +48,20 @@ const logNum = () => {
 };
 console.log(logNum()); // Prints 100
 console.log(num); // Prints 100
+
+
+
+// 5. GOOD SCOPING - scoping variables as tightly as possible using block scope. allows us to define variables with precision, and not pollute the global namespace
+const logUserName = () => {
+    let user1 = "Erik"; 
+    let user2 = "Juan";
+    if (user2 === "Juan") {
+        let user1 = "Julia"; 
+        console.log(user1);  // prints Julia
+    }
+    console.log(user1);  // prints Erik
+}
+logUserName();
+
+
 
