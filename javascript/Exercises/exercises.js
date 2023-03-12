@@ -90,3 +90,32 @@ function finalGrade(grade1, grade2, grade3) {
 
 console.log(finalGrade(100, 100, 100));
 console.log(finalGrade(200, 50, 100));
+
+
+// 6. Function calculates what your weight would eqaute to on another planet
+
+const calculateWeight = (earthWeight, planet) => {
+    let weight = earthWeight;
+    switch (planet) {
+        case "Mercury": 
+            weight *= 0.378;
+        break; 
+        case "Venus": 
+            weight *= 0.907;
+        break; 
+        case "Mars": 
+        weight *= 0.377;
+        break; 
+        case "Jupiter": 
+        weight *= 2.36;
+        break; 
+        case "Saturn": 
+        weight *= 0.916;
+        break; 
+        default :
+        return 'Invalid Planet Entry. Try: Mercury, Venus, Mars, Jupiter, or Saturn.';
+    }
+    return weight;
+}
+console.log(calculateWeight(100, "Jupiter"));
+
