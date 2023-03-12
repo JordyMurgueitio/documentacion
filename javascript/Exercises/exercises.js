@@ -119,3 +119,13 @@ const calculateWeight = (earthWeight, planet) => {
 }
 console.log(calculateWeight(100, "Jupiter"));
 
+
+// 7. Function evaluates if the passed data is truthy or Falsy
+function truthyOrFalsy(data) {
+    if (data) {
+        return true;
+    } else {
+        return false;
+    }
+};
+
