@@ -122,7 +122,7 @@ switch (arrivedFrom) {
     break;
     
     default :
-    console.log("Unknown place")
+    console.log("Unknown place");
 }
 
 

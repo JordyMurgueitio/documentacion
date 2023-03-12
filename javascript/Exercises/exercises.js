@@ -152,9 +152,28 @@ const whatRelation = percentSharedDNA => {
     }
     return 'You are likely not related.'
 }
-
 console.log(whatRelation(34)); // Should print 'You are likely grandparent and grandchild, aunt/uncle and niece/nephew, or half siblings.'
-
 console.log(whatRelation(3)); // Should print 'You are likely 2nd cousins.'
 
 
+// 9. Function calculates the tip based on the quality of service and total of the bill
+
+function tipCalculator(quality, total) {
+    switch (quality) {
+        case "bad":
+            return total*0.05;
+        break;
+        case "ok":
+            return total * 0.15;
+        break;
+        case "good":
+            return total * 0.2;
+        break;
+        case "excellent":
+            return total * 0.3;
+        break;
+        default :
+            return total * 0.18;
+    }
+}
+console.log(tipCalculator("good", 100));
