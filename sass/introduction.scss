@@ -18,3 +18,25 @@
 
 
 // VARIABLES  - allow you to assign an identifier of your choice to a specific value.
+
+$translucent-white: rgba(255,255,255,0.3);
+$special-border: 1px solid black;
+div {
+    background-color: $translucent-white;
+    border: $special-border;
+}
+
+
+// Sass(y) Types - There are different data types you can assign to a variable 
+// number - string - boolean - null
+
+
+// MAPS AND LISTS - data types
+
+div {
+    border: 1px solid black;  // Lists can be separated by either spaces or commas.
+}
+
+div {
+    (key1: value1, key2: value2); // Maps are very similar to lists, but instead each object is a key-value pair.
+}
