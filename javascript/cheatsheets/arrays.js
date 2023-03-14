@@ -30,3 +30,18 @@ console.log(groceryList);  // prints ['bread', 'avocados', 'milk']
 
 // 3. Arrays with let and const  - we can change the contents of a const array, but cannot reassign a new array or a different value.
 
+let condiments = ['Ketchup', 'Mustard', 'Soy Sauce', 'Sriracha'];
+const utensils = ['Fork', 'Knife', 'Chopsticks', 'Spork'];
+
+condiments[0] = 'Mayo';
+console.log(condiments);
+condiments = ["Mayo"];
+console.log(condiments);  // re-assign elements in an array and re-assign an entire new array to a variable declared using the let keyword
+
+utensils[3] = "Spoon";
+console.log(utensils);  // We can change the element of a const array but we can't change the array
+
+
+
+// 4. The .length property 
+
