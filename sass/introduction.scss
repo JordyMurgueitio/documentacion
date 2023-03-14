@@ -1,2 +1,20 @@
-// NESTING SELECTORS 
+// NESTING SELECTORS  - placing selectors inside the scope of another selector
+.parent {
+    color: blue;
+    .child {
+        font-size: 12px;
+    }
+}
 
+
+// NESTING PROPERTIES
+.parent {
+    font : {
+        family: Roboto, sans-serif;
+        size: 12px;
+        decoration: none;
+    }
+}
+
+
+// VARIABLES  - allow you to assign an identifier of your choice to a specific value.
