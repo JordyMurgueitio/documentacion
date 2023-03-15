@@ -43,5 +43,29 @@ console.log(utensils);  // We can change the element of a const array but we can
 
 
 
-// 4. The .length property 
+// 4. The .length property - returns the number of items in the array.
+
+const objectives = ['Learn a new language', 'Read 52 books', 'Run a marathon'];
+
+console.log(objectives.length);  // prints 3
+
+
+// 5. The .push() Method - allows us to add items to the end of an array
+// take a single argument or multiple arguments separated by commas
+
+const chores = ['wash dishes', 'do laundry', 'take out trash'];
+
+chores.push('cook', 'buy shoes');
+console.log(chores);
+
+
+// 6. The .pop() Method - removes the last item of an array
+//  returns the value of the last element
+
+const newItemTracker = ['item 0', 'item 1', 'item 2'];
+const removed = newItemTracker.pop();
+
+console.log(newItemTracker); // Output: [ 'item 0', 'item 1' ]
+console.log(removed); // Output: item 2
+
 
