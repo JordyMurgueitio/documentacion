@@ -102,4 +102,9 @@ const anotherWeek = shortWeek.slice();
 console.log(anotherWeek);  // prints ['monday', 'tuesday', 'wednesday']
 
 
-// 10. 
+
+// 10. The .indexOf() Method - returns the index of the element in the array
+// Returns -1 if the element is not found.
+const colors = ["red", "blue", "black"];
+const indexBlue = colors.indexOf("blue");
+console.log(indexBlue); // logs 1
