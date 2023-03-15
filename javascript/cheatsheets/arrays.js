@@ -69,3 +69,37 @@ console.log(newItemTracker); // Output: [ 'item 0', 'item 1' ]
 console.log(removed); // Output: item 2
 
 
+// 7. The .shift() Method - Removes and returns the first element of the array. All subsequent elements will shift down one place.
+const shoppingList = ['orange juice', 'bananas', 'coffee beans', 'brown rice', 'pasta', 'coconut oil', 'plantains'];
+const removed_item = shoppingList.shift();
+
+console.log(shoppingList);  // prints array without 'orange juice'
+console.log(removed_item);  // prints orange juice
+
+
+// 8. The .unshift() Method - Adds one or more elements to beginning of array and returns new length.
+
+const weekDays = ['wednesday', 'thursday', 'friday'];
+
+weekDays.unshift('monday', 'tuesday');
+console.log(weekDays);
+
+
+// 9. The .slice() Method - returns a shallow copy of all or part of an array without modifying the original.
+// 9.1  two arguments (start, end) index start and index end (not included) of the array
+const names = ['jordy', 'mateo', 'nico', 'juan', 'fer'];
+const fistHalf = names.slice(0, 3);  
+console.log(fistHalf);  // prints ['jordy', 'mateo', 'nico']
+
+// 9.2 One argument (start) - the returned array contains all elements from the start position to the end of the array.
+const numbers = [1, 2, 3, 4, 5, 6];
+const secondHalf = numbers.slice(2); 
+console.log(secondHalf);  // prints [3, 4, 5, 6]
+
+// 9.3  Zero arguments () - If start and end values are not provided, the slicing of array will be of the whole array.
+const shortWeek = ['monday', 'tuesday', 'wednesday'];
+const anotherWeek = shortWeek.slice();
+console.log(anotherWeek);  // prints ['monday', 'tuesday', 'wednesday']
+
+
+// 10. 
