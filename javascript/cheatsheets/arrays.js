@@ -127,3 +127,13 @@ function removeElement (newArr) {
 }
 removeElement (concept);
 console.log(concept); // logs ['arrays', 'can', 'be']
+
+
+// 12. Nested arrays - an array contains another array
+//  to access the elements within the nested array we can chain, or add on, more bracket notation with index values
+
+const numberClusters = [[1,2], [3,4], [5,6]];
+
+console.log(numberClusters[1]);  // logs [3,4]
+console.log(numberClusters[2][1]); // logs 6
+
