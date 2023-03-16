@@ -103,7 +103,21 @@ console.log(anotherWeek);  // prints ['monday', 'tuesday', 'wednesday']
 
 
 
-// 10. The .indexOf() Method - returns the index of the element in the array
+// 10. The .splice() Method -  changes the contents of an array by removing or replacing existing elements and/or adding new elements
+// splice(indexToStart, numberOfIndices, item1, item2, itemN)
+
+const months = ['Jan', 'March', 'April', 'June'];
+months.splice(1, 0, 'Feb');
+// Inserts at index 1 and replaces 0 elements
+console.log(months);  // Expected output:  ["Jan", "Feb", "March", "April", "June"]
+
+months.splice(4, 1, 'May');
+// Replaces 1 element at index 4
+console.log(months);  // Expected output:  ["Jan", "Feb", "March", "April", "May"]
+
+
+
+// 11. The .indexOf() Method - returns the index of the element in the array
 // Returns -1 if the element is not found.
 const colors = ["red", "blue", "black"];
 const indexBlue = colors.indexOf("blue");
@@ -111,7 +125,7 @@ console.log(indexBlue); // logs 1
 
 
 
-// 11. Arrays and functions
+// 12. Arrays and functions
 // you pass an array into a function, if the array is mutated inside the function, that change will be maintained outside the function as well.
 
 const concept = ['arrays', 'can', 'be', 'mutated'];
@@ -129,7 +143,7 @@ removeElement (concept);
 console.log(concept); // logs ['arrays', 'can', 'be']
 
 
-// 12. Nested arrays - an array contains another array
+// 13. Nested arrays - an array contains another array
 //  to access the elements within the nested array we can chain, or add on, more bracket notation with index values
 
 const numberClusters = [[1,2], [3,4], [5,6]];
