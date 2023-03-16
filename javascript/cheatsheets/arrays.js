@@ -108,3 +108,22 @@ console.log(anotherWeek);  // prints ['monday', 'tuesday', 'wednesday']
 const colors = ["red", "blue", "black"];
 const indexBlue = colors.indexOf("blue");
 console.log(indexBlue); // logs 1
+
+
+
+// 11. Arrays and functions
+// you pass an array into a function, if the array is mutated inside the function, that change will be maintained outside the function as well.
+
+const concept = ['arrays', 'can', 'be', 'mutated'];
+
+function changeArr(array){
+    array[3] = 'MUTATED';
+}
+changeArr(concept);
+console.log(concept);  // logs ['arrays', 'can', 'be', 'MUTATED'];
+
+function removeElement (newArr) {
+    newArr.pop();
+}
+removeElement (concept);
+console.log(concept); // logs ['arrays', 'can', 'be']
