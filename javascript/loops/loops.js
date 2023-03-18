@@ -57,4 +57,14 @@ console.log(mutualFollowers);  // logs [ 'erik', 'juam', 'ronaldo' ]
 
 
 
-// 5. The while loop
+// 5. The while loop - creates a loop that is executed as long as a condition evaluates to true. The loop will run until the condition evaluates to false.
+// The condition is specified before the loop, and usually, some variable is incremented or altered
+//  In situations when we want a loop to execute an undetermined number of times,
+
+let counterTwo = 1;
+while (counterTwo < 4) {   // logs 1 2 3
+    console.log(counterTwo);  
+    counterTwo++;
+}
+
+
