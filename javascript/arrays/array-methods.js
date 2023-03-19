@@ -22,22 +22,36 @@ console.log(notes);  // logs [ 2, 5, 6, 7, 8 ]
 console.log(removed);  // logs 9
 
 
-// 4. push()	Adds new elements to the end of an array, and returns the new length
+// 4. every()	Checks if every element in an array pass a test
+// executes a function for each array element / returns true if the function returns true for all elements
+//  returns false if the function returns false for one element
+const ages = [10, 45, 6, 77, 45];
+let everyoneAdult = ages.every(checkAge);  // checks if all elements in the array are > 18
+
+function checkAge (age) { 
+    return age > 18;
+}
+console.log(everyoneAdult);  // logs false
 
 
-// 5. entries()	Returns a key/value pair Array Iteration Object
+// 5. fill()	fills specified elements in an array with a value
+// overwrites the original array - Start and end position can be specified. If not, all elements will be filled.
+const teams = ["liga", "boca", "river", "chelsea", "city"];
+let newteams = teams.fill("psg", 4, 5);
+console.log(newteams);  // logs [ 'liga', 'boca', 'river', 'chelsea', 'psg' ]
 
 
-// 6. every()	Checks if every element in an array pass a test
+// 6. filter()	Creates a new array with every element in an array that pass a test provided by a function
+const amigos = ["kaka", "mama", "ala", "erin", "messi"];
+const startM = amigos.filter(start_m);  // returns an array with all the elements that start with the leter m
+
+function start_m (amigo) {
+    return amigo.startsWith("m");
+}
+console.log(startM);  // logs [ 'mama', 'messi' ]
 
 
-// 7. fill()	Fill the elements in an array with a static value
-
-
-// 8. filter()	Creates a new array with every element in an array that pass a test
-
-
-// 9. find()	Returns the value of the first element in an array that pass a test
+// 7. find()	Returns the value of the first element in an array that pass a test
 
 
 // 10. reverse()	Reverses the order of the elements in an array
