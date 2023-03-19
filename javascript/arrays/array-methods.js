@@ -14,7 +14,12 @@ console.log(children); // logs [ 'juan', ' erik', 'eli', 'pau', 'alih' ]
 const fruits = ["Banana", "Orange", "Apple", "Mango", "Kiwi"];
 console.log(fruits.copyWithin(2, 0, 1));  // logs [ 'Banana', 'Orange', 'Banana', 'Mango', 'Kiwi' ]
 
+
 // 3. pop()	Removes the last element of an array, and returns that element
+const notes = [2, 5, 6, 7, 8, 9];
+let removed = notes.pop();
+console.log(notes);  // logs [ 2, 5, 6, 7, 8 ]
+console.log(removed);  // logs 9
 
 
 // 4. push()	Adds new elements to the end of an array, and returns the new length
