@@ -61,10 +61,8 @@ console.log(mutualFollowers);  // logs [ 'erik', 'juam', 'ronaldo' ]
 // The condition is specified before the loop, and usually, some variable is incremented or altered
 //  In situations when we want a loop to execute an undetermined number of times,
 
-let counterTwo = 1;
-while (counterTwo < 4) {   // logs 1 2 3
-    console.log(counterTwo);  
-    counterTwo++;
+let counter = 1;
+while (counter < 4) {   // logs 1 2 3
+    console.log(counter);  
+    counter++;
 }
-
-
