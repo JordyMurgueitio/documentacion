@@ -1,0 +1,45 @@
+// MIXINS AND THE & SELECTOR
+
+
+
+// 1. The & Selector in Nesting 
+//  used to specify exactly where a parent selector should be inserted
+
+.notecard{ 
+    &:hover{
+        @include transform (rotatey(-180deg));  
+    }
+}
+/* .notecard:hover {
+    transform: rotatey(-180deg);
+} */
+
+
+
+// 2. Mixins - make groups of CSS declarations that you want to reuse throughout your site.
+/* NOTE Sass: Hyphens and underscores are considered to be the same. 
+This means that @mixin important-text { } and @mixin important_text { } are considered as the same mixin! */
+
+@mixin important-text {  // creates a mixin named "important-text":
+    color: red;
+    font-size: 25px;
+    font-weight: bold;
+    border: 1px solid blue;
+}
+// 2.1. @include - The @include directive is used to include a mixin.
+.danger {
+    @include important-text();
+    background-color: green;
+}
+
+
+
+// 3. Mixins: Arguments - a value passed to the mixin that will be used inside the mixin,
+
+@mixin titles-color ($color) {
+    color: $color;
+}
+
+h1 {
+    @include titles-color(red);
+}
