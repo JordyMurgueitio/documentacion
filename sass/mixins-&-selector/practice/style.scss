@@ -1,0 +1,21 @@
+@mixin important-text {  
+    color: red;
+    font-size: 25px;
+    font-weight: bold;
+    border: 1px solid blue;
+}
+@mixin title-style ($color, $background-color, $font-size) {
+    color: $color;
+    background-color: $background-color; 
+    font-size: $font-size;
+}
+
+
+.danger {
+    @include important-text();
+    background-color: green;
+}
+h2 {
+    @include title-style(blue, black, 2em);
+}
+

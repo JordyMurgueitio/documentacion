@@ -36,10 +36,28 @@ This means that @mixin important-text { } and @mixin important_text { } are cons
 
 // 3. Mixins: Arguments - a value passed to the mixin that will be used inside the mixin,
 
-@mixin titles-color ($color) {
+@mixin paragh-color ($color) {
     color: $color;
 }
+p {
+    @include paragh-color(red);
+}
 
-h1 {
-    @include titles-color(red);
+@mixin title-style ($color, $background-color, $font-size) {
+    color: $color;
+    background-color: $background-color; 
+    font-size: $font-size;
+}
+.header-title {
+    @include title-style(blue, black, 2em);
+}
+
+@mixin bordered($color, $width) {
+    border: $width solid $color;
+}
+.myArticle {
+    @include bordered(blue, 1px);  // Call mixin with two values
+}
+.myNotes {
+    @include bordered(red, 2px); // Call mixin with two values
 }
