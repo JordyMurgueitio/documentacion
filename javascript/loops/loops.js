@@ -66,3 +66,35 @@ while (counter < 4) {   // logs 1 2 3
     console.log(counter);  
     counter++;
 }
+
+
+
+// 6. Do... Whiile Statements - run at least once and then loop based on a specific condition after its initial run.
+// says to do a task once and then keep doing it until a specified condition is no longer met. 
+
+let cupsOfSugarNeeded = 9;
+let cupsAdded = 0;
+do { // add at least one cup of sugar to the batter even if the value of cupsOfSugarNeeded is 0
+    cupsAdded ++;
+    console.log(cupsAdded);
+} while (cupsAdded < cupsOfSugarNeeded);
+
+
+
+// 7. The break Keyword- stop a loop from continuing to execute even though the original stopping condition for our loop hasn’t been met
+// add test conditions besides the stopping condition, and exit the loop when they’re met
+
+for (let i = 0; i < 99; i++) { // will print Banana 99 times but will stop when i > 2
+    if (i > 2 ) {
+        break;
+    }
+    console.log('Banana.');   
+}
+
+const rapperArray = ["Lil' Kim", "Jay-Z", "Notorious B.I.G.", "Tupac"];
+for (let i = 0; i < rapperArray.length; i++){   // will print each element of the array but will stop when it is === 'Notorious B.I.G.'
+    console.log(rapperArray[i]);
+    if (rapperArray[i] === 'Notorious B.I.G.') {
+    break;
+    }
+}
