@@ -19,7 +19,7 @@ let result = mensaje2.lastIndexOf("planet", 20);  // position 20 from the end to
 console.log(result);  // logs 6
 
 
-//String search()
+// 3. String search()
 //String match()
 //String matchAll()
 //String includes()
