@@ -19,8 +19,19 @@ let result = mensaje2.lastIndexOf("planet", 20);  // position 20 from the end to
 console.log(result);  // logs 6
 
 
-// 3. String search()
-//String match()
+// 3. search() - searches a string for a string (or a regular expression) and returns the position of the match
+// cannot take a start position argument
+let texto = "Please locate where 'locate' occurs!";
+let where = texto.search("locate");
+let where2 = texto.search(/locate/);
+console.log(where, where2);
+
+
+// 4. match() - Searches a string for a value, or a regular expression, and returns the matches
+// returns an array of matches.
+
+
+
 //String matchAll()
 //String includes()
 //String startsWith()

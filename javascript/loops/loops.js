@@ -98,3 +98,53 @@ for (let i = 0; i < rapperArray.length; i++){   // will print each element of th
     break;
     }
 }
+
+
+
+// 8. The for...of loop -   The loop will iterate over each element in the iterable object and terminate itself when it reaches the last item 
+// can't loop in reverse
+// opt for a standard for loop if you need to access the indices or need finer control to determine what elements you want to loop over.
+const hobbies = ['singing', 'eating', 'quidditch', 'writing'];  // logs I enjoy singing. I enjoy eating. I enjoy quidditch. I enjoy writing.
+for (const hobby of hobbies) {
+    console.log(`I enjoy ${hobby}.`);
+}
+
+// 8.1 Iterating throug an array
+const fruits = ['oranges', 'apples', 'grapes'];  
+for (const fruit of fruits) {  // logs oranges apples grapes
+    console.log(fruit);
+}
+
+// 8.2 Iterating through a string 
+const userName = "ronaldo";
+for (const character of userName) {
+    console.log(character);
+}
+
+// 8.3 Break statement
+// Will iterate through the array until it encounters Basan, then it will exit.
+const strangeBirds = ['Shoebill', 'Cockatrice', 'Basan', 'Terrorbird','Parotia','Kakapo'];
+for (const bird of strangeBirds) {
+    if (bird === 'Basan'){ 
+    break; 
+    }
+    console.log(bird);
+}
+
+// 8.4 continue statement -  skip one iteration of the loop
+// Will iterate through the array and print out every value except the suspected imposter:
+const boys = ['erik', 'juan', 'lisa', 'mateo'];
+for (const boy of boys) {
+    if (boy === 'lisa') {
+        continue;
+    }
+    console.log(boy);
+}
+
+
+
+
+
+
+
+
