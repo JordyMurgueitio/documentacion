@@ -1,4 +1,6 @@
-/* charAt()	Returns the character at a specified index (position)
+/* STRING METHODS
+
+// 1. charAt()	Returns the character at a specified index (position) in a string
 charCodeAt()	Returns the Unicode of the character at a specified index
 concat()	Returns two or more joined strings
 constructor	Returns the string's constructor function
