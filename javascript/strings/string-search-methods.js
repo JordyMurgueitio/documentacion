@@ -29,10 +29,37 @@ console.log(where, where2);
 
 // 4. match() - Searches a string for a value, or a regular expression, and returns the matches
 // returns an array of matches.
+let quote = "The rain in SPAIN stays mainly in the plain";
+
+console.log(quote.match("ain"));
 
 
+// 5. matchAll()  - returns an iterator containing the results of matching a string against a string (or a regular expression).
+let msg = "I love cats. Cats are very easy to love. Cats are very popular.";
+let iterator = msg.matchAll("Cats");
+console.log(iterator);
 
-//String matchAll()
-//String includes()
-//String startsWith()
-//String endsWith()
+
+// 6. includes() - returns true if a string contains a specified string.
+//string.includes(searchvalue, start) 
+let ejemplo = "Hello world, welcome to the universe.";
+
+let findWord = ejemplo.includes("world"); 
+let findWord2 = ejemplo.includes("world", 8); 
+console.log(findWord);  // logs true 
+console.log(findWord2);  // logs false
+
+
+// 7. startsWith() -  returns true if a string starts with a specified string
+// string.startsWith(searchValue, start)
+let chat = "Hello world, welcome to the universe.";
+console.log(chat.startsWith("Hello")); // logs true 
+
+
+// 8. endsWith() - returns true if a string ends with a specified string.
+// string.endsWith(searchvalue, length)
+let chat2 = "Hello world";
+console.log(chat2.endsWith("world"));  // logs true
+
+let chat3 = "Hello world, welcome to the universe.";
+console.log(chat3.endsWith("world", 11));  // logs true
