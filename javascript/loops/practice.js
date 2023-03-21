@@ -27,3 +27,14 @@ function compare (array1, array2) {
 };
 
 compare([2, 5, 6, 7], [4, 7, 8, 2]);
+
+
+// 3.  // for...of loop to iterate through an array
+
+const pokemonList = ['Pikachu', 'Charizard', 'Squirtle', 'Yoshi', 'Snorlax'];
+for (const pokemon of pokemonList) {
+    if (pokemon === 'Yoshi') {
+    continue;
+    }
+    console.log(`You caught a ${pokemon}!`);
+}
