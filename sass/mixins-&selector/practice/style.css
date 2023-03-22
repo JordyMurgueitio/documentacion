@@ -12,4 +12,10 @@ h2 {
   font-size: 2em;
 }
 
+header {
+  color: rgb(250, 250, 250);
+  background-color: rgb(124, 34, 49);
+  font-family: sans-serif;
+}
+
 /*# sourceMappingURL=style.css.map */
