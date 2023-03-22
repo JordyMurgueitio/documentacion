@@ -1,7 +1,15 @@
-/* STRING METHODS
+// STRING METHODS
 
 // 1. charAt()	Returns the character at a specified index (position) in a string
-charCodeAt()	Returns the Unicode of the character at a specified index
+let texto = "hello world";
+console.log(texto.charAt(0));  // logs h
+
+let text1 = "hola pedro";
+console.log(text1.charAt(text1.length - 1)); // logs o
+
+
+
+/* charCodeAt()	Returns the Unicode of the character at a specified index
 concat()	Returns two or more joined strings
 constructor	Returns the string's constructor function
 fromCharCode()	Returns Unicode values as characters
@@ -22,4 +30,4 @@ toUpperCase()	Returns a string converted to uppercase letters
 trim()	Returns a string with removed whitespaces
 trimEnd()	Returns a string with removed whitespaces from the end
 trimStart()	Returns a string with removed whitespaces from the start
-valueOf()	Returns the primitive value of a string or a string object */
+valueOf()	Returns the primitive value of a string or a string object */ 
