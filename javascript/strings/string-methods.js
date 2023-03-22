@@ -1,21 +1,56 @@
 // STRING METHODS
 
+
 // 1. charAt()	Returns the character at a specified index (position) in a string
 let texto = "hello world";
 console.log(texto.charAt(0));  // logs h
 
-let text1 = "hola pedro";
-console.log(text1.charAt(text1.length - 1)); // logs o
+let texto1 = "hola pedro";
+console.log(texto1.charAt(texto1.length - 1)); // logs o
+
+
+// 2. concat()	Returns two or more joined strings
+let word = "sea";
+let word1 = "food";
+console.log(word.concat(word1)); // logs seafood
+
+let text = "Hello";
+let text1 = "world!";
+let text2 = "Have a nice day!";
+console.log(text.concat(" ", text1, " ", text2));  // logs Hello world have a nice day
 
 
 
-/* charCodeAt()	Returns the Unicode of the character at a specified index
-concat()	Returns two or more joined strings
-constructor	Returns the string's constructor function
-fromCharCode()	Returns Unicode values as characters
-length	Returns the length of a string
-localeCompare()	Compares two strings in the current locale
-prototype	Allows you to add properties and methods to an object
+// 3. .length	Returns the length of a string
+let name = "Zlatan";
+console.log(name.length); // logs 6
+
+
+
+// 4. localeCompare()	Compares two strings in the current locale
+// returns sort order -1, 1, or 0 (for before, after, or equal).
+// The current locale is based on the language settings of the browser.
+let string = "ab";
+let string2 = "cd";
+console.log(string.localeCompare(string2)); // logs -1
+
+let user = "cd";
+let user2 = "ad";
+console.log(user.localeCompare(user2));  // logs 1
+
+let combo = "ab";
+let combo2 = "ab";
+console.log(combo.localeCompare(combo2));  // logs 0
+
+
+
+// 5. prototype	Allows you to add properties and methods to an object
+
+
+
+
+/*
+
 repeat()	Returns a new string with a number of copies of a string
 replace()	Searches a string for a value, or a regular expression, and returns a string where the values are replaced
 slice()	Extracts a part of a string and returns a new string

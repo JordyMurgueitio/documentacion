@@ -65,7 +65,7 @@ p {
 
 
 // 4. Default value arguments - A default value is assigned to the argument if no value is passed in when the mixin is included
-
+// 4.1 
 @mixin header-style ($color: rgb(217, 216, 218), $background-color: rgb(66, 30, 36), $font-family: Tahoma) {
     color: $color;
     background-color: $background-color;
@@ -75,7 +75,7 @@ p {
 header {
     @include header-style($font-family: sans-serif); // the color and back color will be default
 }
-
+// 4.2
 @mixin dashed-border($width, $color: #FFF) {
     border: {
         color: $color;
