@@ -54,3 +54,15 @@ cell.color = 'blue'; // Creates a new key of 'speed' with a value of 'Mach 5'
 //You can delete a property from an object with the delete operator.
 delete cell["origin country"]; // Removes the origin country property
 
+
+
+// 4. Methods -  actions that can be performed on objects
+// Methods are stored in properties as function definitions
+const alienShip = {
+    invade () { 
+        console.log('Hello! We have come to dominate your planet')
+    },
+    color: 'black'
+};
+
+alienShip.invade();  // logs 'Hello! We have...'
