@@ -37,3 +37,20 @@ console.log(spaceship['Active Duty']);  // logs true
 // you can also use a variable inside the brackets to select the keys of an object. This can be especially helpful when working with functions:
 let returnAnyProp = (objectName, propName) => objectName[propName];
 returnAnyProp(spaceship, 'homePlanet'); // Returns 'Earth'
+
+
+
+
+// 3. Property Assignment - Objects are mutable. we can update them after we create them
+// If the property already exists on the object, whatever value it held before will be replaced with the newly assigned value.
+// If there was no property with that name, a new property will be added to the object.
+// although we can’t reassign an object declared with const, we can still mutate it,
+
+const cell = {type: 'apple', 'origin country': "china"};
+// const cell= {type: 'alien'};    TypeError: Assignment to constant variable.
+cell.type = 'samsung'; // Changes the value of the type property
+cell.color = 'blue'; // Creates a new key of 'speed' with a value of 'Mach 5'
+
+//You can delete a property from an object with the delete operator.
+delete cell["origin country"]; // Removes the origin country property
+
