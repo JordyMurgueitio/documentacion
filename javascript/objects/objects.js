@@ -59,10 +59,58 @@ delete cell["origin country"]; // Removes the origin country property
 // 4. Methods -  actions that can be performed on objects
 // Methods are stored in properties as function definitions
 const alienShip = {
+    retreat: function () {
+        console.log('Hello, we have decided to leave your planet')
+    },
+    // new method syntax introduced in ES6 we can omit the colon and the function keyword
     invade () { 
         console.log('Hello! We have come to dominate your planet')
     },
     color: 'black'
 };
 
-alienShip.invade();  // logs 'Hello! We have...'
+alienShip.invade();  // logs invade message 
+alienShip.retreat();  // logs retreat message 
+
+
+
+// 5. Nested Objects - objects are often nested— an object might have another object as a property
+
+const hotel = {
+    contact: {
+        name: 'Grand Hotel', 
+        city: 'Barcelona', 
+        phone: 0994784394, 
+    },
+    crew: {
+        manager: {
+            name: 'juan erik',
+            joined: 2010, 
+            'located in': "brasil",
+            encourageTeam () {
+                console.log("let's do it team");
+            }
+        },
+        assistant: {
+            name: 'Messi', 
+            joined: 2020, 
+            clean () {
+                console.log('I guess its time to clean')
+            }
+        }
+    },
+    activities: [{name: "trecking", hours: 2}, {name: "camping", hours: 24}, {name: "city tour", hours: 3}],
+    open () {
+        console.log("The hotel is open");
+    }, 
+    close () {
+        console.log("The hotel is closed");
+    }
+}
+
+console.log(hotel.contact.city); // logs barcelona
+console.log(hotel.crew.manager['located in']); // logs brasil
+console.log(hotel.activities[1]);  // logs { name: 'camping', hours: 24 }
+console.log(hotel.activities[1].name);  // logs camping
+hotel.crew.assistant.clean();  // logs i guess its time to clean
+hotel.close(); // closes the hotel
