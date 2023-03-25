@@ -114,3 +114,55 @@ console.log(hotel.activities[1]);  // logs { name: 'camping', hours: 24 }
 console.log(hotel.activities[1].name);  // logs camping
 hotel.crew.assistant.clean();  // logs i guess its time to clean
 hotel.close(); // closes the hotel
+
+
+
+
+// 6. Pass by reference - functions which change object properties mutate the object permanently (even when the object is assigned to a const variable)
+
+const spaceStation = {
+    homePlanet : 'Earth',
+    color : 'silver'
+};
+
+let paintIt = object => {
+    object.color = 'glorious gold'
+};
+paintIt(spaceStation);
+
+console.log(spaceStation.color) // Returns 'glorious gold'
+
+
+
+// 7. Looping through an object - for...in will execute a given block of code for each property in an object.
+
+
+let flight = {
+    crew: {
+        captain: { 
+            name: 'Lily', 
+            degree: 'Computer Engineering', 
+            cheerTeam() { console.log('You got this!') } 
+        },
+        'chief officer': { 
+            name: 'Dan', 
+            degree: 'Aerospace Engineering', 
+            agree() { console.log('I agree, captain!') } 
+        },
+        medic: { 
+            name: 'Clementine', 
+            degree: 'Physics', 
+            announce() { console.log(`Jets on!`) } 
+        },
+        translator: {
+            name: 'Shauna', 
+            degree: 'Conservation Science', 
+            powerFuel() { console.log('The tank is full!') } 
+        }
+    }
+}; 
+// will iterate through each element of the flight.crew object. In each iteration, the variable crewMember is set to one of flight.crew‘s keys, enabling us to log a list of crew members’ role and name.
+for (let crewMember in flight.crew) {   
+    console.log(` ${crewMember}: ${flight.crew[crewMember].name} `);
+}
+
