@@ -61,3 +61,46 @@ console.log(mobile.energyLevel)  //  getter methods do not need to be called wit
 
 
 // 4. Setters - reassign values of existing properties within an object.
+
+const person = {
+    _age: 89, 
+    set age(newAge) {
+        if (typeof newAge === 'number') {
+            this._age = newAge;
+        } else {
+            console.log("You have to enter a number");
+        }
+    }
+}
+
+person.age = 15;   // Setter methods do not need to be called with a set of parentheses
+console.log(person._age);
+person.age = "cuarenta";
+
+
+
+// 5. Factory functions - is a function that returns an object and can be reused to make multiple object instances
+// can also have parameters allowing us to customize the object that gets returned
+
+const carFactory = (model, year, manual) => {
+    return {
+        model: model, 
+        year: year, 
+        manual: manual, 
+        start () {
+            console.log("car is starting");
+        }
+    }
+};
+
+const car1 = carFactory("ford", 2020, true); 
+const car2 = carFactory("nissan", 2023, false);
+console.log(car1);
+car1.start();
+
+
+
+
+// 6. Property value shorthand - 
+
+
