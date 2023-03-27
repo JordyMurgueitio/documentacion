@@ -15,9 +15,20 @@
 </form>
 
 <!-- <select>  defines a drop-down list -->
+    <!-- <option> elements defines an option that can be selected -->
+    <!-- the size attribute to specify the number of visible values -->
+    <!-- the multiple attribute allows the user to select more than one value -->
+<form action="">
+    <label for="cars">Choose a car:</label>
+    <select id="cars" name="cars" size="2" multiple>
+        <option value="volvo">Volvo</option>  
+        <option value="saab" selected>Saab</option>    <!-- to define a pre-selected option, add the selected attribute to the option -->
+        <option value="fiat">Fiat</option>
+        <option value="audi">Audi</option>
+    </select>
+</form>
 
-
-<select>
+<!-- <textarea> -->
 <textarea>
 <button>
 <fieldset>
