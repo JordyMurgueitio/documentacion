@@ -62,21 +62,34 @@ console.log(tip.replace(/barcelona/g, 'madrid'));
 
 
 
+// 7. slice()	Extracts a part of a string and returns a new string
+// string.slice(start, end)
+let salute = 'hola mundo';
+console.log(salute.slice(0, 4));  // logs hola
+console.log(salute.slice(5));  // logs mundo
+console.log(salute.slice(-1)); // logs o
+
+
+
+// 8. toLowerCase()	Returns a string converted to lowercase letters
+let HAHAHA = "HAHAHAHA";
+console.log(HAHAHA.toLowerCase()); // logs hahahaha
+
+
+// 9. toUpperCase()	Returns a string converted to uppercase letters
+let what = "you did what?"
+console.log(what.toUpperCase());
+
+
 
 
 
 /*
 
 
-slice()	Extracts a part of a string and returns a new string
-split()	Splits a string into an array of substrings
-substr()	Extracts a number of characters from a string, from a start index (position)
-substring()	Extracts characters from a string, between two specified indices (positions)
 toLocaleLowerCase()	Returns a string converted to lowercase letters, using the host's locale
 toLocaleUpperCase()	Returns a string converted to uppercase letters, using the host's locale
-toLowerCase()	Returns a string converted to lowercase letters
 toString()	Returns a string or a string object as a string
-toUpperCase()	Returns a string converted to uppercase letters
 trim()	Returns a string with removed whitespaces
 trimEnd()	Returns a string with removed whitespaces from the end
 trimStart()	Returns a string with removed whitespaces from the start
