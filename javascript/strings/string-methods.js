@@ -28,7 +28,7 @@ console.log(name.length); // logs 6
 
 
 // 4. localeCompare()	Compares two strings in the current locale
-// returns sort order -1, 1, or 0 (for before, after, or equal).
+// returns sort order -1: before, 1: after, or 0: equal
 // The current locale is based on the language settings of the browser.
 let string = "ab";
 let string2 = "cd";
@@ -44,15 +44,30 @@ console.log(combo.localeCompare(combo2));  // logs 0
 
 
 
-// 5. prototype	Allows you to add properties and methods to an object
+// 5. repeat()	Returns a new string with a number of copies of a string
+// string.repeat(count)
+
+let mija = 'futbol papa'; 
+console.log(mija.repeat(2)); // logs futbol papafutbol papa
+
+
+
+// 6. replace()	Searches a string for a value, and returns a string where the values are replaced
+// string.replace(searchValue, newValue)
+let weKnow = 'messi is the best';
+console.log(weKnow.replace('best', 'goat'));
+
+let tip = 'visit barcelona, barcelona is beautiful';
+console.log(tip.replace(/barcelona/g, 'madrid'));
+
+
 
 
 
 
 /*
 
-repeat()	Returns a new string with a number of copies of a string
-replace()	Searches a string for a value, or a regular expression, and returns a string where the values are replaced
+
 slice()	Extracts a part of a string and returns a new string
 split()	Splits a string into an array of substrings
 substr()	Extracts a number of characters from a string, from a start index (position)
