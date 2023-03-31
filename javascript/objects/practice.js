@@ -27,3 +27,20 @@ menu.price = 20;
 console.log(menu.todaysSpecial);
 
 
+// 2. factory function
+
+const carFactory = (model, color, automatic) => {
+    return {
+        model, 
+        color, 
+        automatic
+    }
+}
+
+let car1 = carFactory('ford', 'red', true);
+console.log(car1); // logs new object
+const {model} = car1;
+console.log(model); // logs ford
+
+
+
