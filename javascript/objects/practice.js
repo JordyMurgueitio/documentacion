@@ -82,3 +82,26 @@ team.addGame('liga', 0, 3);
 team.addPlayer('jordy', 'murgueitio', 24);
 console.log(team._players);
 console.log(team._games);
+
+
+// 4. Create a constructor function for a Person object that takes in name, age, gender, and occupation as arguments. 
+// Add a method to the object that logs a message to the console that includes the person's name and occupation. 
+// Then, create instances of the object for three different people and call the method on each instance.
+
+
+const personMaker = (name, age, gender, occupation) => {
+    return {
+        name, 
+        age, 
+        gender, 
+        occupation, 
+        presentation () {
+            console.log(`My name is ${this.name} and I'm a ${this.occupation}`);
+        }
+    }
+}
+
+let person1 = personMaker('jordy', 10, 'male', 'football player');
+let person2 = personMaker('ana', 12, 'female', 'waiter');
+person1.presentation();
+person2.presentation();
