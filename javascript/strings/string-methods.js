@@ -86,9 +86,6 @@ console.log(what.toUpperCase());
 
 /*
 
-
-toLocaleLowerCase()	Returns a string converted to lowercase letters, using the host's locale
-toLocaleUpperCase()	Returns a string converted to uppercase letters, using the host's locale
 toString()	Returns a string or a string object as a string
 trim()	Returns a string with removed whitespaces
 trimEnd()	Returns a string with removed whitespaces from the end
