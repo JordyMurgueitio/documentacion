@@ -62,3 +62,30 @@ const shortNames = names.filter(name => {
     return name.length <= 5; 
 });
 console.log(shortNames); // logs [ 'ruiz', 'pita', 'messi' ]
+
+
+
+
+// 4. the .findIndex() method - find the location of an element in an array
+// will return the index of the first element that evaluates to true in the callback function.
+// If there isn’t a single element in the array that satisfies the condition in the callback, will return -1.
+
+const animals = ['hippo', 'tiger', 'lion', 'seal', 'cheetah', 'monkey', 'salamander', 'elephant'];
+
+const foundAnimal = animals.findIndex(animal => {  // looks for the index of the first element that starts with "s"
+    return animal[0] === "s";
+})
+console.log(foundAnimal);  // logs 3
+
+
+const randomNumbers = [2, 6, 7, 30, 0];
+
+const biggerThan10 = randomNumbers.findIndex(numero => {
+    return numero > 10;
+})
+console.log(biggerThan10);  // logs 3
+
+
+
+
+// 
