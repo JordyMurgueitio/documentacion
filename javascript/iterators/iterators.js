@@ -40,3 +40,25 @@ const bigNumbers = numbers.map(number => {
 
 console.log(numbers); // logs [1, 2, 3, 4, 5]
 console.log(bigNumbers);  // logs [10, 20, 30, 40, 50]
+
+
+
+
+// 3. the .filter() method - returns an array of elements after filtering out certain elements from the original array.
+// The callback function for the .filter() method should return true or false depending on the element that is passed to it. 
+// The elements that cause the callback function to return true are added to the new array.
+
+
+const notes = [10, 10, 7, 3, 5, 6, 9];
+const approved = notes.filter(note => {
+    return note >= 7;
+})
+console.log(notes);  // logs [10, 10, 7, 3, 5, 6, 9];
+console.log(approved); // logs [10, 10, 7, 9];
+
+
+const names = ['martinez', 'gonzales', 'ruiz', 'pita', 'ronaldo', 'messi'];
+const shortNames = names.filter(name => {
+    return name.length <= 5; 
+});
+console.log(shortNames); // logs [ 'ruiz', 'pita', 'messi' ]
