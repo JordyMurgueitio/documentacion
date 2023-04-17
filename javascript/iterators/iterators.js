@@ -121,3 +121,33 @@ console.log(suma);  // returns 26
 
 
 
+// 6. the .some() method - tests whether at least one element in the array passes the test implemented by the provided function
+// returns true if, in the array, it finds an element for which the provided function returns true, otherwise false
+// It doesn't modify the array.
+
+const array = [1, 2, 3, 4, 5];
+
+// Checks whether an element is even
+const even = element => element % 2 === 0;
+console.log(array.some(even)); // Expected output: true
+
+
+const words = ['unique', 'uncanny', 'pique', 'oxymoron', 'guise'];
+
+console.log(words.some((word) => {
+    return word.length < 6;  // logs true
+}));
+
+
+
+
+// 7. the .every() method -  tests whether all elements in the array pass the test implemented by the provided function. 
+// It returns a Boolean value
+
+const isBelowThreshold = (currentValue) => currentValue < 40;
+
+const array1 = [1, 30, 39, 29, 10, 13];
+
+console.log(array1.every(isBelowThreshold));
+// Expected output: true
+
