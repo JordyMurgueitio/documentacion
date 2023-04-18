@@ -29,7 +29,7 @@ sports.forEach(printSport);
 
 
 
-// 2. the .map() method - it takes an argument of a callback function and returns a new array
+// 2. the .map() method -  executes the same code on every element in an array and returns a new array with the updated elements
 // .map will iterate through each element in the array and pass the element into the callback function.
 
 const numbers = [1, 2, 3, 4, 5]; 
@@ -45,8 +45,8 @@ console.log(bigNumbers);  // logs [10, 20, 30, 40, 50]
 
 
 // 3. the .filter() method - returns an array of elements after filtering out certain elements from the original array.
-// The callback function for the .filter() method should return true or false depending on the element that is passed to it. 
-// The elements that cause the callback function to return true are added to the new array.
+// checks every element in an array to see if it meets certain criteria
+// returns a new array with the elements that return truthy for the criteria.
 
 
 const notes = [10, 10, 7, 3, 5, 6, 9];
