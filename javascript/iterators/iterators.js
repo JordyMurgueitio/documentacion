@@ -116,7 +116,7 @@ const suma = otherNumbers.reduce((accumulator, currentValue) => {
     console.log(`The value of currentValue: ${currentValue}`);
     return accumulator + currentValue;
 }, 10);  // 10 is the second parameter that sets the initial value for accumulator
-console.log(suma);  // returns 26
+console.log(suma);  // returns 2g6
 
 
 
