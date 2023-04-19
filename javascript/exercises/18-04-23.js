@@ -66,3 +66,27 @@ const reverseArray = array => {
 }
 
 console.log(reverseArray(["jordy", "juan", "kevin"]));
+
+
+
+// 6. Write a conditional statement that checks if a person is old enough to vote (18 years or older).
+
+const canVote = person => {
+    if (person.age >= 18) {
+        return "You can vote";
+    } else {
+        return "you can not";
+    }
+}; 
+
+const person1 = {
+    name: "messi", 
+    age: 20
+};
+const person2 = {
+    name: "messi", 
+    age: 2
+};
+
+console.log(canVote(person1));
+console.log(canVote(person2));
