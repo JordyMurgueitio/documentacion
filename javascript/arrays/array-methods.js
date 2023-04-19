@@ -22,7 +22,16 @@ console.log(notes);  // logs [ 2, 5, 6, 7, 8 ]
 console.log(removed);  // logs 9
 
 
-// 4. every()	Checks if every element in an array pass a test
+// 4. The .push() Method - allows us to add items to the end of an array
+// take a single argument or multiple arguments separated by commas
+
+const chores = ['wash dishes', 'do laundry', 'take out trash'];
+
+chores.push('cook', 'buy shoes');
+console.log(chores);
+
+
+// 5. every()	Checks if every element in an array pass a test
 // executes a function for each array element / returns true if the function returns true for all elements
 //  returns false if the function returns false for one element
 const ages = [10, 45, 6, 77, 45];
@@ -34,14 +43,14 @@ function checkAge (age) {
 console.log(everyoneAdult);  // logs false
 
 
-// 5. fill()	fills specified elements in an array with a value
+// 6. fill()	fills specified elements in an array with a value
 // overwrites the original array - Start and end position can be specified. If not, all elements will be filled.
 const teams = ["liga", "boca", "river", "chelsea", "city"];
 let newteams = teams.fill("psg", 4, 5);
 console.log(newteams);  // logs [ 'liga', 'boca', 'river', 'chelsea', 'psg' ]
 
 
-// 6. filter()	Creates a new array with every element in an array that pass a test provided by a function
+// 7. filter()	Creates a new array with every element in an array that pass a test provided by a function
 const amigos = ["kaka", "mama", "ala", "erin", "messi"];
 const startM = amigos.filter(start_m);  // returns an array with all the elements that start with the leter m
 
@@ -51,25 +60,25 @@ function start_m (amigo) {
 console.log(startM);  // logs [ 'mama', 'messi' ]
 
 
-// 7. find()	Returns the value of the first element in an array that pass a test
+// 8. find()	Returns the value of the first element in an array that pass a test
 
 
-// 10. reverse()	Reverses the order of the elements in an array
+// 9. reverse()	Reverses the order of the elements in an array
 
 
-// 11. shift()	Removes the first element of an array, and returns that element
+// 10. shift()	Removes the first element of an array, and returns that element
 
 
-// 12. unshift()	Adds new elements to the beginning of an array, and returns the new length
+// 11. unshift()	Adds new elements to the beginning of an array, and returns the new length
 
 
-// 13. slice()	Selects a part of an array, and returns the new array
+// 12. slice()	Selects a part of an array, and returns the new array
 
 
-// 14. findIndex()	Returns the index of the first element in an array that pass a test
+// 13. findIndex()	Returns the index of the first element in an array that pass a test
 
 
-// 15. forEach()	Calls a function for each array element
+// 14. forEach()	Calls a function for each array element
 
 
 // 16. join()	Joins all elements of an array into a string
