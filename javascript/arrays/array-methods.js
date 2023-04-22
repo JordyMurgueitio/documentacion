@@ -96,6 +96,40 @@ console.log(startM);  // logs [ 'mama', 'messi' ]
 // 22. reduce()	Reduce the values of an array to a single value (going left-to-right)
 // 23. reduceRight()	Reduce the values of an array to a single value (going right-to-left)
 // 24. some()	Checks if any of the elements in an array pass a test
-// 25. sort()	Sorts the elements of an array
+
+
+// 25. sort()	Sorts the elements of an array - returns the array with the items sorted
+//  sorts the elements as strings in alphabetical and ascending order
+const months = ['March', 'Jan', 'Feb', 'Dec'];
+months.sort();
+console.log(months); // Expected output: Array ["Dec", "Feb", "Jan", "March"] ABCDEFGHIJKLMNOPQRSTUVWXYZ
+// Sort numbers in ascending order:
+const points = [10, 40, 300, 2, 44];
+points.sort((a,b) => {
+    return a - b;
+});
+console.log(points);  // logs [ 2, 10, 40, 44, 300 ]
+// Sort numbers in descending order:
+points.sort((a,b) => {
+    return b - a;
+});
+console.log(points); // logs [ 300, 44, 40, 10, 2 ]
+// Find the lowest value 
+const edades = [10, 54, 3, 56, 5, 90];
+edades.sort((a, b) => {
+    return a - b;
+}); 
+let lowest = edades[0]; // 3
+let edadesHighest = edades[edades.length - 1]; // 90
+// Find the highest value:
+const puntos = [40, 100, 1, 5, 25, 10];
+points.sort(function(a, b){return b-a});
+let highest = points[0];
+
+
+
+
+
+
 // 26. splice()	Adds/Removes elements from an array
 // 27. toString()	Converts an array to a string, and returns the result 
