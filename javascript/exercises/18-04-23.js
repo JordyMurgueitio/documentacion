@@ -90,3 +90,19 @@ const person2 = {
 
 console.log(canVote(person1));
 console.log(canVote(person2));
+
+
+
+// 7. Write a function that takes in an array of strings and returns a new array. 
+// This new array should contain all the strings from the argument array but with capitalized letters. 'heya' will become 'HEYA!'
+
+const shoutGreetings = array => {
+    let newArray = array.map(element => {
+        return element.toUpperCase() + "!";
+    })
+    return newArray;
+};
+
+const greetings = ['hello', 'hi', 'heya', 'oi', 'hey', 'yo'];
+
+console.log(shoutGreetings(greetings)); // Should print [ 'HELLO!', 'HI!', 'HEYA!', 'OI!', 'HEY!', 'YO!' ]
