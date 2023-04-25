@@ -174,3 +174,44 @@ const factorial = number => {
 }; 
 
 console.log(factorial(6));
+
+
+// 10. Write a function subLength() that takes 2 parameters, a string and a single character. 
+// The function should search the string for the two occurrences of the character 
+// return the length between them including the 2 characters. 
+// If there are less than 2 or more than 2 occurrences of the character the function should return 0.
+// subLength('Saturday', 'a'); returns 6 , subLength('summer', 'm'); returns 2 subLength('digitize', 'i'); returns 0
+
+function subLength(str, char) {
+    let firstIndex = str.indexOf(char);
+    let secondIndex = str.indexOf(char, firstIndex + 1);
+
+    if (firstIndex === -1 || secondIndex === -1 || str.indexOf(char, secondIndex + 1) !== -1) {
+        // return 0 if less than 2 or more than 2 occurrences of the character
+        return 0;
+    } else {
+        // return length between the two occurrences of the character
+        return secondIndex - firstIndex + 1;
+    }
+}
+
+console.log(subLength("ojo", "o"));
+
+
+
+// 11. Write a function groceries() that takes an array of object literals of grocery items. 
+// should return a string with each item separated by a comma except the last two items should be separated by the word 'and'
+
+const groceries = array => {
+    let newString = "";
+    for (let i = 0; i < array.length; i++) {
+        newString += array[i].item;
+        if (i < array.length - 2) {
+            newString += ", "
+        } else if (i == array.length - 2) {
+            newString += " and ";
+        }
+    };
+    return newString
+}
+console.log(groceries( [{item: 'Bread'}, {item: 'Butter'}] ));
