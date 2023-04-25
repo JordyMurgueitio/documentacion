@@ -106,3 +106,17 @@ const shoutGreetings = array => {
 const greetings = ['hello', 'hi', 'heya', 'oi', 'hey', 'yo'];
 
 console.log(shoutGreetings(greetings)); // Should print [ 'HELLO!', 'HI!', 'HEYA!', 'OI!', 'HEY!', 'YO!' ]
+
+
+// 8. Write a function justCoolStuff() that takes in two arrays of strings, 
+// and, using the built-in .filter() method, returns an array with the items that are present in both arrays
+
+
+const justCoolStuff = (firstArray, secondArray) => {
+    return firstArray.filter(item => {
+        return secondArray.includes(item)
+    });
+}
+const objetos2 = ["hola" ,"hdi", "ds"]
+const objetos1 = ["hola" ,"hddi", "ddfs"]
+console.log(justCoolStuff(objetos1, objetos2)); // logs ["hola"]
