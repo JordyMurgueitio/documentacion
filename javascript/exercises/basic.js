@@ -159,3 +159,18 @@ const dogFactory = (name, breed, weight) => {
         }
     }
 }
+
+
+// 9. Write a function factorial() that takes a number as an argument 
+// returns the factorial of the number.
+// factorial(6); returns `720` because 6 * 5 * 4 * 3 * 2 * 1 = 720 
+
+const factorial = number => {
+    let result = 1; 
+    for (let i = number; i >= 1; i--) {
+        result *= i;
+    };
+    return result; 
+}; 
+
+console.log(factorial(6));
