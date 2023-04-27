@@ -25,3 +25,11 @@ document.body.innerHTML = "<h1>This is a heading</h1>";
     // 3.2  .getElementById() - access an element directly by its id 
     // select the element with an ID of 'bio' and set its .innerHTML to the text 'The description'
     document.getElementById("bio").innerHTML = "The description";
+
+    // 3.3  .getElementsByClassName() - returns an array of elements that match the given class
+    // Set first element of .student class as 'Not yet registered'
+    document.getElementsByClassName("student")[0].innerHTML = "not yet registered";
+
+    // 3.4   .getElementsByTagName() - returns an array of elements that match the given tag
+    // Set second <li> tag as "messi"
+    document.getElementsByTagName("li")[1].innerHTML = "messi";
