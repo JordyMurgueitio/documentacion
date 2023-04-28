@@ -60,19 +60,82 @@ function start_m (amigo) {
 console.log(startM);  // logs [ 'mama', 'messi' ]
 
 
-// 8. find()	Returns the value of the first element in an array that pass a test
 
 
-// 9. reverse()	Reverses the order of the elements in an array
+// 8. sort()	Sorts the elements of an array - returns the array with the items sorted
+//  sorts the elements as strings in alphabetical and ascending order
+const months = ['March', 'Jan', 'Feb', 'Dec'];
+months.sort();
+console.log(months); // Expected output: Array ["Dec", "Feb", "Jan", "March"] ABCDEFGHIJKLMNOPQRSTUVWXYZ
+
+// Sort numbers in ascending order:
+const points = [10, 40, 300, 2, 44];
+points.sort((a,b) => {
+    return a - b;
+});
+console.log(points);  // logs [ 2, 10, 40, 44, 300 ]
+// Sort numbers in descending order:
+points.sort((a,b) => {
+    return b - a;
+});
+console.log(points); // logs [ 300, 44, 40, 10, 2 ]
+// Find the lowest value 
+const edades = [10, 54, 3, 56, 5, 90];
+edades.sort((a, b) => {
+    return a - b;
+}); 
+let lowest = edades[0]; // 3
+let edadesHighest = edades[edades.length - 1]; // 90
+// Find the highest value:
+const puntos = [40, 100, 1, 5, 25, 10];
+points.sort(function(a, b){return b-a});
+let highest = points[0];
 
 
-// 10. shift()	Removes the first element of an array, and returns that element
 
 
-// 11. unshift()	Adds new elements to the beginning of an array, and returns the new length
+// 9. find()	Returns the value of the first element in an array that pass a test
+
+const players = ["messi", "hugo", "sebastian"];
+
+const longName = players.find(player => {
+    return player.length > 6;
+}); 
+console.log(longName);   // logs sebastian
 
 
-// 12. slice()	Selects a part of an array, and returns the new array
+
+// 10. reverse()	Reverses the order of the elements in an array, overwrites the original array
+
+let vowels = ["a", "e", "i", "o", "u"];
+let reversedVowels = vowels.reverse(); 
+console.log(reversedVowels);
+
+
+
+// 11. shift()	Removes the first element of an array, and returns that element
+// this method changes the lenght of the array
+
+let signedUp = ["Juan", "Maira", "Elkin", "Soto"]; 
+let removedUser = signedUp.shift(); 
+
+console.log(signedUp); // logs [ 'Maira', 'Elkin', 'Soto' ]
+console.log(removedUser);  // logs Juan
+
+
+
+// 12. unshift()	Adds new elements to the beginning of an array. overwrites the original array
+// returns the new length of the array. 
+
+let bestCompanies = ["SAP", "Apple", "Microsoft"];
+
+console.log(bestCompanies.unshift()); // logs 3
+console.log(bestCompanies.unshift("Nike", "Amazon")); // logs 5
+console.log(bestCompanies);  // logs [ 'Nike', 'Amazon', 'SAP', 'Apple', 'Microsoft' ]
+
+
+
+// 13. slice()	Selects a part of an array, and returns the new array
 
 
 // 13. findIndex()	Returns the index of the first element in an array that pass a test
@@ -96,35 +159,6 @@ console.log(startM);  // logs [ 'mama', 'messi' ]
 // 22. reduce()	Reduce the values of an array to a single value (going left-to-right)
 // 23. reduceRight()	Reduce the values of an array to a single value (going right-to-left)
 // 24. some()	Checks if any of the elements in an array pass a test
-
-
-// 25. sort()	Sorts the elements of an array - returns the array with the items sorted
-//  sorts the elements as strings in alphabetical and ascending order
-const months = ['March', 'Jan', 'Feb', 'Dec'];
-months.sort();
-console.log(months); // Expected output: Array ["Dec", "Feb", "Jan", "March"] ABCDEFGHIJKLMNOPQRSTUVWXYZ
-// Sort numbers in ascending order:
-const points = [10, 40, 300, 2, 44];
-points.sort((a,b) => {
-    return a - b;
-});
-console.log(points);  // logs [ 2, 10, 40, 44, 300 ]
-// Sort numbers in descending order:
-points.sort((a,b) => {
-    return b - a;
-});
-console.log(points); // logs [ 300, 44, 40, 10, 2 ]
-// Find the lowest value 
-const edades = [10, 54, 3, 56, 5, 90];
-edades.sort((a, b) => {
-    return a - b;
-}); 
-let lowest = edades[0]; // 3
-let edadesHighest = edades[edades.length - 1]; // 90
-// Find the highest value:
-const puntos = [40, 100, 1, 5, 25, 10];
-points.sort(function(a, b){return b-a});
-let highest = points[0];
 
 
 
