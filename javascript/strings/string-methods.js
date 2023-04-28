@@ -82,12 +82,16 @@ console.log(what.toUpperCase());
 
 
 
+// 10. toString()	Returns a string or a string object as a string
+
+let myCity = "Quito"; 
+let myCity2 = myCity.toString(); 
+console.log(myCity2);
 
 
-/*
+// 11. trim()  removes whitespace from both sides of a string.
 
-toString()	Returns a string or a string object as a string
-trim()	Returns a string with removed whitespaces
-trimEnd()	Returns a string with removed whitespaces from the end
-trimStart()	Returns a string with removed whitespaces from the start
-valueOf()	Returns the primitive value of a string or a string object */ 
+let hello = "       Hello Wordl    ";
+console.log(hello.trim());   
+
+
