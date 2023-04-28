@@ -135,10 +135,27 @@ console.log(bestCompanies);  // logs [ 'Nike', 'Amazon', 'SAP', 'Apple', 'Micros
 
 
 
-// 13. slice()	Selects a part of an array, and returns the new array
+// 13. slice()	Returns selected elements in an array, as a new array
+//  array.slice(start, end) start and end represent the index of items in that array. (end is not inclusive)
+// The original array will not be modified
+
+const animalNames = ["lion", "tiger", "shark", "dog", "cat"];
+
+console.log(animalNames.slice(0, 3));  // logs [ 'lion', 'tiger', 'shark' ]
+console.log(animalNames.slice(3));  // logs [ 'dog', 'cat' ]
+
+// Negative numbers select from the end of the array.
+console.log(animalNames.slice(-2)); // logs [ 'dog', 'cat' ]
+console.log(animalNames.slice(-3));  // logs [ 'shark', 'dog', 'cat' ]
+console.log(animalNames.slice(-4, -2));  // logs [ 'tiger', 'shark']
+
+
 
 
 // 13. findIndex()	Returns the index of the first element in an array that pass a test
+
+
+
 
 
 // 14. forEach()	Calls a function for each array element
