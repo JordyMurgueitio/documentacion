@@ -33,3 +33,21 @@ document.body.innerHTML = "<h1>This is a heading</h1>";
     // 3.4   .getElementsByTagName() - returns an array of elements that match the given tag
     // Set second <li> tag as "messi"
     document.getElementsByTagName("li")[1].innerHTML = "messi";
+
+
+
+
+// 4. Style an element - .style property of a DOM element provides access to the inline style of that HTML tag
+// .style property does not implement a hyphen such as background-color, but rather camel case notation, backgroundColor. 
+
+//  selects the first element with a class of blue and assigns blue as the background-color
+let blueElement = document.querySelector(".blue"); 
+blueElement.style.backgroundColor = "blue";
+
+// change the font family of the element with the heading class to 'Roboto'
+
+document.querySelector(".heading").style.fontFamily = "Roboto";
+
+
+
+// 5. Traversing the DOM
