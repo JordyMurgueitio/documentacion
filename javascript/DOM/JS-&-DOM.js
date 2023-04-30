@@ -86,7 +86,41 @@ first.parentNode.style.backgroundColor = "blue";  // changes the background colo
 
     // 6.2  .appendChild() method will add a child element as the parent element’s last child node
     // to create an element and add it to the web page, you must assign it to be the child of an element that already exists on the DOM 
-    document.body.appendChild("p");
+    document.body.appendChild(paragraph);
+
+
+
+
+// 7. Remove an element - The .removeChild() method removes a specified child from a parent
+
+// removes the first paragraph from the document body
+let paragraph2 = document.querySelector("p"); 
+document.body.removeChild(paragraph2);
+
+// the .hidden property allows you to hide it by setting the property as true or false
+document.getElementById("sign").hidden = true; 
+
+
+
+
+// 8. add click interactivity - .onclick property allows you to assign a function to run on when a click event happens on an element
+
+let button = document.querySelector("button"); 
+button.onclick = function() {
+    button.style.backgroundColor = "blue"; 
+}; 
+
+
+let button2 = document.getElementsByClassName("button")[1];
+const paintIt = () => {
+    button2.style.backgroundColor = "red"; 
+    button2.style.color = "white"; 
+    button2.innerHTML = "red button";
+}; 
+button2.onclick = paintIt; 
+
+
+
 
 
 
