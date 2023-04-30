@@ -50,4 +50,50 @@ document.querySelector(".heading").style.fontFamily = "Roboto";
 
 
 
-// 5. Traversing the DOM
+// 5. Traversing the DOM - A parent node is any node that is a direct ancestor of another node. A child node is a direct descendant of another node
+// Each element has a .parentNode and .children property
+
+// The .parentNode property returns the parent of the specified element in the DOM 
+// The .children property returns an array of the specified element’s children
+
+
+<ul id='groceries'>
+    <li id='must-have'>Toilet Paper</li>
+    <li>Apples</li>
+    <li>Chocolate</li>
+    <li>Dumplings</li>
+</ul>
+
+let parentElement = document.getElementById("must-have").parentNode;  // stores ul with id: groceries 
+let children = document.getElementById("groceries").children; // stores an array with 4 li elements
+
+
+let first = document.body.children[0]  // saves the first child of the body element into a variable
+first.innerHTML = "BROWN BEARS ARE AWESOME!";  // changes it's innerHTML
+first.parentNode.style.backgroundColor = "blue";  // changes the background color for the parent of first
+
+
+
+// 6. Create and insert elements 
+
+    // 6.1 The .createElement() method - creates a new element based on the specified tag name passed into it as an argument. 
+    // it does not append it to the document. It creates an empty element with no inner HTML.
+    let paragraph = document.createElement("p");
+    // We can assign values to the properties of the newly created element
+    paragraph.id = "info"; 
+    paragraph.innerHTML = "this is a paragraph with id info";
+
+
+    // 6.2  .appendChild() method will add a child element as the parent element’s last child node
+    // to create an element and add it to the web page, you must assign it to be the child of an element that already exists on the DOM 
+    document.body.appendChild("p");
+
+
+
+
+
+
+
+
+
+
