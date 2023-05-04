@@ -77,6 +77,11 @@ share.addEventListener("click", sharePhoto);
 
 
 
+// 4. Event types 
+
+    // 4.1 Mouse Events - click, wheel, mousedown, mouseup, mouseover, mouseout
+
+    
 
 
 
