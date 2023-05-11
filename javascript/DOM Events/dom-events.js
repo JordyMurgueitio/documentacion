@@ -81,7 +81,29 @@ share.addEventListener("click", sharePhoto);
 
     // 4.1 Mouse Events - click, wheel, mousedown, mouseup, mouseover, mouseout
 
-    
+    let button10 = document.getElementById("button10");
+    let otherButton = document.getElementById("other-button");
+
+    function changeBackground () {
+        button10.style.backgroundColor = "blue"; 
+    }; 
+
+    function increaseWidth () {
+        button10.style.width = "500px";
+    };
+
+    function showItem () {
+        otherButton.style.display = "block";
+    }
+
+    button10.addEventListener("mouseup", changeBackground); 
+    button10.addEventListener("mousedown", showItem);
+    button10.addEventListener("mouseover", increaseWidth); 
+    button10.addEventListener("mouseout", changeBackground);
+
+
+
+
 
 
 
