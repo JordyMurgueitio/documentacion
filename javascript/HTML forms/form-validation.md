@@ -3,7 +3,7 @@
 
 
 
-1.  Regular Expressions - is a sequence of characters representing a pattern. 
+## 1.  Regular Expressions - is a sequence of characters representing a pattern. 
 /*  We can use patterns to match a string, parts of a string, confirm that data is formatted acceptably, 
 or replace parts of strings with different characters. */
 
