@@ -23,12 +23,6 @@ or replace parts of strings with different characters. */
     <input type="submit" value="Submit">
     </form>
 
-let myName = "Juan"; 
-
-function saluda (name) {
-    return `hola ${name}`
-}
-saluda(myName)
 
 ## 3. Client-side validation JavaScript - code ourselves or use a validation library
 
