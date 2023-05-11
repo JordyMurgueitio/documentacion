@@ -63,8 +63,7 @@ button.addEventListener('click', showFortune);
 // 3. Event Object properties -  pre-determined properties associated with event objects. 
 // call these properties to see information about the event
 
-    /* 3.1  .target property to reference the element that the event is registered to
-    the event .target is a DOM element and you can access */
+    // 3.1  .target property to reference the element that the event is registered to the event .target is a DOM element and you can access
     // 3.2  .type property to access the name of the event.
     // 3.3 .timeStamp property to access the number of milliseconds that passed since the document loaded and the event was triggered.
 function sharePhoto (event) {
