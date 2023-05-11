@@ -102,6 +102,23 @@ share.addEventListener("click", sharePhoto);
     button10.addEventListener("mouseout", changeBackground);
 
 
+    // 4.2  Keyword events - keydown, keyup, keypress
+    // have unique properties assigned to their event objects like the .key property that stores the values of the key pressed by the user
+    // program the event handler function to react to a specific key, or react to any interaction with the keyboard
+
+    let ball = document.getElementById('float-circle');
+
+    function up () {
+        ball.style.bottom = "250px";
+    }; 
+
+    function down () {
+        ball.style.bottom = "50px";
+    }
+
+    document.addEventListener ("keydown", up);
+    document.addEventListener ("keyup", down);
+
 
 
 
