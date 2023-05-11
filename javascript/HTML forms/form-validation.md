@@ -10,7 +10,7 @@ or replace parts of strings with different characters. */
 
 ## 2. Client-side validation: HTML - prevent problematic inputs from being submitted in the first place
 
-<form action="" method="POST">
+<!--  <form action="" method="POST">
     <label for="text">Enter your name here:</label>
     <input id="name" name="name" type="text" required minlength="3" maxlength="100">
     <br><br>
@@ -21,7 +21,7 @@ or replace parts of strings with different characters. */
     <input id="code" name="code" type="text" required pattern="[cC]odecademy">
     <br><br>
     <input type="submit" value="Submit">
-</form> 
+</form> -->
 
 
 ## 3. Client-side validation JavaScript - code ourselves or use a validation library
