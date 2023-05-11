@@ -1,4 +1,4 @@
-// FORM VALIDATION -The process of checking that the information submitted through a form adheres to expectations
+# FORM VALIDATION -The process of checking that the information submitted through a form adheres to expectations
 
 
 
