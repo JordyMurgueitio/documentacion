@@ -1,8 +1,19 @@
 # HTML FORMS 
 
-We need to supply the ><form>> element with both the location of where the <form>‘s information goes and what HTTP request to make
+We need to supply the form element with both the location of where the form‘s information goes and what HTTP request to make
 ``` html
-<form>
+<form action="/example.html" method="POST">
+</form>
+
+
+```
+1. The action attribute determines where the information is sent.
+2. The method attribute is assigned a HTTP verb that is included in the HTTP request.
+
+``` html
+<form action="/practice.html" method="POST">
+    <h1>Burgers</h1>
+    <p>Feedback is important to us</p>
 </form>
 
 
