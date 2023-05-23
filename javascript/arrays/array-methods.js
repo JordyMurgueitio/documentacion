@@ -152,35 +152,134 @@ console.log(animalNames.slice(-4, -2));  // logs [ 'tiger', 'shark']
 
 
 
-// 13. findIndex()	Returns the index of the first element in an array that pass a test
+// 14. findIndex()	executes a function for each array element.
+//  returns the index (position) of the first element that passes a test. returns -1 if no match is found.
+
+const saldos = [10, 3, 2, 1, 20]; 
+const findBig = (age) => {
+    return age >= 18;
+}
+console.log(saldos.findIndex(findBig)); // logs 4 
+
+
+const alumnos = [{nombre: "Juan", id: 1}, {nombre: "Maria", id: 2}, {nombre: "Messi", id: 3}]
+let index = alumnos.findIndex(alumno => {
+    return alumno.id === 3
+})
+console.log(index); // logs 2
 
 
 
 
 
-// 14. forEach()	Calls a function for each array element
+// 15. .forEach() method - will execute the same code for each element of an array.
+// loops through the array and executes the callback function for each element. 
+// During each execution, the current element is passed as an argument to the callback function.
+
+const groceries = ["apple", "sugar", "milk"];
+groceries.forEach(groceryItem => console.log(groceryItem));
+
+
+const frutas = ["apple", "banana", "melon", "orange"];
+fruits.forEach(fruit => {
+    if (fruit[0] === "a") {
+        console.log(`I want to eat an ${fruit}`)
+    } else {
+        console.log(`I want to eat a ${fruit}`)
+    }
+})
+
+// We can also define a function beforehand to be used as the callback function.
+const sports = ["football", "tennis", "basket"]; 
+const printSport = element => {
+    console.log(`My favorite sport is ${element}`);
+}
+sports.forEach(printSport);
+
+
 
 
 // 16. join()	Joins all elements of an array into a string
 
+const frases = ["hello", "world", "my", "name"]
+
+let fraseString = frases.join(" ");
+let fraseString2 = frases.join(",")
+console.log(fraseString);  // logs hello world my name
+console.log(fraseString2); // logs hello,world,my,name
+
+
+
 
 // 17. includes()	Check if an array contains the specified element
+// returns true if an array contains a specified value
+// returns false if the value is not found.
+
+const precios = [10, 20, 30, 2, 3, 45];
+
+console.log(precios.includes(20)); // logs true
+console.log(precios.includes(13));  // logs false 
 
 
-// 18. indexOf()	Search the array for an element and returns its position
+const pets = ['cat', 'dog', 'bat'];
+console.log(pets.includes('cat')); // output: true
 
 
-// 19. isArray()	Checks whether an object is an array
-// 20. lastIndexOf()	Search the array for an element, starting at the end, and returns its position
+
+
+// 18. indexOf()  returns the first index (position) of a specified value
+// returns -1 if the value is not found
+
+const ids = [123, 122, 566, 343, 222];
+
+console.log(ids.indexOf(122)); // logs 1
+console.log(ids.indexOf(20));  // logs -1
+
+
+// 19. lastIndexOf()	Search the array for an element, starting at the end, and returns its position
+
+const numbers = [10, 20, 30, 40, 30, 10];
+
+const lastIndex = numbers.lastIndexOf(10); 
+const lastIndex2 = numbers.lastIndexOf(30); 
+console.log(lastIndex); // Output: 5
+console.log(lastIndex2); // Output: 4
+
+
+
+
+// 20. isArray()	Checks whether an object is an array
+
+const arra1 = [1, 2, 3];
+const arra2 = 'Hello';
+const arra3 = { name: 'John', age: 30 };
+
+console.log(Array.isArray(arra1)); // Output: true
+console.log(Array.isArray(arra2)); // Output: false
+console.log(Array.isArray(arra3)); // Output: false
+
+
+
+
 // 21. map()	Creates a new array with the result of calling a function for each array element
+
+
+
 // 22. reduce()	Reduce the values of an array to a single value (going left-to-right)
+
+
+
 // 23. reduceRight()	Reduce the values of an array to a single value (going right-to-left)
+
+
+
 // 24. some()	Checks if any of the elements in an array pass a test
 
 
 
-
-
-
 // 26. splice()	Adds/Removes elements from an array
+
+
+
+
 // 27. toString()	Converts an array to a string, and returns the result 
