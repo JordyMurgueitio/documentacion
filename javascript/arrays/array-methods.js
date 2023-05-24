@@ -263,23 +263,88 @@ console.log(Array.isArray(arra3)); // Output: false
 
 // 21. map()	Creates a new array with the result of calling a function for each array element
 
+const agentes = [1, 2, 3, 4, 5]; 
+
+const bigAgents= agentes.map(agente => {
+    return agente * 10;
+});
+
+console.log(agentes); // logs [1, 2, 3, 4, 5]
+console.log(bigAgents);  // logs [10, 20, 30, 40, 50]
 
 
-// 22. reduce()	Reduce the values of an array to a single value (going left-to-right)
+
+
+// 22. The .reduce() method -  returns a single value after iterating through the elements of an array, thereby reducing the array
+//the return value of the callback function becomes the accumulator value for the next iteration, 
+// currentValue takes on the value of the current element in the looping process.
+
+/* Iteration	accumulator	currentValue	return value
+First	        1	         3	              4 
+Second	        4	         5	              9
+Third	        9	         7	              16              */
+
+const newNumbers = [1, 3, 5, 7];
+
+const newSum = newNumbers.reduce((accumulator, currentValue) => {
+    console.log(`The value of accumulator: ${accumulator}`);
+    console.log(`The value of currentValue: ${currentValue}`);
+    return accumulator + currentValue;
+});
+console.log(newSum);  // returns 16
 
 
 
-// 23. reduceRight()	Reduce the values of an array to a single value (going right-to-left)
 
 
+// 23. the .some() method - tests whether at least one element in the array passes the test implemented by the provided function
+// returns true if, in the array, it finds an element for which the provided function returns true, otherwise false
+// It doesn't modify the array.
 
-// 24. some()	Checks if any of the elements in an array pass a test
+const array = [1, 2, 3, 4, 5];
+
+// Checks whether an element is even
+const even = element => element % 2 === 0;
+console.log(array.some(even)); // Expected output: true
+
+
+const words = ['unique', 'uncanny', 'pique', 'oxymoron', 'guise'];
+console.log(words.some((word) => {
+    return word.length < 6;  // logs true
+}));
+
 
 
 
 // 26. splice()	Adds/Removes elements from an array
+// overwrites the original array
+
+const equipos = ["liga", "chelsea", "city", "barca"];
+equipos.splice(1, 0, "real");
+console.log(equipos);  //  logs [ 'liga', 'real', 'chelsea', 'city', 'barca' ]
+
+
+const countries = ["colombia", "ecuador", "usa"];
+countries.splice(0, 2, "argentina", "brazil");
+console.log(countries);  // logs [ 'argentina', 'brazil', 'usa' ]
+
+
+const digits = [20, 2, 45, 56, 1, 10]; 
+const removedElement = digits.splice(4, 1); 
+console.log(digits);  // logs [ 20, 2, 45, 56, 10 ]
+console.log(removedElement); // logs [1]
 
 
 
 
-// 27. toString()	Converts an array to a string, and returns the result 
+
+// 27. toString()	returns a string with array values separated by commas.
+
+const meses = [1, 2, 3, 4, 5];
+
+const stringRepresentation = meses.toString();
+console.log(stringRepresentation); // Output: "1,2,3,4,5"
+
+
+const cities = ["miami", "quito", "rio"];
+console.log(cities.toString());
