@@ -38,6 +38,7 @@ To associate a `<label>` and an `<input>`, the `<input>` needs an id attribute. 
 </form>
 ```
 
+
 ## 2. password input 
 An `<input type ="password">`  element will replace input text with another character like an asterisk (*) or a dot (•).
 ``` html
@@ -47,6 +48,7 @@ An `<input type ="password">`  element will replace input text with another char
 </form>
 ```
 
+
 ## 3. Number input 
 We can restrict what users type into the input field to just numbers
 ``` html
@@ -55,6 +57,7 @@ We can restrict what users type into the input field to just numbers
     <input id="years" name="years" type="number" step="1">
 </form>
 ```
+
 
 ## 4. Range input 
 Limit what numbers our users could type
@@ -66,6 +69,8 @@ Smaller step values will make the slider move more fluidly, whereas larger step 
     <input id="volume" name="volume" type="range" min="0" max="100" step="1">
 </form>
 ```
+
+
 
 ## 5. Checkbox input
 Multiple options to users and allow them to select any number of options
@@ -82,6 +87,7 @@ Multiple options to users and allow them to select any number of options
 ```
 1. there are assigned values to the value attribute of the checkboxes. These values are not visible on the form itself, that’s why it is important that we use an associated `<label>` to identify the checkbox.
 2. each `<input>` has the same value for the name attribute. Using the same name for each checkbox groups the `<input>`s together. However, each `<input>`has a unique id to pair with a `<label>`
+
 
 
 ## 6. Radio Button Input
@@ -101,6 +107,7 @@ Radio buttons (like checkboxes) do not display their value. We have an associate
 To group radio buttons together, we assign them the same name and only one radio button from that group can be selected
 
 
+
 ## 7. Dropdown list
 Allow our users to choose one option from an organized list
 ``` html
@@ -117,6 +124,7 @@ Allow our users to choose one option from an organized list
 ```
 
 The text rendered is the text included between the opening and closing `<option>` tags. However, it is the value of the value attribute that is used in `<form>` submission (notice the difference in the text and value capitalization). When the `<form>` is submitted, the information from this input field will be sent using the **name** of the `<select>` and the **value** of the chosen `<option>`. For instance, if a user selected Pizza from the dropdown list, the information would be sent as **"lunch=pizza"**
+
 
 
 ## 8. Datalist input
@@ -142,6 +150,8 @@ we have an `<input>` that has a list attribute. The `<input>` is associated to t
 In the associated `<input>` element, users can type in the input field to search for a particular option. If none of the `<option>`s match, the user can still use what they typed in. When the form is submitted, the value of the `<input>`‘s name and the value of the option selected, or what the user typed in, is sent as a pair.
 
 
+
+
 ## 9. Textarea element 
 The `<textarea>` element is used to create a bigger text field for users to write more text. We can add the attributes **rows** and **cols** to determine the amount of rows and columns for the `<textarea>`
 
@@ -160,7 +170,18 @@ When we submit the form, the value of `<textarea>` is the text written inside th
 ```
 
 
-## 10. Submit form 
+
+## 10. Placeholder 
+The placeholder attribute is used in HTML forms to provide a short hint or example value that describes the expected input for an input field
+
+``` html
+<input type="text" placeholder="Enter your name">
+```
+Note that the placeholder text is not submitted as part of the form data. It is only used as a visual aid and is replaced by the user's actual input when they start typing
+
+
+
+## 11. Submit form 
 Use the `<input>` element and set the type to "submit"
 
 ``` html
