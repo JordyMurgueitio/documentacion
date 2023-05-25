@@ -103,8 +103,19 @@ To group radio buttons together, we assign them the same name and only one radio
 
 ## 7. Dropdown list
 Allow our users to choose one option from an organized list
+``` html
+<form>
+    <label for="lunch">What's for lunch?</label>
+    <select id="lunch" name="lunch">
+        <option value="pizza">Pizza</option>
+        <option value="curry">Curry</option>
+        <option value="salad">Salad</option>
+        <option value="ramen">Ramen</option>
+        <option value="tacos">Tacos</option>
+    </select>
+</form>
+```
 
-
-
+The text rendered is the text included between the opening and closing `<option>` tags. However, it is the value of the value attribute that is used in `<form>` submission (notice the difference in the text and value capitalization). When the `<form>` is submitted, the information from this input field will be sent using the **name** of the `<select>` and the **value** of the chosen `<option>`. For instance, if a user selected Pizza from the dropdown list, the information would be sent as **"lunch=pizza"**
 
 
