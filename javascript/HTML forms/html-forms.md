@@ -119,3 +119,44 @@ Allow our users to choose one option from an organized list
 The text rendered is the text included between the opening and closing `<option>` tags. However, it is the value of the value attribute that is used in `<form>` submission (notice the difference in the text and value capitalization). When the `<form>` is submitted, the information from this input field will be sent using the **name** of the `<select>` and the **value** of the chosen `<option>`. For instance, if a user selected Pizza from the dropdown list, the information would be sent as **"lunch=pizza"**
 
 
+## 8. Datalist input
+The `<datalist>` is used with an `<input type="text">}` element. The `<input>` creates a text field that users can type into and filter options from the `<datalist>` 
+``` html
+<form>
+    <label for="city">Ideal city to visit?</label>
+    <input type="text" list="cities" id="city" name="city">
+    
+    <datalist id="cities">
+        <option value="New York City"></option>
+        <option value="Tokyo"></option>
+        <option value="Barcelona"></option>
+        <option value="Mexico City"></option>
+        <option value="Melbourne"></option>
+        <option value="Other"></option>  
+    </datalist>
+</form>
+```
+
+we have an `<input>` that has a list attribute. The `<input>` is associated to the `<datalist>`  via the `<input>`‘s list attribute and the id of the `<datalist>` 
+
+In the associated `<input>` element, users can type in the input field to search for a particular option. If none of the `<option>`s match, the user can still use what they typed in. When the form is submitted, the value of the `<input>`‘s name and the value of the option selected, or what the user typed in, is sent as a pair.
+
+
+## 9. Textarea element 
+The `<textarea>` element is used to create a bigger text field for users to write more text. We can add the attributes **rows** and **cols** to determine the amount of rows and columns for the `<textarea>`
+
+``` html
+<form>
+    <label for="blog">New Blog Post: </label>
+    <br>
+    <textarea id="blog" name="blog" rows="5" cols="30">
+    </textarea>
+</form>
+```
+When we submit the form, the value of `<textarea>` is the text written inside the box. If we want to add a default value to `<textarea>` we would include it within the opening and closing tags
+
+``` html
+<textarea>Adding default text</textarea>
+```
+
+
