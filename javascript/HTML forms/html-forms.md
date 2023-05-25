@@ -160,3 +160,13 @@ When we submit the form, the value of `<textarea>` is the text written inside th
 ```
 
 
+## 10. Submit form 
+Use the `<input>` element and set the type to "submit"
+
+``` html
+<form>
+    <input type="submit" value="Send">
+</form>
+```
+
+The **value** assigned to the `<input>` shows up as text on the submit button. If there isn’t a **value** attribute, the default text, **Submit** shows up on the button
