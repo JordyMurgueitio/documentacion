@@ -47,7 +47,7 @@ An `<input type ="password">`  element will replace input text with another char
 </form>
 ```
 
-## 3. number input 
+## 3. Number input 
 We can restrict what users type into the input field to just numbers
 ``` html
 <form>
@@ -56,7 +56,7 @@ We can restrict what users type into the input field to just numbers
 </form>
 ```
 
-## 4. range input 
+## 4. Range input 
 Limit what numbers our users could type
 To set the minimum and maximum values of the slider we assign values to the min and max attribute of the `<input>`
 Smaller step values will make the slider move more fluidly, whereas larger step values will make the slider move more noticeably.
@@ -67,8 +67,8 @@ Smaller step values will make the slider move more fluidly, whereas larger step 
 </form>
 ```
 
-## 5. checkbox input
-multiple options to users and allow them to select any number of options
+## 5. Checkbox input
+Multiple options to users and allow them to select any number of options
 ``` html
 <form>
     <p>Choose your pizza toppings:</p>
@@ -82,3 +82,29 @@ multiple options to users and allow them to select any number of options
 ```
 1. there are assigned values to the value attribute of the checkboxes. These values are not visible on the form itself, that’s why it is important that we use an associated `<label>` to identify the checkbox.
 2. each `<input>` has the same value for the name attribute. Using the same name for each checkbox groups the `<input>`s together. However, each `<input>`has a unique id to pair with a `<label>`
+
+
+## 6. Radio Button Input
+Present multiple options and only allow for one selection
+``` html
+<form>
+    <p>What is sum of 1 + 1?</p>
+    <input type="radio" id="two" name="answer" value="2">
+    <label for="two">2</label>
+    <br>
+    <input type="radio" id="eleven" name="answer" value="11">
+    <label for="eleven">11</label>
+</form>
+```
+
+Radio buttons (like checkboxes) do not display their value. We have an associated `<label>` to represent the value of the radio button. 
+To group radio buttons together, we assign them the same name and only one radio button from that group can be selected
+
+
+## 7. Dropdown list
+Allow our users to choose one option from an organized list
+
+
+
+
+
