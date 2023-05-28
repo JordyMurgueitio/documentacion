@@ -1,0 +1,22 @@
+# How to backtrack 
+
+Git offers a few eraser-like features that allow us to undo mistakes during project creation
+
+
+## head commit 
+In Git, the commit you are currently on is known as the HEAD commit
+
+To see the HEAD commit, enter:
+```bash
+git show HEAD
+```
+
+The output of this command will display everything the git log command displays for the HEAD commit, plus all the file changes that were committed
+
+## git checkout
+The command:
+```bash
+git checkout HEAD filename
+```
+will restore the file in your working directory to look exactly as it did when you last made a commit
+
