@@ -21,3 +21,11 @@ Add the changes to the staging area before commmit to the repository
 4. **git commit:**
 
 A commit permanently stores changes from the staging area inside the repository.
+
+5. **git log:**
+
+Refer back to an earlier version of a project. Commits are stored chronologically in the repository and can be viewed
+
+In the output, notice:
+
+- A 40-character code, called a **SHA**, that uniquely identifies the commit. This appears in orange text
