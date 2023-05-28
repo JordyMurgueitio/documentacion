@@ -37,3 +37,6 @@ This command works by using the first 7 characters of the SHA of a previous comm
 git reset 5d69206
 ```
 HEAD is now set to that previous commit
+
+Each circle represents a commit
+![alt text](reset.png)
