@@ -38,5 +38,6 @@ git reset 5d69206
 ```
 HEAD is now set to that previous commit
 
-Each circle represents a commit
+Each circle represents a commit:
+
 ![alt text](reset.png)
