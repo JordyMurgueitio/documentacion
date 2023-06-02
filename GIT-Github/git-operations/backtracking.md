@@ -14,7 +14,7 @@ git show HEAD
 The output of this command will display everything the git log command displays for the HEAD commit, plus all the file changes that were committed
 
 ## git checkout
-The command:
+Discards changes in the working directory.
 ```bash
 git checkout HEAD filename
 ```
@@ -28,7 +28,7 @@ git reset HEAD filename
 This command resets the file in the staging area to be the same as the HEAD commit. It does not discard file changes from the working directory, it just removes them from the staging area.
 
 ## git reset II 
-Git enables you to rewind to the part before you made the wrong turn. You can do this with:
+Resets to a previous commit in your commit history.
 ```bash
 git reset commit_SHA
 ```
@@ -37,7 +37,3 @@ This command works by using the first 7 characters of the SHA of a previous comm
 git reset 5d69206
 ```
 HEAD is now set to that previous commit
-
-Each circle represents a commit:
-
-![alt text](reset.png)
