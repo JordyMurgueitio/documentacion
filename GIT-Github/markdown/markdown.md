@@ -11,4 +11,7 @@
 
 ## Adding images
 
-For Markdown files living in a repository, the path to the image can either be to an URL or to an image file in the repository. For example, if we had an image named diagram.png inside the images folder of the repository, we could reference it like so ![Use Case Diagram](./images/diagram.png) in the README.md.
+For Markdown files living in a repository, the path to the image can either be to an URL or to an image file in the repository. For example, if we had an image named diagram.png inside the images folder of the repository, we could reference it like so 
+```bash
+![Use Case Diagram](./images/diagram.png) in the README.md.
+```
