@@ -18,7 +18,7 @@ class Dog {
     incrementBehavior() {
         this._behavior ++;
     }
-}
+} 
 
 const tobi = new Dog("tobi");
 console.log(tobi);
@@ -82,6 +82,44 @@ erika.birthday();  //  For methods, you must also include opening and closing pa
 console.log(erika);
 
 
+
+
+// 5. Inheritance I - When multiple classes share properties or methods, they become candidates for inheritance
+// You can create a parent class (superclass) with properties and methods that multiple child classes (subclasses) share.
+// The child classes inherit the properties and methods from their parent class
+
+class HospitalEmployee {  // PARENT CLASS
+    constructor (name) {
+        this._name = name;
+        this._remainingVacationDays = 20;
+    };
+    get name () {
+        return this._name;
+    }
+    get remainingVacationDays (){
+        return this._remainingVacationDays;
+    }
+    takeVacationDays (daysOff) {
+        this._remainingVacationDays = this._remainingVacationDays - daysOff;
+    }
+};
+
+// Inheritance II  - Now that we have these shared properties and methods in the parent HospitalEmployee class, we can extend them to the subclass Nurse
+// The extends keyword makes the methods of the HospitalEmployee class available inside the Nurse class
+class Nurse extends HospitalEmployee {       
+    constructor (name, certifications) {
+        // the super keyword calls the constructor of the parent class. super(name) passes the name argument of the Nurse class to the constructor of the HospitalEmployee class.
+        //  must always call the super method before you can use the this keyword — if you do not, JavaScript will throw a reference error.
+        super(name);   
+        this._certifications = certifications;
+    };
+}; 
+
+// We create a new instance of the Nurse class. 
+const nurseOlynyk = new Nurse("Olynyk", ['Trauma', 'Pediatrics']);
+console.log(nurseOlynyk); 
+
+// Inheritance III - 
 
 
 
