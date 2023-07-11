@@ -119,9 +119,32 @@ class Nurse extends HospitalEmployee {
 const nurseOlynyk = new Nurse("Olynyk", ['Trauma', 'Pediatrics']);
 console.log(nurseOlynyk); 
 
-// Inheritance III - 
 
+// Inheritance III - When we call extends in a class declaration, all of the parent methods are available to the child class.
+// As a result, the Nurse class has access to the HospitalEmployee getters and the .takeVacationDays() method.
 
+nurseOlynyk.takeVacationDays(5);
+console.log(nurseOlynyk.remainingVacationDays);  // logs 15
+
+// Inheritance IV - In addition to the inherited features, child classes can contain their own properties, getters, setters, and methods.
+
+class Doctor extends HospitalEmployee {
+    constructor (name, certifications) {
+        super(name);
+        this._certifications = certifications;
+    }
+    get certifications () {
+        return this._certifications;
+    }
+    addCertification (newCertification) {
+        this._certifications.push(newCertification);
+    }
+}; 
+
+const doctorJuan = new Doctor ("Juan", ["ingles", "html"]);
+console.log(doctorJuan)
+doctorJuan.addCertification("genetics");
+console.log(doctorJuan.certifications); // logs [ 'ingles', 'html', 'genetics' ]
 
 
 
