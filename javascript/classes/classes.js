@@ -149,6 +149,24 @@ console.log(doctorJuan.certifications); // logs [ 'ingles', 'html', 'genetics' ]
 
 
 
+// 6. Static Methods- a class to have methods that aren’t available in individual instances, but that you can call directly from the class.
+class Animal {
+    constructor(name) {
+        this._name = name;
+        this._behavior = 0;
+    }
+    
+    static generateName() {
+        const names = ['Angel', 'Spike', 'Buffy', 'Willow', 'Tara'];
+        const randomNumber = Math.floor(Math.random()*5);
+        return names[randomNumber];
+    }
+} 
+// we can only access .generateName() by appending it to the Animal class.
+console.log(Animal.generateName());
+
+
+
 
 // EXTRA: SOY HENRY PROTOTIPOS 
 
