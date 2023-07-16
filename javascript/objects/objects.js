@@ -80,7 +80,7 @@ const hotel = {
     contact: {
         name: 'Grand Hotel', 
         city: 'Barcelona', 
-        phone: 0994784394, 
+        phone: 3445, 
     },
     crew: {
         manager: {

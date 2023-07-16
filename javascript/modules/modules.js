@@ -32,4 +32,21 @@ export const changeColor = () => {
 };
 
 
-// ES6 Import Syntax 
+
+
+// 2. ES6 Import Syntax - The ES6 syntax for importing named resources from modules is similar to the export syntax:
+
+// import { exportedResourceA, exportedResourceB } from '/path/to/module.js';
+import { toggleHiddenElement, changeToFunkyColor } from '../modules/dom-functions.js';
+
+const buttonElement = document.getElementById('secret-button');
+const pElement = document.getElementById('secret-p');
+
+buttonElement.addEventListener('click', () => {
+    toggleHiddenElement(pElement);
+    changeToFunkyColor(buttonElement);
+});
+
+// When we use modules, we have to include type="module" to the script tag in the html document. 
+
+// <script type="module" src="./secret-messages.js"> </script>
