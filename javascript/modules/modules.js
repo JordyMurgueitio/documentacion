@@ -48,5 +48,20 @@ buttonElement.addEventListener('click', () => {
 });
 
 // When we use modules, we have to include type="module" to the script tag in the html document. 
-
 // <script type="module" src="./secret-messages.js"> </script>
+
+
+
+
+// 3. Renaming imports to Avoid Naming Collisions
+// resources you wish to import share a name with some other value that already exists in your program (or from another imported module).
+// ES6 includes syntax for renaming imported resources by adding in the keyword as. 
+
+import {greet as greetEspanol} from 'greeterEspanol.js';
+import {greet as greetFrench} from 'greeterFrench.js';
+// Now, both of the imported functions can be called within main.js using their new identifiers, greetEspanol() and greetFrench().
+
+
+
+
+// 4. Default Exports and Imports 
