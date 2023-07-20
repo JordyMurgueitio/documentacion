@@ -65,3 +65,21 @@ import {greet as greetFrench} from 'greeterFrench.js';
 
 
 // 4. Default Exports and Imports 
+// Every module also has the option to export a single value to represent the entire module called the default export
+
+const resources = { 
+    valueA, 
+    valueB 
+}
+export { resources as default }; // the clause as default renames the exported object to default, a reserved identifier that can only be given to a single exported value
+
+// You may also see this shorthand syntax
+/* const resources = {
+    valueA,
+    valueB
+}}
+export default resources;   */
+
+
+
+
