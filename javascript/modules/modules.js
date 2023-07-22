@@ -82,4 +82,17 @@ export default resources;   */
 
 
 
+// 5. Importing default values 
+// The syntax for importing default exports looks like this:
+
+import { default as importedResources } from 'module.js';
+// import importedResources from 'module.js'; Or the shorthand 
+
+//  if the default export is an object, the values inside cannot be extracted until after the object is imported, like so
+import resources from 'module.js'
+const { valueA, valueB } = resources;
+
+/* import domFunctions from '../modules/dom-functions.js';
+const { toggleHiddenElement, changeToFunkyColor } = domFunctions; */
+
 
