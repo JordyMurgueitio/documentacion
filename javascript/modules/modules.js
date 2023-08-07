@@ -77,8 +77,8 @@ export { resources as default }; // the clause as default renames the exported o
 /* const resources = {
     valueA,
     valueB
-}}
-export default resources;   */
+}
+export default resources;    */
 
 
 
@@ -86,13 +86,8 @@ export default resources;   */
 // The syntax for importing default exports looks like this:
 
 import { default as importedResources } from 'module.js';
-// import importedResources from 'module.js'; Or the shorthand 
+// import importedResources from 'module.js'; Shorthand 
 
 //  if the default export is an object, the values inside cannot be extracted until after the object is imported, like so
 import resources from 'module.js'
 const { valueA, valueB } = resources;
-
-/* import domFunctions from '../modules/dom-functions.js';
-const { toggleHiddenElement, changeToFunkyColor } = domFunctions; */
-
-
