@@ -31,11 +31,24 @@ throw Error('Something wrong happened'); // code after the throw statement will 
 
 // 4. The try...catch keyword - anticipate and handle errors by writing code to allow our program to continue running.
 
+/* in a try...catch statement, we evaluate code in the try block 
+and if the code throws an error, the code inside the catch block will handle the error for us. */
 try {
     throw Error('This error will get caught');
 } catch (e) {
     console.log(e);
 }
+
+// can also use a try...catch statement to handle built-in errors that are thrown by the JavaScript engine
+const someVar = 'Cannot be reassigned';
+try {
+    someVar = 'Still going to try';
+} catch(e) {
+    console.log(e); // Prints: TypeError: Assignment to constant variable.
+}
+
+
+
 
 
 
