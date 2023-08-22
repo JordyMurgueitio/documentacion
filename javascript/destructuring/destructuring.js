@@ -11,3 +11,15 @@ let [car1, car2, car3] = cars;
 
 console.log(car1, car2, car3);  // Prints: ferrari tesla cadillac
 
+
+
+// 2. Destructuring Objects 
+
+let destinations = {
+    x: "LA", 
+    y: "NYC", 
+    z: "MIA"
+}; 
+
+let {x, y, z} = destinations;
+console.log(x, y, z); // Prints LA NYC MIA
