@@ -23,3 +23,23 @@ let destinations = {
 
 let {x, y, z} = destinations;
 console.log(x, y, z); // Prints LA NYC MIA
+
+
+
+// 3. Destructuring Function Parameters 
+//  Instead of accepting a complete object as an argument, a function can use destructuring to capture specific properties as named parameters.
+
+
+let truck = {
+    model: '1977 Mustang convertible',
+    maker: 'Ford',
+    city: 'Detroit',
+    year: '1977',
+    convertible: true
+};
+
+const printCarInfo = ({model, maker, city}) => {
+    console.log(`The ${model}, or ${maker}, is in the city ${city}.`);
+};
+
+printCarInfo(truck);   // Prints: The 1977 Mustang convertible, or Ford, is in the city Detroit.
