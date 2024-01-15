@@ -1,4 +1,5 @@
 // DESTRUCTURING - is a JavaScript feature that makes it easier to extract data from arrays and objects
+// Destructuring is a way to unpack values from arrays and objects and assign them to variables or parameters.
 
 
 
