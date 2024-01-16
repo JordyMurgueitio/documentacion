@@ -15,4 +15,16 @@ const title = <h1 id="title">Into to React</h1>
 
 
 
-// 3. Nested JSX 
+// 3. Nested JSX  - You can nest JSX elements inside of other JSX elements
+// If a JSX expression takes up more than one line, then you must wrap the multi-line JSX expression in parentheses
+// Nested JSX expressions can be saved as variables, passed to functions, etc., just like non-nested JSX expressions can!
+
+
+const note = (
+    <a href="#">
+        <h1>
+            Click me!
+        </h1>
+    </a>
+);
+
