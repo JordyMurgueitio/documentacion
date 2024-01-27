@@ -44,3 +44,18 @@ const printCarInfo = ({model, maker, city}) => {
 };
 
 printCarInfo(truck);   // Prints: The 1977 Mustang convertible, or Ford, is in the city Detroit.
+
+
+
+// JAVSCRIPT REFRESHER UDEMY REACT COURSE 
+
+
+const [name, age] = ["juan", 19]; 
+console.log(name); // will print juan
+
+const {año, modelo} = {
+    año: 2017, 
+    modelo: "Mazda"
+};
+
+console.log(año); // will print 2017

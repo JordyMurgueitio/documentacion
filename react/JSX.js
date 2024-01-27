@@ -5,13 +5,13 @@
 
 <h1>Hello world</h1>
 // a JSX element can be saved in a variable, passed to a function, stored in an object or array…
-const navBar = <nav>I am a nav bar</nav>
+const navBar = <nav>I am a nav bar</nav>;
 
 
 
 // 2. ATTRIBUTES IN JSX - JSX elements can have attributes, just like how HTML elements can.
 
-const title = <h1 id="title">Into to React</h1>
+const title = <h1 id="title">Into to React</h1>;
 
 
 

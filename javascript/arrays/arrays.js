@@ -139,7 +139,7 @@ console.log(concept);  // logs ['arrays', 'can', 'be', 'MUTATED'];
 function removeElement (newArr) {
     newArr.pop();
 }
-removeElement (concept);
+removeElement (conc6ept);
 console.log(concept); // logs ['arrays', 'can', 'be']
 
 
