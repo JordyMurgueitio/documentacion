@@ -121,7 +121,7 @@ if (user.age >= drinkingAge) {
     </h1>
     );
 }
-
+root.render(message);
 
 // 8. JSX Conditionals. The ternary operator. - x ? y : z
 // If x is truthy, then the entire ternary operator returns y. If x is falsy, then the entire ternary operator returns z
@@ -138,6 +138,30 @@ const headline = (
 
 
 // 9. JSX Conditionals -- &&
+// && works best for conditionals that will sometimes do an action but other times do nothing at all
+// If the expression on the left of the && evaluates as true, then the JSX on the right of the && will be rendered. 
+// If the first expression is false, however, then the JSX to the right of the && will be ignored and not rendered
+const tasty = (
+    <ul>
+        <li>Applesauce</li>
+        { !baby && <li>Pizza</li> }
+        { age > 15 && <li>Brussels Sprouts</li> }
+        { age > 20 && <li>Oysters</li> }
+        { age > 25 && <li>Grappa</li> }
+    </ul>
+);
+
+
+
+// 10. .map in JSX - If you want to create a list of JSX elements, then using .map() is often the most efficient way.
+
+const people = ['Rowe', 'Prevost', 'Gare'];
+const peopleList = people.map(person =>
+    // expression goes here:
+    <li>{person}</li>);
+
+root.render(<ul>{peopleList}</ul>);
+
 
 
 
