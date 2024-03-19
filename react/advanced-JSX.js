@@ -164,12 +164,25 @@ root.render(<ul>{peopleList}</ul>);
 
 
 
+// 11. Keys  - Is a JSX attribute. The attribute’s value should be something unique, similar to an id attribute
+// keys don’t do anything visible! React uses them internally to keep track of lists
+
+
+const cities = ['Rome', 'Paris', 'Guayaquil'];
+const cityTour = cities.map((city, i) =>
+    // expression goes here:
+    <li key={"city_number" + i}>{city}</li>);
+
+root.render(<ul>{peopleList}</ul>);
 
 
 
 
-
-
-
-
-
+// 12. React.createElement (type, props, children)
+// The following JSX expression:   const h1 = <h1>Hello world</h1>;
+// can be rewritten without JSX, like this:
+const h1 = React.createElement(
+    "h1",
+    null,
+    "Hello world"
+);
