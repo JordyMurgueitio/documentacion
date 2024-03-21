@@ -61,3 +61,50 @@ function RandomNumber() {
 
 
 // 4. Use a conditional in a Function component 
+// the if statement is located inside of the function component, but before the return statement
+
+import React from 'react';
+
+function TodaysPlan() {
+    let task;
+    let apocalypse = false;
+    if (!apocalypse) {
+        task = 'learn React.js'
+    } else {
+        task = 'run around'
+    }
+    return <h1>Today I am going to {task}!</h1>;
+}
+// export default TodaysPlan;
+
+const fiftyFifty = Math.random() < 0.5;
+
+function TonightsPlan(){
+    if (fiftyFifty === true) {
+        return <h1>Tonight I'm going out WOOO</h1>;
+    } else {
+        return <h1>Tonight I'm going to bed WOOO</h1>;
+    }
+}
+// export default TonightsPlan;
+
+
+
+
+// 5. Event listener and Event Handlers in a Component 
+// Your function components can include event handlers
+// Event handler functions are defined inside the function component
+// by convention, start with the word “handle” followed by the type of event it is handling.
+function MyComponent(){
+    function handleHover() {
+        alert('Stop it.  Stop hovering.');
+    }
+    return <div onHover={handleHover}></div>;
+}
+
+function SubmitButton() {
+    function handleClick() {
+        alert('Submission Successful.');
+    }
+    return <button onClick={handleClick}>Submit</button>;
+}
