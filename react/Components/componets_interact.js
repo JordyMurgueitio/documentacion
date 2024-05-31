@@ -25,14 +25,14 @@ function ItemBox() {   // ItemBox returns an instance of PurchaseButton
 props.name
 
 
+
 // 3. Pass props to a Component  - we pass props by giving the component an attribute:
 
 <SloganDisplay message="We're great!" />
 
 // If you want to pass information that isn’t a string, then wrap that information in curly braces. 
 // values that aren’t strings are wrapped in curly braces:
-<Greeting myInfo={["Astronaut", "Narek", "43"]} />
-
+//<Greeting myInfo={["Astronaut", "Narek", "43"]} />
 <Mensaje name="The Queen Mary" city="Long Beach, California" age={56} haunted={true} />
 
 function App() {
@@ -44,9 +44,16 @@ function App() {
 // 4. Render a Component's props  - Props allow us to customize the component by passing it information.
 // To make sure that a function component can use the props object, define your function component with props as the parameter:
 
-function Button(props) {
-    return <button>{props.displayText}</button>;
+function Product(props) {
+    return (
+    <div>
+        <h1>{props.name}</h1>
+        <h2>{props.price}</h2>
+        <h3>{props.rating}</h3>
+    </div>       
+    );
 }
 
-
-
+function App() {
+    return <Product name="Iphone 15" price = {399} rating = "4.5/5.0" />;
+}
