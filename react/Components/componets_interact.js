@@ -57,3 +57,77 @@ function Product(props) {
 function App() {
     return <Product name="Iphone 15" price = {399} rating = "4.5/5.0" />;
 }
+
+
+
+
+// 5. Pass props from Component to Component  - The most common use of props is to pass information to a component from a different component
+// Props in React travel in a one-way direction, from the top to bottom, parent to child.
+// Props passed down are immutable, meaning they cannot be changed.
+
+function App() {   // In this example, App is the parent and Product is the child
+    return <Product name="Apple Watch" price = {399} rating = "4.5/5.0" />;
+}
+
+
+
+
+// 6. Render different UI based on props - You can also use props to make decisions.
+// we use the props passed in to make a decision rather than rendering the value to the screen.
+
+function LoginMsg(props) {
+    if (props.password === "complicated-password") {
+        return <h2>Sign in Successful</h2>; 
+    } else {
+        return <h2>Sign in failed</h2>
+    }
+}
+
+
+function Greeting(props) {
+    if (props.signedIn == false) {
+        return <h1>Please login.</h1>;
+    } else {
+        return (
+        <>
+            <h1>Welcome back, {props.name}!</h1>
+            <article>
+                Latest Movie: A Computer Bug's Life
+            </article>
+        </>
+        )
+    }
+}
+function App() {
+    return (
+        <div>
+            <h1>
+            MovieFlix
+            </h1>
+            <Greeting name="Alison" signedIn={true} />
+        </div>
+    );
+}
+
+
+
+
+// 7. Event Handler in a function Component - pass functions as props. It is especially common to pass event handler functions
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
