@@ -113,21 +113,87 @@ function App() {
 
 
 // 7. Event Handler in a function Component - pass functions as props. It is especially common to pass event handler functions
+// we have to define an event handler before we can pass one
+// We define an event handler as a method on the function component!
+
+function Example() {
+    function handleEvent() {
+        alert(`I am an event handler.
+        If you see this message,
+        then I have been called.`);
+    }
+    return (
+        <h1 onClick={handleEvent}>
+            Hello world
+        </h1>
+    );
+}
+
+
+function Talker() {
+    function talk() {
+        let speech = '';
+        for (let i = 0; i < 10000; i++) {
+        speech += 'blah ';
+        }
+        alert(speech);
+    }
+    return <Button talk={talk} />;
+}
+
+// Receive an event handler as a prop 
+
+function Button(props) {
+    return (
+        <button onClick={props.talk}>
+            Click me!
+        </button>
+    );
+}
 
 
 
 
 
+// 8. NAME CONVENTIONS
+    // 8.1 The first name that you have to choose is the name of the event handler itself
+        // If you are listening for a “click” event, then you name your event handler handleClick. 
+        //If you are listening for a “hover” event, then you name your event handler handleHover
+
+    // 8.2 The second name that you have to choose is the name of the prop that you will use to pass the event handler. 
+        // Your prop name should be the word on, plus your event type. If you are listening for a “click” event, then you name your prop onClick
+
+function myClass(){
+    function handleHover() {
+        alert('I am an event handler.');
+        alert('I will listen for a "hover" event.');
+        }
+    return <Child onHover={handleHover} />;
+}
 
 
 
+// 9. props.children -Every component’s props object has a property named children
+// props.children will return everything in between a component’s opening and closing JSX tags
 
 
+// 10. Giving Default values to props 
+// The first method is adding a defaultProps static property to the component:
 
+function Example(props) {
+    return <h1>{props.text}</h1>
+}
+Example.defaultProps = {
+    text: 'This is default text',
+};
 
+// You can also specify the default value directly in the function definition:
+function Example({text='This is default text'}) {
+    return <h1>{text}</h1>
+}
 
-
-
-
-
-
+// you can also set the default value in the function body
+function Example(props) {
+    const {text = 'This is default text'} = props;
+    return <h1>{text}</h1>
+}
