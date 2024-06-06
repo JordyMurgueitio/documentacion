@@ -28,12 +28,14 @@ props.name
 
 // 3. Pass props to a Component  - we pass props by giving the component an attribute:
 
-<SloganDisplay message="We're great!" />
+// <SloganDisplay message="We're great!" />
 
 // If you want to pass information that isn’t a string, then wrap that information in curly braces. 
 // values that aren’t strings are wrapped in curly braces:
 //<Greeting myInfo={["Astronaut", "Narek", "43"]} />
-<Mensaje name="The Queen Mary" city="Long Beach, California" age={56} haunted={true} />
+
+// <Mensaje name="The Queen Mary" city="Long Beach, California" age={56} haunted={true} />
+
 
 function App() {
     return <PropsDisplayer myProp="Hello" />;
