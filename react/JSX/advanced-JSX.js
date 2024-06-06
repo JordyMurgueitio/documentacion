@@ -156,9 +156,7 @@ const tasty = (
 // 10. .map in JSX - If you want to create a list of JSX elements, then using .map() is often the most efficient way.
 
 const people = ['Rowe', 'Prevost', 'Gare'];
-const peopleList = people.map(person =>
-    // expression goes here:
-    <li>{person}</li>);
+const peopleList = people.map(person => <li>{person}</li>);
 
 root.render(<ul>{peopleList}</ul>);
 
