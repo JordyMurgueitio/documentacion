@@ -71,3 +71,123 @@ function ColorPicker() {
 }
 
 
+
+// 4. Use State Setter outside of JSX 
+// example of managing the changing value of a string as a user types into a text input field
+// our event handler is defined inside of the definition for our function component, but outside of our JSX
+import React, { useState } from 'react';
+
+export default function EmailTextInput() {
+    const [email, setEmail] = useState('');
+    const handleChange = (event) => {
+        const updatedEmail = event.target.value;
+        setEmail(updatedEmail);
+    }
+    return (
+        <input value={email} onChange={handleChange} />
+    );
+}
+
+// It’s common in React code to simplify like this:
+const handleChange1 = (event) => setEmail(event.target.value);
+
+// or, using object destructuring, this
+
+const handleChange2 = ({target}) => setEmail(target.value);
+
+
+
+// 5. Set from previous state - React state updates are asynchronous, scenarios where portions of your code will run before the state is finished updating
+// it is best practice to update a state with a callback function, preventing accidental outdated values
+
+import React, { useState } from 'react';
+    
+    export default function Counter() {
+    const [count, setCount] = useState(0);
+    // Because the next value of count depends on the previous value of count, we pass a callback function as the argument for setCount()
+    const increment = () => setCount(prevCount => prevCount + 1);  
+    
+    return (
+        <div>
+        <p>Wow, you've clicked that button: {count} times</p>
+        <button onClick={increment}>Click here!</button>
+        </div>
+    );
+}
+
+// Nav bar that allows users to go back and next
+export default function QuizNavBar({ questions }) {
+    const [questionIndex, setQuestionIndex] = useState(0);
+    
+        // define event handlers 
+        const goBack = () => {
+        setQuestionIndex(prevQuestionIndex => prevQuestionIndex - 1)
+        }
+        const goToNext = () => {
+        setQuestionIndex(prevQuestionIndex => prevQuestionIndex + 1)
+        }
+        // determine if on the first question or not 
+        const onFirstQuestion = questionIndex === 0; 
+        const onLastQuestion = questionIndex === questions.length - 1;
+    
+        return (
+        <nav>
+            <span>Question #{questionIndex + 1}</span>
+            <div>
+            <button onClick={goBack} disabled={onFirstQuestion}>
+                Go Back
+            </button>
+            <button disabled={onLastQuestion} onClick={goToNext}>
+                Next Question
+            </button>
+            </div>
+        </nav>
+    );
+}
+
+
+
+
+
+
+// 6. Arrays in State - JavaScript arrays are the best data model for managing and rendering JSX lists
+
+import React, { useState } from 'react';
+
+//Static array of pizza options offered. 
+const options = ['Bell Pepper', 'Sausage', 'Pepperoni', 'Pineapple'];
+
+export default function PersonalPizza() {
+    const [selected, setSelected] = useState([]);
+
+    const toggleTopping = ({target}) => {
+        const clickedTopping = target.value;
+        setSelected((prev) => {
+        // check if clicked topping is already selected
+        if (prev.includes(clickedTopping)) {
+            // filter the clicked topping out of state
+            return prev.filter(t => t !== clickedTopping);
+        } else {
+            // add the clicked topping to our state
+            return [clickedTopping, ...prev];
+        }
+        });
+    };
+
+    return (
+        <div>
+        {options.map(option => (
+            <button value={option} onClick={toggleTopping} key={option}>
+            {selected.includes(option) ? 'Remove ' : 'Add '}
+            {option}
+            </button>
+        ))}
+        <p>Order a {selected.join(', ')} pizza</p>
+        </div>
+    );
+}
+
+
+
+
+
