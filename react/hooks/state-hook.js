@@ -151,6 +151,10 @@ export default function QuizNavBar({ questions }) {
 
 
 // 6. Arrays in State - JavaScript arrays are the best data model for managing and rendering JSX lists
+/*  When updating an array in a state, we do not just add new data to the previous array. 
+We replace the previous array with a brand new array. 
+This means that any information that we want to save from the previous array needs to be explicitly copied over to our new array. 
+That’s what this spread syntax does for us */
 
 import React, { useState } from 'react';
 
@@ -185,6 +189,70 @@ export default function PersonalPizza() {
         <p>Order a {selected.join(', ')} pizza</p>
         </div>
     );
+}
+
+
+
+
+// 7. Objects in State - useful to work with a set of related variables
+// The spread syntax is the same for objects as for arrays: { ...oldObject, newKey: newValue }.
+
+import React, { useState } from "react";
+
+export default function EditProfile() {
+    const [profile, setProfile] = useState({});
+
+    const handleChange = ({ target }) => {
+        const {name, value} = target; 
+        setProfile((prevProfile) => ({
+        ...prevProfile,
+        [name]: value
+        }));
+    };
+
+    const handleSubmit = (event) => {
+        event.preventDefault();
+        alert(JSON.stringify(profile, '', 2));
+    };
+
+    return (
+        <form onSubmit={handleSubmit}>
+        <input
+            value={profile.firstName || ''}
+            name="firstName"
+            type="text"
+            placeholder="First Name"
+            onChange={handleChange}
+        />
+        <input
+            value={profile.bday || ''}
+            type="date"
+            name="bday"
+            onChange={handleChange}
+        />
+        <input
+            value={profile.password || ''}
+            type="password"
+            name="password"
+            placeholder="Password"
+            onChange={handleChange}
+        />
+        <button type="submit">Submit</button>
+        </form>
+        
+    );
+}
+
+
+
+// 8. Separate Hooks for separate States  - it can also be helpful to create different state variables for data that change separately.
+// It’s best to create multiple state variables based on which values tend to change together.
+
+function Subject() {
+    const [currentGrade, setGrade] = useState('B');
+    const [classmates, setClassmates] = useState(['Hasan', 'Sam', 'Emma']);
+    const [classDetails, setClassDetails] = useState({topic: 'Math', teacher: 'Ms. Barry', room: 201});
+    const [exams, setExams] = useState([{unit: 1, score: 91}, {unit: 2, score: 88}]);
 }
 
 
