@@ -256,6 +256,11 @@ function Subject() {
 }
 
 
+// REVIEW
 
-
-
+/* State setters can be called in event handlers.
+We can define simple event handlers inline in our JSX and complex event handlers outside of our JSX.
+We use a state setter callback function when our next value depends on our previous value.
+We use arrays and objects to organize and manage related data that tend to change together.
+Use the spread syntax on collections of dynamic data to copy the previous state into the next state like so: setArrayState((prev) => [ ...prev ]) and setObjectState((prev) => ({ ...prev })).
+It’s best practice to have multiple, simpler states instead of having one complex state object. */
