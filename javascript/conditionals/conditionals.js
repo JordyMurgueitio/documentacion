@@ -7,7 +7,7 @@
 let discount = true;
 
 if (discount) {     //evaluates if discount is true
-    console.log("Time to buy");
+    console.log("Time to buy something");
 }
 
 // if else statement - run a block of code when the condition evaluates to false
