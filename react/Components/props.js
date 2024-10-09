@@ -37,10 +37,6 @@ props.name
 // <Mensaje name="The Queen Mary" city="Long Beach, California" age={56} haunted={true} />
 
 
-function App() {
-    return <PropsDisplayer myProp="Hello" />;
-}
-
 
 
 // 4. Render a Component's props  - Props allow us to customize the component by passing it information.
@@ -48,18 +44,17 @@ function App() {
 
 function Product(props) {
     return (
-    <div>
-        <h1>{props.name}</h1>
-        <h2>{props.price}</h2>
-        <h3>{props.rating}</h3>
-    </div>       
-    );
+        <div>
+            <h1>{props.name}</h1>
+            <h2>{props.price}</h2>
+            <h3>{props.rating}</h3>
+        </div>
+    )
 }
 
-function App() {
-    return <Product name="Iphone 15" price = {399} rating = "4.5/5.0" />;
+function App() {   // In this example, App is the parent and Product is the child
+    return <Product name="Apple Watch" price = {399} rating = "4.5/5.0" />;
 }
-
 
 
 
@@ -67,11 +62,18 @@ function App() {
 // Props in React travel in a one-way direction, from the top to bottom, parent to child.
 // Props passed down are immutable, meaning they cannot be changed.
 
-function App() {   // In this example, App is the parent and Product is the child
-    return <Product name="Apple Watch" price = {399} rating = "4.5/5.0" />;
+function Player(props) {
+    return (
+        <>
+            <h1>{props.songName}</h1>
+            <h2>{props.artist}</h2>
+        </>
+    );
 }
 
-
+function App2 () {
+    return <Player songName='deep' artist='tiesto' />   // App2 is the parent of Player and passes the props to the child
+}
 
 
 // 6. Render different UI based on props - You can also use props to make decisions.

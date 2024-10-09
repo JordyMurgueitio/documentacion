@@ -1,0 +1,11 @@
+    <style>
+    {{content_blocks.${design_system_general_styles_rebranding_2023}}}
+    
+    @media (min-width: 471px) {
+        {{content_blocks.${design_system_desktop_styles_rebranding_2023}}}
+    }
+    
+    @media (max-width: 470px) {
+        {{content_blocks.${design_system_mobile_styles_rebranding_2023}}}
+    }
+    </style>

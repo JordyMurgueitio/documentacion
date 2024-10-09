@@ -1,0 +1,164 @@
+    .section {
+        -webkit-border-radius: 8px !important;
+        -moz-border-radius: 8px !important; 
+        border-radius: 8px !important;
+    }
+    .special_section {
+        -webkit-border-radius: 0px !important;
+        -moz-border-radius: 0px !important; 
+        border-radius: 0px !important;
+    }      
+    .hero_title {
+        font-family: Tahoma, Helvetica, Arial, sans-serif !important;
+        font-size: 20px !important;
+        line-height: 30px !important; 
+        font-weight: 700 !important; 
+        margin: 0 !important;
+        display: inline-block !important;
+    }
+    .block_title {
+        font-family: Tahoma, Helvetica, Arial, sans-serif !important;
+        font-size: 18px !important;
+        line-height: 30px !important; 
+        font-weight: 700 !important; 
+        margin: 0 !important;
+        display: inline-block !important;
+        margin: 0 !important; 
+    }
+    .text {
+        font-family: Tahoma, Helvetica, Arial, sans-serif !important;
+        font-size: 16px !important; 
+        line-height: 26px !important; 
+        display: inline-block !important; 
+        margin: 0 !important;
+    }
+    .small_text {
+        font-family: Tahoma, Helvetica, Arial, sans-serif !important;
+        font-size: 12px !important; 
+        line-height: 16px !important; 
+        margin: 0 !important;
+        display: inline-block !important;
+    }
+    .ordered_list_number {
+        font-family: Tahoma, Helvetica, Arial, sans-serif !important;
+        font-size: 34px !important; 
+        line-height: 52px !important; 
+        margin: 0 !important;
+        display: inline-block !important; 
+    }
+    .text_400 {
+        font-weight: 400 !important;
+    }
+    .text_700 {
+        font-weight: 700 !important;
+    }
+    .text_align_center {
+        text-align: center !important;
+    }
+    .text_align_left {
+        text-align: left !important;
+    }
+    .text_align_right {
+        text-align: right !important;
+    }
+    .btn {
+        text-align: center !important;
+        vertical-align: middle !important;
+        -webkit-border-radius: 8px !important;
+        -moz-border-radius: 8px !important; 
+        border-radius: 8px !important;
+        width:100% !important;
+        line-height: 24px !important;
+        border: 2px solid #121117 !important;
+    }
+    .btn_large {
+        height: 52px !important;
+    }
+    .btn_medium {
+        height: 44px !important;
+    }
+    .btn_small {
+        height: 36px !important;
+    }
+    .btn_primary {
+        background-color: #FF7AAC !important;
+    }
+    .btn_primary:hover {
+        background-color: #FE9FC3 !important;
+    }
+    
+    .btn_secondary {
+        background-color: transparent !important;
+    }
+    .btn_secondary:hover {
+        background-color: #F4F4F8 !important;
+    }
+    .btn_primary_black {
+        background-color: black !important;
+    }
+    .btn_primary_black:hover {
+        background-color: #262525 !important;
+    }
+    .btn_link {
+        -webkit-border-radius: 8px !important;
+        -moz-border-radius: 8px !important; 
+        border-radius: 8px !important;
+        vertical-align: middle !important; 
+        margin: auto !important;
+    }
+
+    .btn_link_large_black {
+        font-family: Tahoma, Helvetica, Arial, sans-serif !important;
+        font-size: 18px !important; 
+        line-height: 24px !important; 
+        text-decoration: none !important;
+        display: inline-block !important; 
+        width: 100% !important;
+        color: white !important;
+    }    
+
+    .btn_link_medium_black {
+        font-family: Tahoma, Helvetica, Arial, sans-serif !important;
+        font-size: 16px !important; 
+        line-height: 24px !important; 
+        text-decoration: none !important;
+        display: inline-block !important; 
+        width: 100% !important;
+        color: white !important;
+    }      
+    .btn_link_small_black {
+        font-family: Tahoma, Helvetica, Arial, sans-serif !important;
+        font-size: 14px !important; 
+        line-height: 24px !important; 
+        text-decoration: none !important;
+        display: inline-block !important; 
+        width: 100% !important;
+        color: white !important;
+    }  
+    
+    .btn_link_large {
+        font-family: Tahoma, Helvetica, Arial, sans-serif !important;
+        font-size: 18px !important; 
+        line-height: 24px !important; 
+        text-decoration: none !important;
+        display: inline-block !important; 
+        width: 100% !important;
+    }
+    .btn_link_medium {
+        font-family: Tahoma, Helvetica, Arial, sans-serif !important;
+        font-size: 16px !important; 
+        line-height: 24px !important; 
+        text-decoration: none !important;
+        display: inline-block !important; 
+        width: 100% !important;
+    }
+    
+    .btn_link_small {
+        font-family: Tahoma, Helvetica, Arial, sans-serif !important;
+        font-size: 14px !important; 
+        line-height: 24px !important; 
+        text-decoration: none !important;
+        display: inline-block !important; 
+        width: 100% !important;
+    }
+
