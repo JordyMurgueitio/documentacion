@@ -1,59 +1,142 @@
 <!-- Forms -->
 
-
-<!--   1. Form elenents -->
-
-<!-- <input> specifies an input field where the user can enter data -->
-<form action="">
-    <input type="text" id="fname" name="fname">
+The <form> element must have both the location of where the <form>'s information goes and what HTTP request to make.
+<form action="/example.html" method="POST">
 </form>
 
-<!-- <label> defines a label for several form elements  -->
-<form action="">
-    <label for="message">Write your message</label>
-    <input type="text" id="message">
+
+
+<!--  Text input -->
+The <input> element has a type attribute which determines how it renders on the web page and what kind of data it can accept.
+
+<form action="/example.html" method="POST">
+    <input type="text" name="first-text-field">
 </form>
 
-<!-- <select>  defines a drop-down list -->
-    <!-- <option> elements defines an option that can be selected -->
-    <!-- the size attribute to specify the number of visible values -->
-    <!-- the multiple attribute allows the user to select more than one value -->
-<form action="">
-    <label for="cars">Choose a car:</label>
-    <select id="cars" name="cars" size="2" multiple>
-        <option value="volvo">Volvo</option>  
-        <option value="saab" selected>Saab</option>    <!-- to define a pre-selected option, add the selected attribute to the option -->
-        <option value="fiat">Fiat</option>
-        <option value="audi">Audi</option>
+After users type into the <input> element, the value of the value attribute becomes what is typed into the text field.
+The value of the value attribute is paired with the value of the name attribute and sent as text when the form is submitted
+
+
+<!-- Label -->
+To properly identify an <input> we use the appropriately named <label> element.
+To associate a <label> and an <input>, the <input> needs an id attribute and the <label> a for attribute with the value of the id of <input>
+
+<form action="/example.html" method="POST">
+    <label for="meal">What do you want to eat?</label>
+    <br>
+    <input type="text" name="food" id="meal">
+</form>
+
+
+<!--  Password input -->
+An <input type ="password"> element will replace input text with another character like an asterisk (*)
+
+
+<!--  Number input -->
+By setting type="number" for an <input> we can restrict what users type into the input field to just numbers
+We can also provide a step attribute which creates arrows inside the input field to increase or decrease
+
+<form>
+    <label for="years"> Years of experience: </label>
+    <input id="years" name="years" type="number" step="2">
+</form>
+
+
+<!--  Range input -->
+By setting type to "range" we create a slider.
+To set the minimum and maximum values of the slider we assign values to the min and max attribute of the <input>. 
+We could also control how smooth and fluid the slider works by assigning the step attribute a value
+
+<form>
+    <label for="volume"> Volume Control</label>
+    <input id="volume" name="volume" type="range" min="0" max="100" step="1">
+</form>
+
+
+<!--  Checkbox input -->
+The value attribute of the checkboxes should match the value of the for attribute of <label> to identify the checkbox.
+Each <input> has the same value for the name attribute. 
+Using the same name for each checkbox groups the <input>s together. However, each <input> has a unique id to pair with a <label>.
+
+<form>
+    <p>Choose your pizza toppings:</p>
+    <label for="cheese">Extra cheese</label>
+    <input id="cheese" name="topping" type="checkbox" value="cheese">
+    <br>
+    <label for="pepperoni">Pepperoni</label>
+    <input id="pepperoni" name="topping" type="checkbox" value="pepperoni">
+</form>
+
+
+<!-- Radio Button Input -->
+Present multiple options and only allow for one selection
+To group radio buttons together, we assign them the same name and only one radio button from that group can be selected
+<form>
+    <p>What is sum of 1 + 1?</p>
+    <input type="radio" id="two" name="answer" value="2">
+    <label for="two">2</label>
+    <br>
+    <input type="radio" id="eleven" name="answer" value="11">
+    <label for="eleven">11</label>
+</form>
+
+
+
+<!-- Dropdown list -->
+Allow our users to choose one option from an organized list.
+When the <form> is submitted, the information will be sent using the "name" of the <select> and the "value" of the chosen <option>. 
+If a user selected Pizza from the dropdown list, the information would be sent as "lunch=pizza"
+<form>
+    <label for="lunch">What's for lunch?</label>
+    <select id="lunch" name="lunch">
+        <option value="pizza">Pizza</option>
+        <option value="curry">Curry</option>
+        <option value="salad">Salad</option>
+        <option value="ramen">Ramen</option>
+        <option value="tacos">Tacos</option>
     </select>
+</form>  
+
+
+
+<!-- Datalist Input -->
+The <datalist> is used with an <input type="text"> element. 
+The <input> creates a text field that users can type into and filter options from the <datalist></datalist>
+The <input> has a "list" attribute. 
+The <input> is associated to the <datalist> via the <input>'s "list" attribute and the "id" of the <datalist></datalist>
+<form>
+    <label for="city">Ideal city to visit?</label>
+    <input type="text" list="cities" id="city" name="city">
+    <datalist id="cities">
+        <option value="New York City"></option>
+        <option value="Tokyo"></option>
+        <option value="Barcelona"></option>
+        <option value="Mexico City"></option>
+        <option value="Melbourne"></option>
+        <option value="Other"></option>  
+    </datalist>
 </form>
 
-<!-- <textarea> -->
-<textarea>
-<button>
-<fieldset>
-<legend>
-<datalist>
-<output>
-<option>
-<optgroup>
+
+
+<!-- Textarea element -->
+The <textarea> element is used to create a bigger text field for users to write more text.
+We can add the attributes "rows" and "cols" to determine the amount of rows and columns
+If we want to add a default value to <textarea> we would include it within the opening and closing tags
+<form>
+    <label for="blog">New Blog Post: </label>
+    <br>
+    <textarea id="blog" name="blog" rows="5" cols="30">Default value</textarea>
+</form>
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+<!-- Submit Form -->
+To make a submit button in a <form>, we're going to use the <input> element and set the "type" attribute to "submit" 
+The "value" assigned to the <input> shows up as text on the submit button
+<form>
+    <input type="submit" value="Send">
+</form>     
 
 
 
