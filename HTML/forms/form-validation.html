@@ -1,0 +1,57 @@
+<!-- FORM VALIDATION -->
+
+<!-- server-side validation -->
+This happens when data is sent to another machine (typically a server) for validation.
+An example of this type of validation is the usage of a login page
+
+
+<!-- client-side validation -->
+We use it when we want to check the data on the browser (the client). This validation occurs before data is sent to the server
+It saves us time from having to send information to the server and wait for the server to send back confirmation or rejection of the data
+
+
+
+<!-- Requiring an input -->
+There are fields in our <form>s which are not optional
+We can add the "required" attribute to an <input> element.
+<form action="/example.html" method="POST">
+    <label for="allergies">Do you have any dietary restrictions?</label>
+    <br>
+    <input id="allergies" name="allergies" type="text" required>
+    <br>
+    <input type="submit" value="Submit">
+</form>
+
+
+<!-- Set a minimum and maximum -->
+Assign a minimum or maximum value for a number field e.g. <input type="number"> and <input type="range">
+To set a minimum acceptable value, we assign the "min" attribute a value. 
+To set a maximum acceptable value, we assign the "max" attribute a value.
+<form action="/example.html" method="POST">
+    <label for="guests">Enter # of guests:</label>
+    <input id="guests" name="guests" type="number" min="1" max="4">
+    <input type="submit" value="Submit">
+</form>
+
+
+
+<!-- Checking text length -->
+To set a minimum number of characters for a text field, we add the "minlength" attribute and a value 
+To set a maximum number of characters for a text field, we add the "maxlength" attribute and a value
+<form action="/example.html" method="POST">
+    <label for="summary">Summarize your feelings in less than 250 characters</label>
+    <input id="summary" name="summary" type="text" minlength="5" maxlength="250" required>
+    <input type="submit" value="Submit">
+</form>
+
+
+<!-- Matching a pattern -->
+When we want user input to follow specific guidelines, we use the "pattern" attribute and assign it a regular expression, or regex.
+Regular expressions are a sequence of characters that make up a search pattern
+Let's say we wanted to check for a valid credit card number (a 14 to 16 digit number). We could use the regex: [0-9]{14,16}
+<form action="/example.html" method="POST">
+    <label for="payment">Credit Card Number (no spaces):</label>
+    <br>
+    <input id="payment" name="payment" type="text" required pattern="[0-9]{14,16}">
+    <input type="submit" value="Submit">
+</form>
