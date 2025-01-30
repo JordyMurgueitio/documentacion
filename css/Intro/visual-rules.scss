@@ -1,0 +1,71 @@
+// Font Family 
+h1 {
+    font-family: Garamond;
+}
+
+// Font Size 
+p {
+    font-size: 18px;
+}
+
+// Font Weight 
+p {
+    font-weight: bold;
+}
+
+// Text Align 
+// will align text to the element that holds it, otherwise known as its parent.
+h1 {
+    text-align: left; // Default 
+    text-align: right; // aligns text to the right side of its parent element.
+    text-align: center; // centers text inside of its parent element.
+    text-align: justify;  // spaces out text in order to align with the right and left side of the parent element.
+}
+
+
+// Color and Background Color 
+h1 {
+    color: red;
+    background-color: blue;
+}
+
+
+// Opacity 
+// It’s measured from 0 to 1, with 1 representing 100%, or fully visible
+// 0 representing 0%, or fully invisible.
+.overlay {
+    opacity: 0.5;
+}
+
+
+// Background Image 
+// The value provided to background-image is a url
+// The url can be a file within your project, or it can be a link to an external site.
+.main-banner {
+    background-image: url('https://www.example.com/image.jpg');
+}
+.secondary-banner {
+    background-image: url('https://www.example.com/image.jpg');
+}
+
+
+// Important 
+// It will override any style no matter how specific it is.
+p {
+    color: blue !important; // all p elements will appear blue, even if there is a more specific selector
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

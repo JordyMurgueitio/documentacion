@@ -1,0 +1,73 @@
+// TYPE SELECTOR
+// The type selector matches the type of the element in the HTML document.
+* { 
+    font-family: Verdana;
+}
+p {
+    color: green;
+}
+
+
+// UNIVERSAL SELECTOR  
+// The universal selector selects all elements of any type.
+* { 
+    font-family: Verdana;
+}
+
+
+// CLASS SELECTOR
+// To select an HTML element by its class using CSS, a period (.) must be prepended to the class’s name
+.brand {
+    color: black;
+}
+
+
+// ID SELECTOR 
+// To select an element’s ID with CSS, we prepend the id name with a number sign (#). 
+#large-title {
+    font-family: 'Courier New', Courier, monospace;
+}
+
+
+// ATTRIBUTE SELECTOR 
+// [href] would target all elements with an href attribute and set the to magenta.
+[href]{
+    color: magenta;
+}
+// type[attribute=value]. this code selects an element where the attribute contains any instance of the specified value.
+// looks for an img element with an attribute of src that contains the string 'winter'
+img[src*='winter'] {
+    height: 50px;
+}
+
+
+// PSEUDO-CLASS SELECTORS
+// It is always written as a colon : followed by a name
+// :focus, :visited, :disabled, etc 
+p:hover {
+    background-color: lime;
+}
+
+
+// CHAINING 
+// require an HTML element to have two or more CSS selectors by combining multiple selectors
+h1.special {
+    font-weight: 400;
+}
+// The code above would select only the <h1> elements with a class of special
+
+
+// DESCENDANT COMBINATOR
+// selecting elements that are nested within other HTML elements, also known as descendants.
+.main-list li {
+    font-size: 40px;
+}
+
+
+// MULTIPLE SELECTORS 
+// it’s possible to add CSS styles to multiple CSS selectors all at once.
+// we can separate the selectors by a comma to apply the same style to both
+h1, 
+.menu {
+    font-family: Georgia;
+}
