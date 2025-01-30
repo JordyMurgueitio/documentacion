@@ -1,0 +1,128 @@
+// FLOW OF HTML
+// A browser will render the elements of an HTML document that has no CSS from left to right, top to bottom
+// CSS includes properties that change how a browser positions elements. 
+
+
+
+// POSITION 
+// Block-level elements block the full width of their parent elements, they prevent other elements from appearing in the same horizontal space.
+
+// POSITION: RELATIVE 
+// This value allows you to position an element relative to its default static position on the web page.
+.green-box {
+    background-color: green;
+    position: relative;
+    top: 20px; // moves the element down from the top.
+    right: 20px; // moves the element away from the right side (to the left).
+    left: 20px; // moves the element away from the left side (to the right).
+    bottom: 20px; // moves the element up from the bottom.
+}
+
+// POSITION: ABSOLUTE  
+// all other elements on the page will ignore the element and act like it is not present on the page
+// The element will be positioned relative to its closest ancestor that has its position property set to anything other than static
+.text1 {
+    position: absolute;
+    right: 0px; // aligns the element with the right edge of the parent container.
+    top: 300px; //moves the element 300 pixels down from the parent  
+}
+
+// POSITION: FIXED 
+// We can fix an element to a specific position on the page (regardless of user scrolling) by setting its position to fixed
+.title {
+    position: fixed;
+    top: 0px;
+    left: 0px;
+}
+
+
+// POSITION: STICKY  
+// Keeps an element in the document flow as the user scrolls, but sticks to a specified position as the page is scrolled further.
+.box-bottom {
+    background-color: darkgreen;
+    position: sticky;
+    top: 240px;
+}
+
+
+// Z-INDEX
+// The z-index property controls how far back or how far forward an element should appear on the web page when elements overlap.
+// The z-index property accepts integer values. 
+//We changed position to relative, because the z-index property does not work on static elements.
+.blue-box {
+    background-color: blue;
+    position: relative;
+    z-index: 1;
+}
+.green-box {
+    background-color: green;
+    position: relative;
+    top: -170px;
+    left: 170px;
+}
+
+
+// INLINE DISPLAY 
+// Inline elements have a box that wraps tightly around their content, only taking up the amount of space necessary to display their content
+// Inline elements cannot be altered in size with the height or width CSS properties
+h1 {
+    display: inline; // The browser will render <h1> elements on the same line as other inline elements immediately before or after
+}
+
+// DISPLAY: BLOCK 
+// These elements fill the entire width of the page by default, but their width property can also be set.
+// they are the height necessary to accommodate their content. 
+a.important {
+    display: block;
+}
+
+// DISPLAY: INLINE-BLOCK 
+// Inline-block elements can appear next to each other and we can specify their dimensions using the width and height properties.
+.rectangle {
+    display: inline-block;
+    width: 200px;
+    height: 300px;
+}
+
+
+// FLOAT 
+// Moving an element as far left or as far right as possible in the container,
+// This works for static and relative positioned elements
+// Floated elements must have a width specified
+.green-section {
+    width: 50%;
+    height: 150px;
+}
+.orange-section {
+    background-color: orange;
+    width: 50%;
+    float: right; // moves elements as far right as possible. 
+}
+
+
+// CLEAR 
+// The clear property specifies how elements should behave when they bump into each other on the page
+div {
+    width: 200px;
+    float: left;
+}
+div.special {
+    clear: left; // the left side of the element will not touch any other element within the same containing element.
+    clear: right; // the right side of the element will not touch any other element within the same containing element.
+    clear: both; // neither side of the element will touch any other element within the same containing element.
+    clear: none; // the element can touch either side.
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
