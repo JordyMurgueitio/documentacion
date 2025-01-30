@@ -1,0 +1,146 @@
+
+// width and height: The width and height of the content area.
+// padding: The amount of space between the content area and the border.
+// border: The thickness and style of the border surrounding the content area and padding.
+// margin: The amount of space between the border and the outside edge of the element. 
+
+
+
+
+// HEIGHT AND WIDTH  
+// By default, the dimensions of an HTML box are set to hold the raw contents of the box.
+
+.image {
+    width: 30px;
+    height: 50px;
+}
+
+
+// BORDERS
+// Borders can be set with a specific width, style, and color
+p {
+    border: 3px solid coral;
+    border: 2px dotted black;
+    border: 2px dashed red;
+}
+
+
+// BORDER RADIUS 
+// You can modify the corners of an element’s border box with the border-radius property.
+div.container {
+    border: 3px solid blue;
+    border-radius: 5px;
+}
+/* To create a perfect circle border we create an element with the same width and height,
+and then setting the radius equal to half the width of the box, which is 50%. */
+div.container {
+    height: 60px;
+    width: 60px;
+    border: 3px solid blue;
+    border-radius: 50%;
+}  
+
+
+
+// PADDING 
+// The space between the contents of a box and the borders of a box 
+.container2 {
+    border: 2px solid black;
+    padding: 10px 5px 15px 4px; //specifies every side
+    padding: 5px 10px 20px; //top, right-left, bottom
+    padding: 40px 20px;  // top-bottom, left-right 
+    padding: 5px; // same value for every side 
+}
+
+
+// MARGIN
+// Margin refers to the space directly outside of the box. 
+.container {
+    border: 1px dotted blue;
+    margin: 23px;
+}
+
+// MARGIN 0 AUTO  
+// The margin property also lets you center content withtin their containers.
+// The 0 sets the top and bottom margins to 0 pixels. 
+// Auto instructs the browser to adjust the left and right margins until the element is centered within its containing element. 
+// To center an element, a width must be set to it. Otherwise, the width of the div will be set to the full width of its containing element
+div.headline {
+    width: 400px;
+    margin: 0 auto;
+}
+
+// MARGIN COLLAPSE 
+// top and bottom margins, also called vertical margins, collapse, while top and bottom padding does not.
+// Horizontal margins (left and right), like padding, are always displayed and added together
+// vertical margins do not add. Instead, the larger of the two vertical margins sets the distance between adjacent elements.
+#img-one {
+    margin-bottom: 30px;
+}
+#img-two {
+    margin-top: 20px;   // the vertical margin between the #img-one and #img-two elements is 30 pixels.
+}
+
+
+// Minimum and Maximum Height and Width 
+p {
+    min-width: 300px;
+    max-width: 600px;
+    min-height: 100px;
+    max-height: 200px;
+}
+
+
+// OVERFLOW
+// The overflow property controls what happens to content that spills, or overflows, outside its box.
+p {
+    overflow: hidden;  // any content that overflows will be hidden from view.
+    overflow: scroll;  // a scrollbar will be added to the element’s box so that the rest of the content can be viewed by scrolling.
+    overflow: visible; // the overflow content will be displayed outside of the containing element. Default 
+}
+
+
+// RESETTING DEFAULTS  
+// Web browsers have a default stylesheet which often have default CSS rules that set default values for padding and margin
+* {
+    margin: 0;
+    padding: 0;
+}
+
+
+// VISIBILITY  
+// Elements can be hidden from view with the visibility property.
+// An element with "display: none" will be completely removed from the web page. 
+// An element with "visibility: hidden", however, will not be visible on the web page, but the space reserved for it will.
+.test {
+    visibility: hidden;
+    visibility: visible;
+    visibility: collapse;
+}
+
+
+// CHANGING THE BOX MODEL 
+// Under the current box model, the border thickness and padding are added to the overall dimensions of the box.
+
+// CURRENT BOX MODEL: CONTENT-BOX  
+// the box-sizing property controls the type of box model the browser should use. Default value is content-box 
+
+// NEW BOX MODEL: BORDER-BOX
+// The height and width of the box will remain fixed. 
+// The border thickness and padding will be included inside of the box, which means the overall dimensions of the box do not change.
+* {
+    box-sizing: border-box;
+}
+h1 {
+    border: 1px dashed #4f768e; 
+    height: 150px;  // the height of the box would remain at 150 pixels   
+    width: 200px;  // the width would remain at 200 pixels.
+    padding: 20px;   // // The border thickness and padding would remain entirely inside of the box.
+}
+
+
+
+
+
+
+
