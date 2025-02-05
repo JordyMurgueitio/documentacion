@@ -1,0 +1,30 @@
+// LINK STYLING 
+a {
+    color: #466995;
+    text-decoration: underline;
+}
+
+
+// TOOLTIPS AND TITLES 
+// Additional context can be provided as text using the HTML "title" attribute for clickable elements.
+// browsers will display the text of a title attribute as a tooltip
+
+
+// LINK STATES 
+// normal (not clicked), hover, active (clicked), and visited. 
+// These 4 states have associated CSS pseudo-classes: :link, :hover, :active, and :visited
+// The ordering of link state pseudo-class rules is important to reveal the proper information. 
+// The proper order of these rules is:
+:link
+:visited
+:hover
+:active
+a {
+    color: blue;
+}
+a:hover {
+    color: orange;
+}
+
+
+
