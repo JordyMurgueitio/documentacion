@@ -1,0 +1,84 @@
+// Em - font size 
+// if the base font of a browser is 16 pixels (normally the default size of text in a browser), 
+// then 1 em is equal to 16 pixels. 2 em would equal 32 pixels, and so on
+.heading {
+    font-size: 2em;  // relative to the default font size of the browser.
+}
+
+.splash-section {
+    font-size: 18px; // use em without relying on the default font size of the browser. Instead, a base font size (18px) is defined
+}
+.splash-section h1 {
+    font-size: 1.5em;
+}
+
+
+// Rem - font size 
+// Checks the root element. The root element is the <html> tag.
+// Most browsers set the font size of <html> to 16 pixels
+html {
+    font-size: 20px;  // changes the default root font size
+}
+h1 {
+    font-size: 2rem; // set all h1 elements to 40px
+}
+
+
+
+// Percentages: Height and Width 
+// To size non-text HTML elements relative to their parent elements on the page 
+// When percentages are used, elements are sized relative to the dimensions of their parent element
+// a child element’s dimensions may be set erroneously if the dimensions of its parent element aren’t set first.
+.main {
+    height: 300px;
+    width: 500px;
+}
+.main .subsection {
+    height: 50%;   // div will be 150 pixels tall
+    width: 50%; // div will be 250 pixels wide
+}
+
+
+// Percentages: Padding and Margin 
+// When percentages are used to set padding and margin, they are calculated based only on the width of the parent element.
+// Vertical padding and margin are also calculated based on the width of the parent
+
+
+// Width: Minimum and Maximum 
+// elements on a website can lose their integrity when they become too small or large
+p {
+    min-width: 300px;  // the width will not fall below 300 pixels, 
+    max-width: 600px;  // the width will not exceed 600 pixels.
+}
+
+// Height: Minimum and Maximum 
+p {
+    min-height: 150px; //the height will not shrink below 150 pixels 
+    max-height: 300px; //the height will not exceed 300 pixels.
+}
+
+
+// Scaling images and videos 
+.container {
+    width: 50%;
+    height: 200px;
+    overflow: hidden;
+}
+.container img {
+    max-width: 100%; // The image’s height will automatically scale proportionally with the width
+    height: auto; // the image’s height will automatically scale proportionally with the width
+    display: block;  
+}
+// To swap this behavior, you can set max-height to 100% and width to auto. 
+// This will scale the height of the image with the height of the container instead.
+
+
+
+// Scaling Background Images 
+body {
+    background-image: url('#');
+    background-repeat: no-repeat; // not repeat the image (by default, images will repeat).
+    background-position: center;  // centers the image within the element.
+    background-size: cover;  // image will cover the entire background of the element, while keeping the image in proportion
+}
+
