@@ -1,0 +1,50 @@
+// FONT FAMILY 
+
+h1 {
+    font-family: Arial;
+}
+
+
+// FONT WEIGHT 
+// Controls how bold or thin text appears. It can be specified with keywords or numerical values.
+.left-section {
+    font-weight: 700;
+}
+.right-section {
+    font-weight: bold; 
+    font-weight: normal;
+}
+
+// FONT STYLE 
+h1 { 
+    font-style: italic;
+    font-style: normal;
+    font-style: oblique;
+}
+
+
+//  TEXT TRANSFORMATION 
+// Text can also be styled to appear in either all uppercase or lowercase
+h1 {
+    text-transform: uppercase;
+    text-transform: lowercase;
+}
+
+
+// Line Height
+// set how tall we want each line containing our text to be
+p {
+    line-height: 1.4;
+}
+
+// Text Alignment 
+// aligns text to its parent element.
+h1 {
+    text-align: right;
+}
+
+
+
+
+
+
