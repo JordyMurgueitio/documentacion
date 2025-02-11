@@ -1,4 +1,5 @@
 //PROPERTIES - data types have properties
+/* Number, Biglnt, String, Boolean, Null, Undefined, Symbol, Object */
 
 console.log("hello".length); //length propertie - prints 5
 
