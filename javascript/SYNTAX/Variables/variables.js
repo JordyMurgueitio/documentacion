@@ -3,6 +3,19 @@
 
 console.log("hello".length); //length propertie - prints 5
 
+
+
+// Arithmetic Operators 
+// built-in arithmetic operators, that allow us to perform mathematical calculations on numbers
+// % Remainder operator:  returns the number that remains after the right-hand number divides into the left-hand number as many times as it evenly can
+console.log(3 + 4); // Prints 7
+console.log(5 - 1); // Prints 4
+console.log(4 * 2); // Prints 8
+console.log(9 / 3); // Prints 3
+console.log(11 % 3); // Prints 2
+console.log(12 % 3); // Prints 0
+
+
 //METHODS - actions we can perform
 
 console.log("hello".toUpperCase()); //prints HELLO
@@ -25,24 +38,30 @@ console.log(Number.isInteger(120)); //prints true
 
 
 
-// VARIABLES - store information 
-
+// VARIABLES - variables label and store data in memory.
+// Variable names cannot start with numbers.
+// Variable names are case sensitive
+// Variable names cannot be the same as keywords.
 
 //var - can be reassigned - can be undefinded
 var myName = ""; 
 myName = "Juan"
-console.log(myName);
+console.log(myName);  // Prints Juan
 
 //let - can be reassigned - can be undefinded
-let meal = "pizza"; 
-meal = "burger"
-console.log(meal);
+let price;
+console.log(price); // Output: undefined
+price = 350;
+console.log(price); // Output: 350
 
 //const - can't be reassigned - must have a value
 const age = 50;
 console.log(age);
 
-//Mathematical assignment operators 
+
+
+// MATHEMATICAL ASSIGNMENT OPERATORS: +=, -=, *=, /=, ++, -- 
+// Calculate new values and assign them to a variable.
 let a = 8;
 a += 2; // Can be written as a = a + 2
 console.log(a); // Output: 10
@@ -59,7 +78,7 @@ let z = 8;
 z /= 2; // Can be written as z = z / 2
 console.log(z); // Output: 4
 
-//Increment and decrement operators 
+//INCREMENT AND DECREMENT OPERATORS
 let tios = 5; 
 tios++; 
 console.log(tios); //Prints 6 
@@ -68,25 +87,30 @@ let abuelos = 4;
 abuelos--; 
 console.log(abuelos); //prints 3
 
-//String concatenation with variables 
 
+
+//String concatenation with variables 
+// The + operator can be used to combine two string values even if those values are being stored in variables
 let favoriteAnimal = "lion";
 console.log("My favorite animal: " + favoriteAnimal); //prints My favorite animal: lion
 
-//String interpolation - We use template literals (``) 
 
+//String interpolation - We use template literals (``) 
+// Inside the template literal, you’ll see a placeholder, ${}. 
 let user = "jordy";
 let myCity = "Quito";
-console.log(`My name is ${user} and I live in ${myCity}`);
+console.log(`My name is ${user} and I live in ${myCity}`); // Logs: My name is Jordy and I live in Quito
+
 
 //typeof operator - check data type of a variable's value
-
+// checks the value to its right and returns a string of the data type.
 let newVariable = 'Playing around with typeof';
+const unknown3 = true;
 
 console.log(typeof newVariable); //prints string
 newVariable = 1;
-console.log(typeof newVariable); //prints number 
-
+console.log(typeof newVariable); //prints number  
+console.log(typeof unknown3); // Output: boolean
 
 
 //KELVIN-WEATHER PROJECT - transform from kelvin to fahrenheit
