@@ -105,7 +105,7 @@ console.log(`My name is ${user} and I live in ${myCity}`); // Logs: My name is J
 //typeof operator - check data type of a variable's value
 // checks the value to its right and returns a string of the data type.
 let newVariable = 'Playing around with typeof';
-const unknown3 = true;
+const unknown3 = false;
 
 console.log(typeof newVariable); //prints string
 newVariable = 1;
