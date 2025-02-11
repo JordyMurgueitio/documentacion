@@ -123,19 +123,6 @@ console.log(`The temperature is ${fahrenheit} degrees Fahrenheit`);
 
 
 
-//DOG YEARS PROJECT - calculate my age in dog years 
-
-let myAge = 24; //saving my age
-let earlyYears = 2; 
-earlyYears *= 10.5; //first 2 years count as 10.5 dog years each. 
-
-let laterYears = myAge - 2;  
-laterYears *= 4; //Each year following equates to 4 dog years
-
-let myAgeInDogYears = earlyYears + laterYears;
-
-console.log(`My name is Jordy. I'm ${myAge} years old in human years which is ${myAgeInDogYears} years old in dog years`);
-
 
 
 
