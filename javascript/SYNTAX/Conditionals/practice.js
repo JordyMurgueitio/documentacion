@@ -177,3 +177,20 @@ function tipCalculator(quality, total) {
     }
 }
 console.log(tipCalculator("good", 100));
+
+
+// 10.  Movie ticket price 
+let age = 19;
+function ageChecker () {
+    switch (true) {
+        case (age > 0 && age <= 12):
+            return 'price is 0';
+            break;
+        case (age >12):
+            return 'price is 10';
+            break;
+    }
+}
+
+console.log(ageChecker(10));
+
