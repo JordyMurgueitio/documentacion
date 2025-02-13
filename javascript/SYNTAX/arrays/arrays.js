@@ -1,5 +1,4 @@
 // ARRAYS  
-
 //JavaScript’s way of making lists. Arrays can store any data types (including strings, numbers, and booleans).
 // we can have an array that holds all the same data types or an array that holds different data types.
 
@@ -11,7 +10,6 @@ const grades = [10, 7, 5, 8, 8];
 
 // 1. Accessing Elements - Each element in an array has a numbered position known as its index
 // Arrays in JavaScript are zero-indexed, meaning the positions start counting from 0 rather than 1
-
 const cities = ["New York", "Amsterdam", "Barcelona"];
 let bestCity = cities[1];
 console.log(bestCity);  // prints amsterdam
@@ -20,7 +18,6 @@ console.log(cities[0]); // prints new york
 
 
 // 2. Update Elements  - Once you have access to an element in an array, you can update its value.
-
 let groceryList = ['bread', 'tomatoes', 'milk'];
 
 groceryList[1] = 'avocados';
@@ -28,8 +25,7 @@ console.log(groceryList);  // prints ['bread', 'avocados', 'milk']
 
 
 
-// 3. Arrays with let and const  - we can change the contents of a const array, but cannot reassign a new array or a different value.
-
+// 3. Arrays with let and const  - we can change the content of a const array, but cannot reassign a new array or a different value.
 let condiments = ['Ketchup', 'Mustard', 'Soy Sauce', 'Sriracha'];
 const utensils = ['Fork', 'Knife', 'Chopsticks', 'Spork'];
 
@@ -44,29 +40,29 @@ console.log(utensils);  // We can change the element of a const array but we can
 
 
 // 4. The .length property - returns the number of items in the array.
-
 const objectives = ['Learn a new language', 'Read 52 books', 'Run a marathon'];
 
 console.log(objectives.length);  // prints 3
 
 
+
 // 5. The .push() Method - allows us to add items to the end of an array
 // take a single argument or multiple arguments separated by commas
-
 const chores = ['wash dishes', 'do laundry', 'take out trash'];
 
 chores.push('cook', 'buy shoes');
 console.log(chores);
 
 
+
 // 6. The .pop() Method - removes the last item of an array
 //  returns the value of the last element
-
 const newItemTracker = ['item 0', 'item 1', 'item 2'];
 const removed = newItemTracker.pop();
 
 console.log(newItemTracker); // Output: [ 'item 0', 'item 1' ]
 console.log(removed); // Output: item 2
+
 
 
 // 7. The .shift() Method - Removes and returns the first element of the array. All subsequent elements will shift down one place.
@@ -105,7 +101,6 @@ console.log(anotherWeek);  // prints ['monday', 'tuesday', 'wednesday']
 
 // 10. The .splice() Method -  changes the contents of an array by removing or replacing existing elements and/or adding new elements
 // splice(indexToStart, numberOfIndices, item1, item2, itemN)
-
 const months = ['Jan', 'March', 'April', 'June'];
 months.splice(1, 0, 'Feb');
 // Inserts at index 1 and replaces 0 elements
@@ -125,8 +120,9 @@ console.log(indexBlue); // logs 1
 
 
 
+
 // 12. Arrays and functions
-// you pass an array into a function, if the array is mutated inside the function, that change will be maintained outside the function as well.
+// When you pass an array into a function, if the array is mutated inside the function, that change will be maintained outside the function as well.
 
 const concept = ['arrays', 'can', 'be', 'mutated'];
 
@@ -139,8 +135,9 @@ console.log(concept);  // logs ['arrays', 'can', 'be', 'MUTATED'];
 function removeElement (newArr) {
     newArr.pop();
 }
-removeElement (conc6ept);
+removeElement (concept);
 console.log(concept); // logs ['arrays', 'can', 'be']
+
 
 
 // 13. Nested arrays - an array contains another array

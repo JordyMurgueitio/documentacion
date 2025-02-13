@@ -1,4 +1,12 @@
 // ARRAY METHODS
+/* push(), 
+pop(),
+shift(), 
+unshift(), 
+forEach(), filter()
+map(),  join()
+every(), find()
+includes(), */
 
 
 // 1. The .push() Method - allows us to add items to the end of an array
@@ -21,7 +29,6 @@ console.log(removed);  // logs 9
 
 // 3. shift()	Removes the first element of an array, and returns that element
 // this method changes the lenght of the array
-
 let signedUp = ["Juan", "Maira", "Elkin", "Soto"]; 
 let removedUser = signedUp.shift(); 
 
@@ -31,8 +38,7 @@ console.log(removedUser);  // logs Juan
 
 
 // 4. unshift()	Adds new elements to the beginning of an array. overwrites the original array
-// returns the new length of the array. 
-
+// Returns the new length of the array. 
 let bestCompanies = ["SAP", "Apple", "Microsoft"];
 
 console.log(bestCompanies.unshift()); // logs 3
@@ -44,13 +50,12 @@ console.log(bestCompanies);  // logs [ 'Nike', 'Amazon', 'SAP', 'Apple', 'Micros
 // 5. .forEach() method - will execute the same code for each element of an array.
 // loops through the array and executes the callback function for each element. 
 // During each execution, the current element is passed as an argument to the callback function.
-
 const groceries = ["apple", "sugar", "milk"];
 groceries.forEach(groceryItem => console.log(groceryItem));
 
 
 const frutas = ["apple", "banana", "melon", "orange"];
-fruits.forEach(fruit => {
+frutas.forEach(fruit => {
     if (fruit[0] === "a") {
         console.log(`I want to eat an ${fruit}`)
     } else {
@@ -68,7 +73,6 @@ sports.forEach(printSport);
 
 
 // 6. map()	Creates a new array with the result of calling a function for each array element
-
 const agentes = [1, 2, 3, 4, 5]; 
 
 const bigAgents= agentes.map(agente => {
@@ -96,12 +100,10 @@ console.log(everyoneAdult);  // logs false
 // 8. includes()	Check if an array contains the specified element
 // returns true if an array contains a specified value
 // returns false if the value is not found.
-
 const precios = [10, 20, 30, 2, 3, 45];
 
 console.log(precios.includes(20)); // logs true
 console.log(precios.includes(13));  // logs false 
-
 
 const pets = ['cat', 'dog', 'bat'];
 console.log(pets.includes('cat')); // output: true
@@ -109,7 +111,6 @@ console.log(pets.includes('cat')); // output: true
 
 
 // 9. join()	Joins all elements of an array into a string
-
 const frases = ["hello", "world", "my", "name"]
 
 let fraseString = frases.join(" ");
