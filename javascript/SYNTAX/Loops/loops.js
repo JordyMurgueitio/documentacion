@@ -1,13 +1,15 @@
-// LOOPS - repeats a set of instructions until a specified condition, called a stopping condition is reached
+// LOOPS - 
+// repeats a set of instructions until a specified condition, called a stopping condition is reached
 
 
 
-// 1. The For loop -  The iterator variable is initialized, checked against the stopping condition, and assigned a new value on each loop iteration
+// 1. The For loop 
+// The iterator variable is initialized, checked against the stopping condition, and assigned a new value on each loop iteration
+// Iterator variables can have any name
 
-// initialization is let count = 5, so the loop will start counting at 5.
-// stopping condition is count < 11, the loop will run as long as the iterator variable, count, is less than 4.
+// initialization is: let count = 5, so the loop will start counting at 5.
+// stopping condition is: count < 11, the loop will run as long as the iterator variable, count, is less than 11.
 // iteration statement is count++. after each loop, the value of count will increase by 1
-
 for (let count = 5; count < 11; count++) {
     console.log(count);  // logs 5 6 7 8 9 10
 }
@@ -19,7 +21,6 @@ for (let count = 5; count < 11; count++) {
 // Set the iterator variable to the highest desired value in the initialization expression.
 // Set the stopping condition for when the iterator variable is greater or equal than the desired amount.
 // The iterator should decrease in intervals after each iteration.
-
 for (let i = 3; i >= 0; i--) {
     console.log(i); // logs 3 2 1 0
 }
@@ -28,8 +29,8 @@ for (let i = 3; i >= 0; i--) {
 
 // 3. Looping through Arrays  - use a for loop to perform the same operation on each element on an array
 // To loop through each element in an array, a for loop should use the array’s .length property in its condition
-
-const vacationSpots = ['Bali', 'Paris', 'Tulum'];
+// When we use i to iterate through arrays we can think of it as being short-hand for the word index
+const vacationSpots = ['Bali', 'Paris', 'Tulum', 'Lecce'];
 
 for (let i = 0; i < vacationSpots.length; i++) {
     console.log(`I would love to visit ${vacationSpots[i]}`);
@@ -38,14 +39,14 @@ for (let i = 0; i < vacationSpots.length; i++) {
 
 
 // 4. Nested Loops - For each round of the outer for loop, the inner for loop will run completely.
+// One use for a nested for loop is to compare the elements in two arrays
+
 // for each friend of bob, we loop over all the friends of tina
 // 1sr friend of bob, loop over all friends of tina, and compare each friend of tina with 1st friend of bob, 
 // 2nd friend of bob, loop over all friends of tina, and compare each friend of tina with 2nd friend of bob etc
-
 const bobsFollowers = ['erik', 'juam', 'jordy', 'ronaldo'];
 const tinasFollowers = ['erik', 'juam', 'ronaldo'];
 const mutualFollowers = [];
-
 for (let b = 0; b < bobsFollowers.length; b++) {
     for (let t = 0; t < tinasFollowers.length; t++) {
         if (bobsFollowers[b] === tinasFollowers[t]) {
@@ -55,12 +56,20 @@ for (let b = 0; b < bobsFollowers.length; b++) {
 }
 console.log(mutualFollowers);  // logs [ 'erik', 'juam', 'ronaldo' ]
 
+const animal = 'cat';
+for (let i = 0; i < animal.length; i++) { // c 1 2 3 a 1 2 3 t 1 2 3
+    console.log(animal[i]);
+    for (let j = 1; j < 4; j++) {
+    console.log(j);
+    }
+}
 
 
-// 5. The while loop - creates a loop that is executed as long as a condition evaluates to true. The loop will run until the condition evaluates to false.
+// 5. The while loop - 
+// creates a loop that is executed as long as a condition evaluates to true. The loop will run until the condition evaluates to false.
 // The condition is specified before the loop, and usually, some variable is incremented or altered
 //  In situations when we want a loop to execute an undetermined number of times,
-
+// The syntax of a while loop is ideal when we don’t know in advance how many times the loop should run
 let counter = 1;
 while (counter < 4) {   // logs 1 2 3
     console.log(counter);  
@@ -69,21 +78,21 @@ while (counter < 4) {   // logs 1 2 3
 
 
 
-// 6. Do... Whiile Statements - run at least once and then loop based on a specific condition after its initial run.
+// 6. Do... Whiile Statements - 
+// run at least once and then loop based on a specific condition after its initial run.
 // says to do a task once and then keep doing it until a specified condition is no longer met. 
-
 let cupsOfSugarNeeded = 9;
 let cupsAdded = 0;
 do { // add at least one cup of sugar to the batter even if the value of cupsOfSugarNeeded is 0
     cupsAdded ++;
     console.log(cupsAdded);
-} while (cupsAdded < cupsOfSugarNeeded);
+} while (cupsAdded <= cupsOfSugarNeeded);
 
 
 
-// 7. The break Keyword- stop a loop from continuing to execute even though the original stopping condition for our loop hasn’t been met
+// 7. The break Keyword- 
+// stop a loop from continuing to execute even though the original stopping condition for our loop hasn’t been met
 // add test conditions besides the stopping condition, and exit the loop when they’re met
-
 for (let i = 0; i < 99; i++) { // will print Banana 99 times but will stop when i > 2
     if (i > 2 ) {
         break;
@@ -101,18 +110,24 @@ for (let i = 0; i < rapperArray.length; i++){   // will print each element of th
 
 
 
-// 8. The for...of loop -   The loop will iterate over each element in the iterable object and terminate itself when it reaches the last item 
-// can't loop in reverse
+// 8. The for...of loop -  ES6 version of JavaScript introduced the shorter and more concise for...of loop 
 // opt for a standard for loop if you need to access the indices or need finer control to determine what elements you want to loop over.
-const hobbies = ['singing', 'eating', 'quidditch', 'writing'];  // logs I enjoy singing. I enjoy eating. I enjoy quidditch. I enjoy writing.
+// for vs for..of loop
+const activities = ['singing', 'eating', 'quidditch', 'writing']; 
+for (let i = 0; i < activities.length; i++) {
+    console.log(`I enjoy ${activities[i]}`);
+}
+// Alternative using the for...of loop
+const hobbies = ['singing', 'eating', 'quidditch', 'writing'];  
 for (const hobby of hobbies) {
     console.log(`I enjoy ${hobby}.`);
 }
 
+
 // 8.1 Iterating throug an array
-const fruits = ['oranges', 'apples', 'grapes'];  
-for (const fruit of fruits) {  // logs oranges apples grapes
-    console.log(fruit);
+const fruits = ['apple', 'oragne', 'banana'];
+for (const fruit of fruits) {
+    console.log(`I want to eat ${fruit}`);
 }
 
 // 8.2 Iterating through a string 
@@ -128,7 +143,7 @@ for (const bird of strangeBirds) {
     if (bird === 'Basan'){ 
     break; 
     }
-    console.log(bird);
+    console.log(bird);  // logs Shoebill Cockatrice
 }
 
 // 8.4 continue statement -  skip one iteration of the loop

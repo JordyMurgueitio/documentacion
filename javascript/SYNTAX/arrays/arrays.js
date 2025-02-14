@@ -148,3 +148,17 @@ const numberClusters = [[1,2], [3,4], [5,6]];
 console.log(numberClusters[1]);  // logs [3,4]
 console.log(numberClusters[2][1]); // logs 6
 
+
+
+// Function finds the max value in an array 
+const findMax = array => {
+    let max = array[0];
+    for (let i = 1; i < array.length; i++) {
+        if (array[i] > max) {
+            max = array[i];
+        } ;
+    };
+    return max;
+};
+
+console.log(findMax([30, 45, 748]));
