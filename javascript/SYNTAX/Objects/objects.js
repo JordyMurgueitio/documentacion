@@ -1,20 +1,20 @@
-// OBJECTS - containers storing related data and functionality
+// OBJECTS - A data type for organizing a set of custom properties and behaviors.
 
 
 
 // 1. Object literals -  use curly braces, {}, to designate an object literal:
 // // This data is organized into key-value pairs. 
 // A key’s value can be of any data type including functions or other objects.
-
 const spaceShip = { // The spaceship object has two properties Fuel Type and color
     'fuel type': 'diesel',  //'Fuel Type' has quotation marks because it contains a space character.
-    color: 'silver'
+    color: 'silver'    
 }
 console.log(spaceShip);
 
 
 
-// 2. Accessing Properties - write the object’s name, followed by the dot operator and then the property name (key)
+// 2. Accessing Properties - 
+// write the object’s name, followed by the dot operator and then the property name (key)
 const car = {
     color: 'red', 
     model: 'ford',
@@ -33,7 +33,6 @@ let spaceship = {
     numCrew: 5
 };
 console.log(spaceship['Active Duty']);  // logs true
-
 // you can also use a variable inside the brackets to select the keys of an object. This can be especially helpful when working with functions:
 let returnAnyProp = (objectName, propName) => objectName[propName];
 returnAnyProp(spaceship, 'homePlanet'); // Returns 'Earth'
@@ -45,9 +44,7 @@ returnAnyProp(spaceship, 'homePlanet'); // Returns 'Earth'
 // If the property already exists on the object, whatever value it held before will be replaced with the newly assigned value.
 // If there was no property with that name, a new property will be added to the object.
 // although we can’t reassign an object declared with const, we can still mutate it,
-
 const cell = {type: 'apple', 'origin country': "china"};
-// const cell= {type: 'alien'};    TypeError: Assignment to constant variable.
 cell.type = 'samsung'; // Changes the value of the type property
 cell.color = 'blue'; // Creates a new key of 'speed' with a value of 'Mach 5'
 
@@ -75,7 +72,7 @@ alienShip.retreat();  // logs retreat message
 
 
 // 5. Nested Objects - objects are often nested— an object might have another object as a property
-
+// We can chain operators to access nested properties.
 const hotel = {
     contact: {
         name: 'Grand Hotel', 
@@ -107,7 +104,6 @@ const hotel = {
         console.log("The hotel is closed");
     }
 }
-
 console.log(hotel.contact.city); // logs barcelona
 console.log(hotel.crew.manager['located in']); // logs brasil
 console.log(hotel.activities[1]);  // logs { name: 'camping', hours: 24 }
@@ -119,24 +115,25 @@ hotel.close(); // closes the hotel
 
 
 // 6. Pass by reference - functions which change object properties mutate the object permanently (even when the object is assigned to a const variable)
+// when you assign an object to a variable or pass it to a function, you're not copying the object itself. Instead, you're just copying a reference (or pointer) to the original object
+let obj1 = { name: "John" };
+let obj2 = obj1; // obj2 now refers to the same object as obj1
+obj2.name = "Doe"; // Modifying obj2 also changes obj1
+console.log(obj1.name); // Output: "Doe"
 
-const spaceStation = {
-    homePlanet : 'Earth',
-    color : 'silver'
-};
+// if the function modifies the object, the changes will also affect the original object outside the function.
+function modifyObject(obj) {
+    obj.name = "Doe"; // Modifying the object inside the function
+}
+let person = { name: "John" };
 
-let paintIt = object => {
-    object.color = 'glorious gold'
-};
-paintIt(spaceStation);
-
-console.log(spaceStation.color) // Returns 'glorious gold'
-
-
-
-// 7. Looping through an object - for...in will execute a given block of code for each property in an object.
+modifyObject(person); // Passing the object to the function
+console.log(person.name); // Output: "Doe"
 
 
+
+// 7. Looping through an object - 
+// for...in will execute a given block of code for each property in an object.
 let flight = {
     crew: {
         captain: { 
@@ -161,7 +158,8 @@ let flight = {
         }
     }
 }; 
-// will iterate through each element of the flight.crew object. In each iteration, the variable crewMember is set to one of flight.crew‘s keys, enabling us to log a list of crew members’ role and name.
+// will iterate through each element of the flight.crew object. 
+// In each iteration, the variable crewMember is set to one of flight.crew‘s keys, enabling us to log a list of crew members’ role and name.
 for (let crewMember in flight.crew) {   
     console.log(` ${crewMember}: ${flight.crew[crewMember].name} `);
 }
