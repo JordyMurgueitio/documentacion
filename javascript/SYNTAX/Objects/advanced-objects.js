@@ -233,3 +233,38 @@ console.log(newComputer);   // logs {year: 2023, camera: true, model: 'apple', c
 9. Factory functions allow us to create object instances quickly and repeatedly.
 10. There are different ways to use object destructuring: one way is the property value shorthand and another is destructured assignment.
 */
+
+
+const team = {
+    _players: [{firstName: 'Leo', lastName: 'Messi', age: 33}, 
+        {firstName: 'Cristiano', lastName: 'Ronaldo', age: 33}, 
+        {firstName: 'Eden', lastName: 'Hazard', age: 37}],
+    _games: [{opponent: 'Madrid', teamPoints: 3, opponentPoints: 0}, 
+        {opponent: 'Chelsea', teamPoints: 3, opponentPoints: 0}, 
+        {opponent: 'LDU', teamPoints: 1, opponentPoints: 1}],
+    get players () {
+        return this._players;
+    }, 
+    get games () {
+        return this._games;
+    }, 
+    addPlayer (newFirstName, newLastName, newAge) {
+        let newPlayer = {
+            firstName: newFirstName,
+            lastName: newLastName, 
+            age: newAge
+        }
+        this._players.push(newPlayer);
+    }, 
+    addGame (newOpponent, newTeamPoints, newOpponentPoints) {
+        let game = {
+            opponent: newOpponent, 
+            teamPoints: newTeamPoints, 
+            opponentPoints: newOpponentPoints
+        }
+        this._games.push(game);
+    }
+};
+
+team.addGame('liga', 0, 3);
+team.addPlayer('jordy', 'murgueitio', 24);
