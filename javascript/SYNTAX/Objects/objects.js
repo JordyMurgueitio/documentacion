@@ -46,7 +46,7 @@ returnAnyProp(spaceship, 'homePlanet'); // Returns 'Earth'
 // although we can’t reassign an object declared with const, we can still mutate it,
 const cell = {type: 'apple', 'origin country': "china"};
 cell.type = 'samsung'; // Changes the value of the type property
-cell.color = 'blue'; // Creates a new key of 'speed' with a value of 'Mach 5'
+cell.color = 'blue'; // Creates a new key
 
 //You can delete a property from an object with the delete operator.
 delete cell["origin country"]; // Removes the origin country property
