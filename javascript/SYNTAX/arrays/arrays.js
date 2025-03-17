@@ -69,12 +69,11 @@ console.log(removed); // Output: item 2
 const shoppingList = ['orange juice', 'bananas', 'coffee beans', 'brown rice', 'pasta', 'coconut oil', 'plantains'];
 const removed_item = shoppingList.shift();
 
-console.log(shoppingList);  // prints array without 'orange juice'
+console.log(shoppingList);  // prints ['bananas', 'coffee beans', 'brown rice', 'pasta', 'coconut oil', 'plantains']
 console.log(removed_item);  // prints orange juice
 
 
 // 8. The .unshift() Method - Adds one or more elements to beginning of array and returns new length.
-
 const weekDays = ['wednesday', 'thursday', 'friday'];
 
 weekDays.unshift('monday', 'tuesday');
@@ -115,7 +114,7 @@ console.log(months);  // Expected output:  ["Jan", "Feb", "March", "April", "May
 // 11. The .indexOf() Method - returns the index of the element in the array
 // Returns -1 if the element is not found.
 const colors = ["red", "blue", "black"];
-const indexBlue = colors.indexOf("blue");
+const indexBlue = colors.indexOf("blue"); 
 console.log(indexBlue); // logs 1
 
 
