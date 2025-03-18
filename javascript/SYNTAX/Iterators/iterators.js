@@ -1,6 +1,6 @@
 // ITERATORS  - built-in array methods which make looping easier
 //  Iterators are methods called on arrays to manipulate elements and return values.
-
+// All iterator methods take a callback function, which can be a pre-defined function, a function expression, or an arrow function.
 
 
 // 1. the .forEach() method - 
