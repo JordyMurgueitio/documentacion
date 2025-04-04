@@ -25,10 +25,6 @@ CREATE TABLE table_name (
     column_2 data_type, 
     column_3 data_type
 );
-/* CREATE TABLE */ is the command that creates a new table in the database
-/* table_name */ is the name of the table you want to create
-/* column_1, column_2, and column_3 */ are the names of the columns in the table
-/* data_type */ is the type of data that will be stored in that column
 
 
 /* CREATE TABLE */
@@ -38,6 +34,10 @@ CREATE TABLE celebs (
     name TEXT, 
     age INTEGER
 );
+/* CREATE TABLE */ is the command that creates a new table in the database
+/* table_name */ is the name of the table you want to create
+/* column_1, column_2, and column_3 */ are the names of the columns in the table
+/* data_type */ is the type of data that will be stored in that column
 
 
 /* INSERT INTO */
