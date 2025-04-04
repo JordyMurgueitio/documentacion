@@ -68,7 +68,7 @@ ADD COLUMN twitter_account TEXT;
 You can use the UPDATE statement when you want to change existing records */
 UPDATE celebs 
 SET twitter_account = '@justinbieber'
-WHERE id = 1
+WHERE id = 1;
 /* UPDATE */ is a clause that edits a row in the table.
 /* SET */ is a clause that indicates the column to edit.
 /* WHERE */ is a clause that indicates which row(s) to edit.
