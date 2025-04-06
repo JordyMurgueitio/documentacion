@@ -35,8 +35,8 @@ CREATE TABLE celebs (
     age INTEGER
 );
 /* CREATE TABLE */ is the command that creates a new table in the database
-/* table_name */ is the name of the table you want to create
-/* column_1, column_2, and column_3 */ are the names of the columns in the table
+/* celebs */ is the name of the table you want to create
+/* id, name, and age */ are the names of the columns in the table
 /* data_type */ is the type of data that will be stored in that column
 
 

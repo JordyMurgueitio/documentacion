@@ -136,8 +136,8 @@ FROM movies;
 
 /* WHEN */ tests a condition and /* THEN */ gives us the string if the condition is true.
 /* ELSE */ gives us the string if all the above conditions are false.
-The /* CASE */ statement must end with /* END */.
-we can rename the columnwe can rename the column using /* AS */
+/* CASE */ statement must end with /* END */.
+/* AS */ rename the column=s in the result set.
 
 SELECT name,
     CASE
