@@ -1,10 +1,16 @@
 //  DOM Events 
+// Events on the web are user interactions and browser manipulations that you can program to trigger functionality
+// Events are triggered by user interactions with the browser, such as clicking a button, moving the mouse, or pressing a key.
 
 
-// 1.  Adding event handlers
 
-    //  1.1  .addEventListener() method -  A DOM element listens for a specific event and execute a block of code when the event is detected. 
-    //  with the .addEventListener() method , we can add multiple event handler functions
+// Registering Event handlers
+// Functions that modify and update DOM elements after an event fires
+
+// .addEventListener() method -  
+// we can have a DOM element listen for a specific event and execute a block of code when the event is detected. 
+// The DOM element that listens for an event is called the event target
+// The .addEventListener() method takes two arguments: an event name in string format and an event handler function.
 let eventTarget = document.getElementById("target-element"); 
 eventTarget.addEventListener("click", function() {
     this.style.backgroundColor = "black"; 
@@ -16,18 +22,22 @@ function chnageFont () {
 }
 eventTarget.addEventListener("click", chnageFont); 
 
-
-    // 1.2  Event Handlers can also be registered by setting an .onevent property on a DOM element (event target)
-    // With .onevent, it allows for one event handler function to be attached to the event target. 
+// .onevent property - 
+// Event Handlers can also be registered by setting an .onevent property on a DOM element (event target)
+// for registering a specific event whe append an element with .on followed by the lowercased event type name
 function eventHandlerFunction () {
     eventTarget.style.borderRadius = "15px";
 }
 eventTarget.onclick = eventHandlerFunction; 
+// the .onevent property and the .addEventListener() method will both register event listeners
+/* With .onevent, it allows for one event handler function to be attached to the event target. 
+However, with the .addEventListener() method , we can add multiple event handler functions */
 
 
 
 
-// 2. Removing event handlers - The .removeEventListener() method is used to reverse the .addEventListener() method
+// Removing event handlers 
+// The .removeEventListener() method is used to reverse the .addEventListener() method
 /* .removeEventListener() also takes two arguments:
     1. The event type as a string
     2. the name of the event handler you want to remove
