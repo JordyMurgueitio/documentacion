@@ -84,47 +84,51 @@ share.addEventListener("click", sharePhoto);
 
 // Event types 
 
-    // 4.1 Mouse Events - click, wheel, mousedown, mouseup, mouseover, mouseout
+// Mouse Events 
+/* 
+click event - fired when the user clicks on an element
+wheel event - fired when the user scrolls the mouse wheel
+mousedown event - fired when the user presses a mouse button down. doesn’t need the mouse button to be released to fire
+mouseup event - fired when the user releases the mouse button
+mouseover event - fired when the mouse enters the content of an element. 
+mouseout event - fired when the mouse leaves an element */
+let button10 = document.getElementById("button10");
+let otherButton = document.getElementById("other-button");
 
-    let button10 = document.getElementById("button10");
-    let otherButton = document.getElementById("other-button");
+function changeBackground () {
+    button10.style.backgroundColor = "blue"; 
+}; 
+function increaseWidth () {
+    button10.style.width = "500px";
+};
+function showItem () {
+    otherButton.style.display = "block";
+}
 
-    function changeBackground () {
-        button10.style.backgroundColor = "blue"; 
-    }; 
-
-    function increaseWidth () {
-        button10.style.width = "500px";
-    };
-
-    function showItem () {
-        otherButton.style.display = "block";
-    }
-
-    button10.addEventListener("mouseup", changeBackground); 
-    button10.addEventListener("mousedown", showItem);
-    button10.addEventListener("mouseover", increaseWidth); 
-    button10.addEventListener("mouseout", changeBackground);
-
-
-    // 4.2  Keyword events - keydown, keyup, keypress
-    // have unique properties assigned to their event objects like the .key property that stores the values of the key pressed by the user
-    // program the event handler function to react to a specific key, or react to any interaction with the keyboard
-
-    let ball = document.getElementById('float-circle');
-
-    function up () {
-        ball.style.bottom = "250px";
-    }; 
-
-    function down () {
-        ball.style.bottom = "50px";
-    }
-
-    document.addEventListener ("keydown", up);
-    document.addEventListener ("keyup", down);
+button10.addEventListener("mouseup", changeBackground); 
+button10.addEventListener("mousedown", showItem);
+button10.addEventListener("mouseover", increaseWidth); 
+button10.addEventListener("mouseout", changeBackground);
 
 
+// Keyboard events 
+/* 
+keydown event - fired when the user presses a key down
+keyup event - fired when the user releases a key
+keypress event - fired when the user presses a key down and releases it */
+let ball = document.getElementById('float-circle');
+function up () {
+    ball.style.bottom = "250px";
+}; 
+function down () {
+    ball.style.bottom = "50px";
+};
+
+document.addEventListener ("keydown", up);
+document.addEventListener ("keyup", down);
+/* Keyboard events have unique properties assigned to their event objects 
+like the .key property that stores the values of the key pressed by the user
+You can program the event handler function to react to a specific key */
 
 
 
