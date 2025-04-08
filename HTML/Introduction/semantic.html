@@ -60,5 +60,45 @@ Usually, <figcaption> will go inside <figure>.
 
 
 
+<!-- ARIA role -->
+The ARIA role attribute is used to define the role of an element in a web application.
+The value of an element's role changes how a screen reader communicates the element
+<div id="code-editor" role="complementary">
+    ...
+</div>
+
+
+
+<!-- ARIA role: Presentation -->
+We can instruct screen readers to skip reading unnecessary elements by setting the role attribute to presentation
+<ol role="presentation">
+    <li>List Item 1</li>
+    <li>List Item 2</li>
+</ol>
+- A screen reader will not read the element's name (“ordered list”)
+- Adding role="presentation" to an <ol> tag will cause the screen reader to skip 
+directly to the text between the <li> tags (it will not read the names of the <li> elements).
+
+
+
+<!-- ARIA properties -->   
+ARIA properties are attributes that you can add to HTML elements.
+The property aria-label gives the screen reader additional information to read out loud to the user
+<img src="#" alt="A painting of the Shenandoah Valley"/>
+<p aria-label="Artist">Armand Cabrera, 2010</p>
+
+
+
+<!-- The alt attribute -->
+The alt attribute is used to describe an image (or several other elements). 
+A screen reader will read the value of the alt attribute out loud
+<img src="#" alt="a kitten snuggling a puppy"/>
+
+When using the alt attribute, you should adhere to these conventions:
+
+1. In general, the value of alt should concisely describe the image.
+2. For images that are also <a> elements, the alt attribute should describe the source that the link targets.
+3. If an image conveys no information (such as a decorative border), the alt attribute should be empty, but should never be omitted.
+4. If an image is described by text near the image, do not duplicate the description in the alt attribute. Use an empty alt attribute instead.
 
 
