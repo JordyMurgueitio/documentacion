@@ -111,3 +111,4 @@ The results are grouped by price */
 
 
 
+/* The WHERE clause filters rows, whereas the HAVING clause filter groups. */
