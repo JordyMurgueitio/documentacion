@@ -119,6 +119,25 @@ The results are grouped by category and ordered by the number of startups in des
 
 
 
+/* strftime() function */
+/* SQLite comes with a strftime() function - that allows you to return a formatted date. 
+It takes two arguments:
+strftime(format, column) */
+-- What's the best time to post a story?
+SELECT strftime('%H', timestamp) AS 'Hour', 
+    ROUND(AVG(score), 1) AS 'Average Score', 
+    COUNT(*) AS 'Number of Stories'
+FROM hacker_news
+WHERE timestamp IS NOT NULL
+GROUP BY 1
+ORDER BY 2 DESC; /* Returns the average score and number of stories for each hour of the day
+The results are grouped by hour and ordered by average score in descending order */
+
+
+
+
+
+
 /* EXAMPLES */
 
 SELECT COUNT(*)
@@ -164,3 +183,13 @@ HAVING AVG(employees) > 500; /* returns the average number of employees for star
 The results are grouped by location */
 
 
+SELECT CASE
+    WHEN url LIKE '%github.com%' THEN 'GitHub'
+    WHEN url LIKE '%medium.com%' THEN 'Medium'
+    WHEN url LIKE '%nytimes.com%' THEN 'New York Times'
+    ELSE 'Other'
+    END AS 'Source',
+    COUNT(*)
+FROM hacker_news
+GROUP BY 1;  /* returns the number of articles from each source
+The results are grouped by source */ 
