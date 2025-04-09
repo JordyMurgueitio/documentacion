@@ -98,5 +98,16 @@ The results are grouped by category and price */
 
 /* HAVING */
 /* Filters the results of a GROUP BY statement
+When we want to limit the results of a query based on an aggregate property, use HAVING
 HAVING comes after the GROUP BY statement, but before the ORDER BY statement
 HAVING takes a column name and a condition as arguments */
+SELECT price, 
+    ROUND(AVG(downloads)),
+    COUNT(*)
+FROM fake_apps
+GROUP BY price
+HAVING COUNT(*) > 10;  /* Returns the average downloads and the number of apps at each price point that have more than 10 apps
+The results are grouped by price */
+
+
+
