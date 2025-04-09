@@ -109,6 +109,58 @@ GROUP BY price
 HAVING COUNT(*) > 10;  /* Returns the average downloads and the number of apps at each price point that have more than 10 apps
 The results are grouped by price */
 
-
-
 /* The WHERE clause filters rows, whereas the HAVING clause filter groups. */
+SELECT category, COUNT(*)
+FROM startups
+GROUP BY category
+HAVING COUNT(*) > 3
+ORDER BY 2 DESC; /* Returns the number of startups in each category that have more than 3 startups
+The results are grouped by category and ordered by the number of startups in descending order */
+
+
+
+/* EXAMPLES */
+
+SELECT COUNT(*)
+FROM startups; /* returns all columns in the startups table */
+
+SELECT SUM(valuation)
+FROM startups; /* returns the sum of all valuations in the startups table */
+
+SELECT MAX(raised)
+FROM startups
+WHERE stage = 'Seed'; /* returns the maximum amount raised by startups in the Seed stage */
+
+SELECT MIN(founded)
+FROM startups; /* returns the min value in the founded column (oldest company)  */
+
+SELECT AVG(valuation)
+FROM startups;  /* returns the average valuation of all startups in the table */
+
+SELECT category, AVG(valuation)
+FROM startups
+GROUP BY category; /* returns the average valuation of startups in each category */
+
+SELECT category, ROUND(AVG(valuation), 2)
+FROM startups
+GROUP BY 1
+ORDER BY 2 DESC; /* returns the average valuation of startups in each category rounded to 2 decimal places
+The results are ordered by the average valuation in descending order */
+
+SELECT category, COUNT(*)
+FROM startups
+GROUP BY 1
+HAVING COUNT(*) > 3; /* returns the number of startups in each category that have more than 3 startups
+The results are grouped by category */
+
+SELECT location, AVG(employees)
+FROM startups 
+GROUP BY location;  /* returns the average number of employees for startups in each location */
+
+SELECT location, AVG(employees)
+FROM startups 
+GROUP BY 1
+HAVING AVG(employees) > 500; /* returns the average number of employees for startups in each location that have more than 500 employees
+The results are grouped by location */
+
+
