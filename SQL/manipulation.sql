@@ -51,7 +51,8 @@ VALUES (1, 'Justin Bieber', 29);
 /* Fetch data from a database */
 /* SELECT is a clause that indicates that the statement is a query. You will use SELECT every time you query data from a database */
 SELECT * FROM celebs;
-SELECT statements always return a new table called the result set.
+/* SELECT statements always return a new table called the result set. */
+
 
 
 /* ALTER TABLE */ 
@@ -79,7 +80,7 @@ WHERE id = 1;
 The statement below deletes all records in the celebs table with no twitter_handle.
 If a WHERE statment is excluded, all the rows in the table will be deleted */
 DELETE FROM celebs 
-WHERE twitter_account IS NULL
+WHERE twitter_account IS NULL;
 /* DELETE FROM */ is a clause that lets you delete rows from a table.
 /* WHERE */ is a clause that lets you select which rows you want to delete
 /* IS NULL */ is a condition in SQL that returns true when the value is NULL and false otherwise
