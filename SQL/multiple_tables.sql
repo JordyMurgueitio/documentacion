@@ -87,3 +87,59 @@ Foreign key of students is class_id which corresponds to the primary key of clas
 
 
 /* CROSS JOIN */
+-- Combine all rows of one table with all rows of another table
+-- Returns all possible combinations of rows from both tables
+-- Cross joins don’t require an ON statement. You’re not really joining on any columns
+SELECT shirts.shirt_color,
+    pants.pants_color
+FROM shirts
+CROSS JOIN pants; 
+-- A more common usage of CROSS JOIN is when we need to compare each row of a table to a list of values
+
+
+
+/* UNION */
+-- stacks one dataset on top of another
+-- Combines the results of two or more SELECT queries
+-- The number of columns and the data types of the columns must be the same in each SELECT statement
+SELECT *
+FROM table1
+UNION
+SELECT *
+FROM table2;
+
+
+
+/* WITH */
+-- Combine two tables, but one of the tables is the result of another calculation
+-- The WITH statement allows you to create a temporary table that you can use in your main query
+-- Stores the result of a query in a temporary table using an alias
+WITH temp_table AS (
+    SELECT *
+    FROM table1
+    WHERE column1 = 'value'
+)
+SELECT *
+FROM temp_table
+JOIN table2
+ON temp_table.column2 = table2.column2; -- The result set will include all rows from temp_table and only the rows from table2 that match the ON condition 
+
+WITH previous_query AS (
+    SELECT customer_id,
+    COUNT(subscription_id) AS 'subscriptions'
+    FROM orders
+    GROUP BY customer_id
+)
+SELECT customers.customer_name,
+    previous_query.subscriptions
+FROM previous_query 
+JOIN customers 
+ON customers.customer_id = previous_query.customer_id; 
+
+
+
+
+
+
+
+
