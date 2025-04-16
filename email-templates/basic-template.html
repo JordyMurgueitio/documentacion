@@ -31,30 +31,18 @@
         <!-- ALL VARIABLES - please, if more/different variables are needed in the template ADD them here, and REMOVE variables that are not used in the template or its links -->  
         {% assign student_name = {{${first_name} | escape}} %} 
         {% assign tutor_name = {{event_properties.${tutor_name} | escape}} %}
-        {% assign tutor_avatar = {{event_properties.${tutor_ava} | escape}} %}
-        {% assign tutoring_id = {{event_properties.${tutoring_id}}} %} <!-- Always leave this variable in - it's needed for the header -->
-        {% assign tutor_id = {{event_properties.${tutor_id}}} %}
-        {% assign collocutor_id = {{event_properties.${collocutor_id}}} %}
         {% assign request_id = {{event_properties.${request_id}}} %}
         {% assign num_hours = {{event_properties.${num_hours}}} %}
-        {% assign subject = {{event_properties.${subject_name}}} %}
-        {{content_blocks.${add_translated_subjects_with_cases_with_fallback}}}
-        <!-- when subject name is needed, we need to add to var_list the following variables: 
-            subject_name: {{subject_name | strip}}, subject_name1: {{subject_name1 | strip}}, subject_name2: {{subject_name2 | strip}}, subject_name3: {{subject_name3 | strip}}, subject_name4: {{subject_name4 | strip}} -->
         {% assign today = 'now' | date: "%s" %}
         {% assign date_in_3_days= today | plus: 259200 | date: "%d/%m/%y" %}
         {%capture lang %}{{custom_attribute.${language_version}}}{% endcapture %}
-        {%capture promocode %}HELLOWORLD{% endcapture %}
         {% assign price = {{event_properties.${price} | round 2}} %}
-        {% assign currency = {{event_properties.${currency}}} %}
         
         
         <!-- GENERAL URLS - please REMOVE the links that are not used in the template -->
         {% capture home %}{{content_blocks.${r_link_home}}}{% endcapture %} 
         {% capture my_lessons %}{{content_blocks.${r_link_my_lessons}}}{% endcapture %} <!--add in <a> universal=true -->
         {% capture my_subscription %}{{content_blocks.${r_link_my_subscription}}}{% endcapture %}
-        {% capture find_tutors %}{{content_blocks.${r_link_find_tutors}}}{% endcapture %} <!-- if they had trial -->
-        {% capture find_tutors_with_psq %}{{content_blocks.${r_link_find_tutors_with_psq}}}{% endcapture %} <!-- if they didn't have trial -->
 
         
         <!--DESIGN SYSTEM: START -->
@@ -75,12 +63,6 @@
         @media (min-width: 471px) {
         }
         @media (max-width: 470px) {
-        .timer_days{
-            width: 100% !important;
-        }
-        .timer_no_days{
-            width: 95% !important;
-        }
         }
         </style>
         <!--EXTRA STYLES: END -->
@@ -102,29 +84,11 @@
     
 
         <center class="bg_color_white" style="width: 100%;">
-        <!-- Visually Hidden Preheader Text : START 
-            <div style="display:none;font-size:1px;line-height:1px;max-height:0px;max-width:0px;opacity:0;overflow:hidden;mso-hide:all;font-family: sans-serif;">
-                (Optional) This text will appear in the inbox preview, but not the email body.
-            </div>  -->
-        <!-- Visually Hidden Preheader Text : END -->
-
-        <!--
-            Set the email width. Defined in two places:
-            1. max-width for all clients except Desktop Windows Outlook, allowing the email to squish on narrow but never go wider than 520px.
-            2. MSO tags for Desktop Windows Outlook enforce a 520px width.
-        -->
         <table class="bg_color_grey50" cellspacing="0" cellpadding="0" border="0" align="center" width="100%" style="max-width: 800px;">
             <tr>
             <td>
                 <!-- EMAIL BODY : START -->
                 <table class="section bg_color_grey50" cellspacing="0" cellpadding="0" border="0" align="center" width="520"  style="max-width: 520px; text-align: center;">
-                
-                <!-- HEADER (logo + menu) : START -->
-                {{content_blocks.${r_logo_black}}}
-                {{content_blocks.${r_student_menu}}}
-                {{content_blocks.${r_tutor_menu}}}
-                
-                <!-- HEADER: END -->
                 
                 <!-- Template name for translations -->
                 {% assign template_name = "TEMPLATE_NAME_SAME_AS_IN_CROWDIN" %}
@@ -298,178 +262,8 @@
                     </td>
                 </tr>
                 <!-- SECTION 2: Hero block with image - END -->
-                
-                <!-- SECTION 3: Regular block no image - START -->
-                <tr>
-                    <td class="section_mobile_margin" style="padding-bottom: 24px;">
-                    <table class="section bg_color_white" cellspacing="0" cellpadding="0" border="0"  width="520" style="padding: 24px 24px">
-                        <!-- Title: START -->
-                        <tr>
-                        <td style="font-family: Tahoma, Helvetica, Arial, sans-serif; color: #121117; font-weight: 700; padding-bottom: 12px;" class="text_align_left">
-                            <p class="block_title text_color_grey900" style="margin: 0px;">
-                            {% capture translation_string %}{{ strings["Add header here %(VARIABLE)s"] | default: "Regular block no image"}}{% endcapture %}{% capture var_list %}VARIABLE: {{variable}}{% endcapture%}{{content_blocks.${input_variables_in_translations}}}
-                            </p>
-                        </td>
-                        </tr>
-                        <!-- Title: END -->
-                        <!-- Paragraph: START -->
-                        <tr>
-                        <td style="font-family: Tahoma, Helvetica, Arial, sans-serif; color: #121117; padding-bottom: 16px;" class="text_align_left">
-                            <p class="text text_400 text_color_grey900">
-                            {% capture translation_string %}{{ strings["Add your text here %(VARIABLE)s"] | default: "Add your text here %(VARIABLE)s"}}{% endcapture %}{% capture var_list %}VARIABLE: {{variable}}{% endcapture%}{{content_blocks.${input_variables_in_translations}}}
-                            </p>
-                        </td>
-                        </tr>
-                        <!-- Paragraph: END -->
-                        <!-- Primary Button: START -->
-                        <tr>
-                        <td>
-                            <table width="100%" cellspacing="0" cellpadding="0" border="0">
-                            <tr>
-                                <td style="padding-bottom: 12px">
-                                <table cellspacing="0" cellpadding="0" border="0" height="44" align="center" width="100%">
-                                    <tr>
-                                    <td class="btn btn_medium btn_primary" align="center" valign="middle" height="44"  style="font-size: 16px; line-height: 24px; font-weight: 400; font-family: Tahoma, Helvetica, Arial, sans-serif; color: #121117; text-decoration: none;">
-                                        <a class="btn_link btn_link_medium" href="{{my_lessons}}" target="_blank" valign="middle" style="font-size: 16px; line-height: 24px; font-weight: 400; font-family: Tahoma, Helvetica, Arial, sans-serif; color: #121117; text-decoration: none;">{{ strings["Button Text"] | default: "Button text"}}</a>
-                                    </td> 
-                                    </tr>
-                                </table>
-                                </td>
-                            </tr>
-                            </table>
-                        </td>
-                        </tr>
-                        <!-- Primary Button: END -->
-                        <!-- Secondary Button: START -->
-                        <tr>
-                        <td>
-                            <table width="100%" cellspacing="0" cellpadding="0" border="0">
-                            <tr>
-                                <td style="padding-top: 0px; padding-bottom: 12px;">
-                                <table cellspacing="0" cellpadding="0" border="0" align="center"  height="44" width="100%">
-                                    <tr>
-                                    <td class="btn btn_medium btn_secondary" align="center" valign="middle" height="44"  style="font-size: 16px; line-height: 24px; font-weight: 400; font-family: Tahoma, Helvetica, Arial, sans-serif; color: #121117; text-decoration: none;">
-                                        <a class="btn_link btn_link_medium" href="{{my_lessons}}" target="_blank" valign="middle" style="font-size: 16px; line-height: 24px; font-weight: 400; font-family: Tahoma, Helvetica, Arial, sans-serif; color: #121117; text-decoration: none;">{{ strings["Button Text"] | default: "Button text"}}</a>
-                                    </td> 
-                                    </tr> 
-                                </table>
-                                </td>
-                            </tr>
-                            </table>
-                        </td>
-                        </tr>
-                        <!-- Secondary Button: END -->
-                        <!-- Small text under button: START -->
-                        {%capture embedded_link %}<a class="text_color_grey500" href="{{my_lessons}}">{{ strings["embedded link"] | default: "embedded link"}}</a>{% endcapture %}
-                        <tr>
-                        <td style="font-family: Tahoma, Helvetica, Arial, sans-serif; color: #121117;" class="text_align_left text_color_grey500">
-                            <p class="small_text text_color_grey500">
-                            {% capture translation_string %}{{ strings["Small text with %(embedded_link)s"] | default: "Small text with %(embedded_link)s"}}{% endcapture %}{% capture var_list %}embedded_link: {{embedded_link}}{% endcapture%}{{content_blocks.${input_variables_in_translations}}}
-                            </p>
-                        </td>
-                        </tr>
-                        <!-- Small text under button: END -->
-                    </table>
-                    </td>
-                </tr>
-                <!-- SECTION 3: Regular block no image - END -->
-                
-                
-                <!-- SECTION 5: Regular block with image - START -->
-                <tr>
-                    <td class="section_mobile_margin" style="padding-bottom: 24px;">
-                    <table cellspacing="0" cellpadding="0" border="0" width="520" style="padding: 0px 0px 24px 0px;" class="section bg_color_white">
-                        <!-- Upper part with image: START -->
-                        <!-- Image: START -->
-                        <tr>
-                        <td class="upper_section text_align_center hide_desktop" style="padding-bottom: 16px;">
-                            <a href="{{buy_hours_with_modal}}">
-                            <img src="https://cdn.braze.eu/appboy/communication/assets/image_assets/images/64e4c2eb20fac502bd6975a5/original.png?1692713706" width="520" class="img_100 upper_section">
-                            </a>
-                        </td>
-                        </tr>
-                        <!-- Image: END -->
-                        <!-- Upper part with image: END -->
-                        <!-- Lower part of the block: START -->
-                        <tr>
-                        <td>
-                            <table cellspacing="0" cellpadding="0" border="0" width="100%" style="padding: 0px 24px 0px 24px;">
-                            <!-- Title: START -->
-                            <tr>
-                                <td style="font-family: Tahoma, Helvetica, Arial, sans-serif; color: #121117; font-weight: 700; padding-bottom: 12px;" class="text_align_left background_red">
-                                <p class="block_title text_color_grey900">
-                                    {% capture translation_string %}{{ strings["Add header here %(VARIABLE)s"] | default: "Regular block with image"}}{% endcapture %}{% capture var_list %}VARIABLE: {{variable}}{% endcapture%}{{content_blocks.${input_variables_in_translations}}}
-                                </p>
-                                </td>
-                            </tr>
-                            <!-- Title: END -->
-                            <!-- Paragraph: START -->
-                            <tr>
-                                <td style="font-family: Tahoma, Helvetica, Arial, sans-serif; color: #121117; padding-bottom: 16px;" class="text_align_left">
-                                <p class="text text_400 text_color_grey900">
-                                    {% capture translation_string %}{{ strings["Add your text here %(VARIABLE)s"] | default: "Add your text here %(VARIABLE)s"}}{% endcapture %}{% capture var_list %}VARIABLE: {{variable}}{% endcapture%}{{content_blocks.${input_variables_in_translations}}}
-                                </p>
-                                </td>
-                            </tr>
-                            <!-- Paragraph: END -->
-                            <!-- Primary Button: START -->
-                            <tr>
-                                <td>
-                                <table width="100%" cellspacing="0" cellpadding="0" border="0">
-                                    <tr>
-                                    <td style="padding-bottom: 12px">
-                                        <table cellspacing="0" cellpadding="0" border="0" height="44" align="center" width="100%">
-                                        <tr>
-                                            <td class="btn btn_medium btn_primary" align="center" valign="middle" height="44"  style="font-size: 16px; line-height: 24px; font-weight: 400; font-family: Tahoma, Helvetica, Arial, sans-serif; color: #121117; text-decoration: none;">
-                                            <a class="btn_link btn_link_medium" href="{{my_lessons}}" target="_blank" valign="middle" style="font-size: 16px; line-height: 24px; font-weight: 400; font-family: Tahoma, Helvetica, Arial, sans-serif; color: #121117; text-decoration: none;">{{ strings["Button Text"] | default: "Button text"}}</a>
-                                            </td> 
-                                        </tr>
-                                        </table>
-                                    </td>
-                                    </tr>
-                                </table>
-                                </td>
-                            </tr>
-                            <!-- Primary Button: END -->
-                            <!-- Secondary Button: START -->
-                            <tr>
-                                <td>
-                                <table width="100%" cellspacing="0" cellpadding="0" border="0">
-                                    <tr>
-                                    <td style="padding-top: 0px; padding-bottom: 12px;">
-                                        <table cellspacing="0" cellpadding="0" border="0" align="center"  height="44" width="100%">
-                                        <tr>
-                                            <td class="btn btn_medium btn_secondary" align="center" valign="middle" height="44"  style="font-size: 16px; line-height: 24px; font-weight: 400; font-family: Tahoma, Helvetica, Arial, sans-serif; color: #121117; text-decoration: none;">
-                                            <a class="btn_link btn_link_medium" href="{{my_lessons}}" target="_blank" valign="middle" style="font-size: 16px; line-height: 24px; font-weight: 400; font-family: Tahoma, Helvetica, Arial, sans-serif; color: #121117; text-decoration: none;">{{ strings["Button Text"] | default: "Button text"}}</a>
-                                            </td> 
-                                        </tr> 
-                                        </table>
-                                    </td>
-                                    </tr>
-                                </table>
-                                </td>
-                            </tr>
-                            <!-- Secondary Button: END -->
-                            <!-- Small text under button: START -->
-                            {%capture embedded_link %}<a class="text_color_grey500" href="{{my_lessons}}">{{ strings["embedded link"] | default: "embedded link"}}</a>{% endcapture %}
-                            <tr>
-                                <td style="font-family: Tahoma, Helvetica, Arial, sans-serif; color: #121117;" class="text_align_left text_color_grey500">
-                                <p class="small_text text_color_grey500">
-                                    {% capture translation_string %}{{ strings["Small text with %(embedded_link)s"] | default: "Small text with %(embedded_link)s"}}{% endcapture %}{% capture var_list %}embedded_link: {{embedded_link}}{% endcapture%}{{content_blocks.${input_variables_in_translations}}}
-                                </p>
-                                </td>
-                            </tr>
-                            <!-- Small text under button: END -->
-                            </table>
-                        </td>
-                        </tr>
-                        <!-- Lower part of the block: END -->
-                    </table>
-                    </td>
-                </tr>
-                <!-- SECTION 5: Regular block with image - END -->
-                
-                <!-- SECTION 6: Block 1/3 image right - START -->
+            
+                <!-- SECTION 3: Block 1/3 image right - START -->
                 <tr>
                     <td class="section_mobile_margin" style="padding-bottom: 24px;">
                     <table cellspacing="0" cellpadding="0" border="0" width="520" order="0" width="520" class="section bg_color_white">
@@ -537,77 +331,7 @@
                     </table>
                     </td>
                 </tr>
-                <!--SECTION 6: Block 1/3 image right - END -->
-                
-                <!--SECTION 7: Block 1/3 image left - START -->
-                <tr>
-                    <td class="section_mobile_margin" style="padding-bottom: 24px;">
-                    <table cellspacing="0" cellpadding="0" border="0" width="520" order="0" width="520" class="section bg_color_white">
-                        <tr>
-                        <!-- Desktop image: START -->
-                        <td class="one_third_img text_align_left show_desktop hide_mobile left_img bg_color_pink50" style="vertical-align:bottom;">
-                            <img src="{{INSERT_DESKTOP_IMAGE_HERE}}" width="150" style="display: block;">
-                        </td>
-                        <!-- Desktop image: END -->
-                        <!-- Mobile image: START -->
-                        <td class="one_third_img text_align_center show_mobile left_img bg_color_pink50" style="display: none; mso-hide: all;">
-                        <img class="show_mobile" src="{{INSERT_MOBILE_IMAGE_HERE}}" height="130" style="padding-top: 20px; display:none; mso-hide: all;">
-                        </td>
-                        <!-- Mobile image: END -->
-                        <!-- Text: START -->
-                        <td class="text_align_left two_thirds_text" style="padding: 24px 24px;">
-                            <table style="width: 100%;">
-                            <tr>
-                                <td  class="text_align_left mobile_padding" style="padding-bottom: 4px; font-family: Tahoma, Helvetica, Arial, sans-serif; color: #121117; font-weight: 700;">
-                                <p class="block_title text_color_grey900">
-                                    {% capture translation_string %}{{ strings["Add header here %(VARIABLE)s"] | default: "1/3 block"}}{% endcapture %}{% capture var_list %}VARIABLE: {{variable}}{% endcapture%}{{content_blocks.${input_variables_in_translations}}}
-                                </p>
-                                </td>
-                            </tr>
-                            
-                            <tr>
-                                <td class="text_align_left mobile_padding" style="padding-bottom: 4px; font-family: Tahoma, Helvetica, Arial, sans-serif; color: #121117;">
-                                <p class="text text_400 text_color_grey900">
-                                    {% capture translation_string %}{{ strings["Add your text here %(VARIABLE)s"] | default: "Add your text here %(VARIABLE)s"}}{% endcapture %}{% capture var_list %}VARIABLE: {{variable}}{% endcapture%}{{content_blocks.${input_variables_in_translations}}}
-                                </p>
-                                </td>
-                            </tr>
-                            
-                            <tr>
-                                <td class="text_align_left mobile_padding" style="padding-bottom: 12px; font-family: Tahoma, Helvetica, Arial, sans-serif; color: #121117;">
-                                <p class="text text_400 text_color_grey900">
-                                    {% capture translation_string %}{{ strings["Add your text here %(VARIABLE)s"] | default: "Add your text here %(VARIABLE)s"}}{% endcapture %}{% capture var_list %}VARIABLE: {{variable}}{% endcapture%}{{content_blocks.${input_variables_in_translations}}}
-                                </p>
-                                </td>
-                            </tr>
-                            
-                            <!-- Primary Button: START -->
-                            <tr>
-                                <td>
-                                <table width="100%" cellspacing="0" cellpadding="0" border="0">
-                                    <tr>
-                                    <td>
-                                        <table cellspacing="0" cellpadding="0" border="0" height="44" align="center" width="100%">
-                                        <tr>
-                                            <td class="btn btn_medium btn_primary" align="center" valign="middle" height="44"  style="font-size: 16px; line-height: 24px; font-weight: 400; font-family: Tahoma, Helvetica, Arial, sans-serif; color: #121117; text-decoration: none;">
-                                            <a class="btn_link btn_link_medium" href="{{my_lessons}}" target="_blank" valign="middle" style="font-size: 16px; line-height: 24px; font-weight: 400; font-family: Tahoma, Helvetica, Arial, sans-serif; color: #121117; text-decoration: none;">{{ strings["Button Text"] | default: "Button text"}}</a>
-                                            </td> 
-                                        </tr>
-                                        </table>
-                                    </td>
-                                    </tr>
-                                </table>
-                                </td>
-                            </tr>
-                            <!-- Primary Button: END -->
-                            </table>
-                        </td>
-                        <!-- Text: END -->
-                        </tr>
-                    </table>
-                    </td>
-                </tr>
-                <!--SECTION 7: Block 1/3 image left - END -->
+                <!--SECTION 3: Block 1/3 image right - END -->
                     
                 <!-- SECTION 12: Block with miscellaneus - START -->
                 <tr>
@@ -1159,70 +883,7 @@
                         </td>
                         </tr>
                         <!-- Title: END -->
-                        <!-- Badge block: START -->
-                        <tr>
-                        <td class="text_align_left" style="padding-bottom: 4px;">
-                            <table width="100%" cellspacing="0" cellpadding="0" border="0">
-                            <!-- Badge: START -->
-                            <tr>
-                                <td>
-                                <table cellspacing="0" cellpadding="0" border="0" width="100%">
-                                    <tr>
-                                    <td class="text_align_left badge_display_block" style="padding-bottom: 4px;">
-                                        <table cellspacing="0" cellpadding="0" border="0" width="100">
-                                        <tr>
-                                            <td class="text_align_center bg_color_pink50" style="font-family: Tahoma, Helvetica, Arial, sans-serif; color: #ffffff; font-weight: 700; padding: 2px 8px; border-radius: 4px;">
-                                            <p class="badge_text text_400  text_color_grey900">
-                                            {{ strings["Badge"] | default: "Badge"}}
-                                            </p>
-                                            </td>
-                                        </tr>
-                                        </table>
-                                    </td>
-                                    <td class="text_align_left badge_display_block" style="padding-bottom: 4px; padding-left: 8px;">
-                                        <table cellspacing="0" cellpadding="0" border="0" width="100">
-                                        <tr>
-                                            <td class="text_align_center bg_color_pink600" style="font-family: Tahoma, Helvetica, Arial, sans-serif; color: #ffffff; font-weight: 700; padding: 2px 8px; border-radius: 4px;">
-                                            <p class="badge_text text_400  text_color_white">
-                                            {{ strings["Other Badge"] | default: "Other Badge"}}
-                                            </p>
-                                            </td>
-                                        </tr>
-                                        </table>
-                                    </td>
-                                    <td class="text_align_left badge_display_block" style="padding-bottom: 4px;  padding-left: 8px;">
-                                        <table cellspacing="0" cellpadding="0" border="0" width="100">
-                                        <tr>
-                                            <td class="text_align_center bg_color_yellow400" style="font-family: Tahoma, Helvetica, Arial, sans-serif; color: #ffffff; font-weight: 700; padding: 2px 8px; border-radius: 4px; border: 1px solid #121117;">
-                                            <p class="badge_text text_400  text_color_grey900">
-                                            {{ strings["Last Badge"] | default: "Last Badge"}}
-                                            </p>
-                                            </td>
-                                        </tr>
-                                        </table>
-                                    </td>
-                                    <!-- Text next to badge: START -->
-                                    <td class="text_align_left badge_display_block" style="padding-bottom: 4px;  padding-left: 8px;">
-                                        <table cellspacing="0" cellpadding="0" border="0" width="100">
-                                        <tr>
-                                            <td class="text_align_left" style="font-family: Tahoma, Helvetica, Arial, sans-serif; color: #121117; padding-left: 8px;">
-                                            <p class="badge_text text_400 text_color_grey900">
-                                                <s>{{ strings["text"] | default: "text"}}</s>
-                                            </p>
-                                            </td>
-                                        </tr>
-                                        </table>
-                                    </td>
-                                    <!-- Text next to badge: END -->
-                                    </tr>
-                                </table>
-                                </td>
-                            </tr>
-                            <!-- Badge: END -->
-                            </table>
-                        </td>
-                        </tr>
-                        <!-- Badge block: END -->
+                        
                         <!-- Message block: START -->
                         <!-- Title: START -->
                         <tr>
@@ -1299,25 +960,6 @@
                         </td>
                         </tr>
                         <!-- Colored detail block: END -->
-                        <!-- Promocode: START -->
-                        <tr>
-                        <td>
-                            <table width="100%" cellspacing="0" cellpadding="0" border="0">
-                            <tr>
-                                <td style="padding-top: 16px; padding-bottom: 8px">
-                                <table cellspacing="0" cellpadding="0" border="0" height="44" align="center" width="100%">
-                                    <tr>
-                                    <td align="center" valign="middle" height="40"  style="font-size: 16px; line-height: 24px; font-weight: 400; font-family: Tahoma, Helvetica, Arial, sans-serif; color: #121117; text-decoration: none; border: 2px solid #DCDCE5; border-radius: 8px; padding: 4px">
-                                        <p class="text text_700 text_color_grey900" target="_blank" valign="middle" style="font-size: 16px; line-height: 24px; font-weight: 700; font-family: Tahoma, Helvetica, Arial, sans-serif; color: #121117;"><img src="https://cdn.braze.eu/appboy/communication/assets/image_assets/images/64e86d9c702b8928b30fbc44/original.png?1692954012" width="24" style="padding-right: 8px; vertical-align: middle;">{{ strings["PROMO CODE:"] | default: "PROMO CODE:"}} <span class="text_color_pink400">{{promocode}}</span></p>
-                                    </td> 
-                                    </tr>
-                                </table>
-                                </td>
-                            </tr>
-                            </table>
-                        </td>
-                        </tr>
-                        <!-- Promocode: END -->
                     
                         <!-- Quote Colored detail block : START -->
                         <!-- Title: START -->
