@@ -1,0 +1,25 @@
+<!-- Backtrack -->
+Git offers a few eraser-like features that allow us to undo mistakes during project creation
+
+
+<!-- head commit -->
+<!-- the commit you are currently on is known as the HEAD commit -->
+<!-- To see the HEAD commit, enter: -->
+git show HEAD
+
+
+<!-- git checkout -->
+<!-- Discards changes in the working directory -->
+<!-- will restore the file in your working directory to look exactly as it did when you last made a commit -->
+git checkout HEAD filename 
+
+
+<!-- git reset -->
+<!-- Unstages file changes in the staging area -->
+<!-- It does not discard file changes from the working directory, it just removes them from the staging area. -->
+git reset HEAD filename
+
+
+git reset commit_SHA
+<!--Resets to a previous commit in your commit history -->
+<!-- works by using the first 7 characters of the SHA of a previous commit -->
