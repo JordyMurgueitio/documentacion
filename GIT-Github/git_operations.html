@@ -23,3 +23,41 @@ git reset HEAD filename
 git reset commit_SHA
 <!--Resets to a previous commit in your commit history -->
 <!-- works by using the first 7 characters of the SHA of a previous commit -->
+
+
+
+<!-- git stash -->
+<!-- will store your work temporarily for later use in a hidden directory -->
+<!-- It is useful when you want to switch branches but have uncommitted changes in your working directory -->
+git stash 
+<!-- to retrieve the code you were working on previously, you can “pop” the work that was stored when you used git stash. -->
+git stash pop 
+<!-- From here, you can continue your work and commit it when ready -->
+
+
+
+<!-- git log -->
+<!-- shows the commit history of the current branch -->
+git log
+
+<!-- git log -S "keyword" -->
+<!-- searches the commit history for a specific keyword -->
+git log -S "add" <!-- find any commits where the 'add' keyword was used -->
+
+<!-- git log --oneline --graph -->
+<!-- visual representation of how the branches and commits were created -->
+<!-- shows the commit history in a more compact format -->
+git log --oneline --graph
+
+
+
+
+<!-- git commit --ammend -->
+<!-- allows you to modify the last commit -->
+<!-- This is useful if you forgot to add a file or want to change the commit message -->
+git commit --ammend   
+<!-- This will open the commit message in your default text editor, allowing you to modify it -->
+
+
+
+
