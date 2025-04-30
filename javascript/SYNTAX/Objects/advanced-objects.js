@@ -174,7 +174,7 @@ const robot123 = {
         fireLaser() {
             console.log('Pew Pew');
         },
-        }
+    }
 };
 const {functionality} = robot123;   
 functionality.beep();   

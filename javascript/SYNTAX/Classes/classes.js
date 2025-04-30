@@ -1,9 +1,9 @@
 // CLASSES
 
 
-// 1. Introduction to classes - Classes are a tool that developers use to quickly produce similar objects.
+// 1. Introduction to classes - 
+// Classes are a tool that developers use to quickly produce similar objects.
 //  By convention, we capitalize and PascalCase class names ejm: class NewPerson
-
 class Dog {
     constructor(name) {
         this._name = name;
@@ -19,40 +19,42 @@ class Dog {
         this._behavior ++;
     }
 } 
-
 const tobi = new Dog("tobi");
 console.log(tobi);
 
 
 
-// 2. Constructor - JavaScript calls the constructor() method every time it creates a new instance of a class
-
+// 2. Constructor - 
+// JavaScript calls the constructor() method every time it creates a new instance of a class
+// Inside of the constructor() method, we use the this keyword. In the context of a class, this refers to an instance of that class
 class Surgeon {
     constructor (name, department) {
         this.name= name;
         this.department= department;
     }
 };
+const surgeonRomero = new Surgeon("Fran Romero", "Medico general");
 
 
 
-// 3. Instance - An instance is an object that contains the property names and methods of a class, but with unique property values.
+// 3. Instance - 
+// Object that contains the property names and methods of a class, but with unique property values.
+// We use the new keyword to create an instance of our class.
 class OtherDog {
     constructor (name, color) {
         this.name = name; 
         this.color = color;
     }
-}
-//  we use the new keyword to create an instance of our OtherDog class.
+};
 const max = new OtherDog("max", "white");
 const firulais = new OtherDog("firulais", "black");
-//  we use the new keyword to create an instance of our Surgeon class from example 2.
-const surgeonRomero = new Surgeon("Fran Romero", "Medico general");
 
 
 
-// 4. Methods - Class method and getter syntax is the same as it is for objects except you can not include commas between methods.
 
+// 4. Methods - 
+// Class method and getter syntax is the same as it is for objects except you can not include commas between methods.
+// Between each of our methods, we did not include commas as we would with an object
 class Person {
     constructor (name, age) {
         this._name = name; 
@@ -68,26 +70,18 @@ class Person {
         this._age ++ ;
     }
 }
-// we add getter methods for name and age. 
-// We also prepended our property names with underscores (_name and _age), which indicate these properties should not be accessed directly. 
-// Added a birthday method, we called on a Person instance, it adds the age of that instance by 1.
-// Between each of our methods, we did not include commas as we would with an object
-
-// 4.1. Method Call
 const erika = new Person("erika", 20);
-
 console.log(erika.age)  // to call a getter, we don't use parentheses
-console.log(erika);
 erika.birthday();  //  For methods, you must also include opening and closing parentheses.
-console.log(erika);
+console.log(erika.age);  // logs 21
 
 
 
 
-// 5. Inheritance I - When multiple classes share properties or methods, they become candidates for inheritance
+// 5. Inheritance I - 
+// When multiple classes share properties or methods, they become candidates for inheritance
 // You can create a parent class (superclass) with properties and methods that multiple child classes (subclasses) share.
 // The child classes inherit the properties and methods from their parent class
-
 class HospitalEmployee {  // PARENT CLASS
     constructor (name) {
         this._name = name;
@@ -104,7 +98,8 @@ class HospitalEmployee {  // PARENT CLASS
     }
 };
 
-// Inheritance II  - Now that we have these shared properties and methods in the parent HospitalEmployee class, we can extend them to the subclass Nurse
+// Inheritance II  - 
+// Now that we have these shared properties and methods in the parent HospitalEmployee class, we can extend them to the subclass Nurse
 // The extends keyword makes the methods of the HospitalEmployee class available inside the Nurse class
 class Nurse extends HospitalEmployee {       
     constructor (name, certifications) {
@@ -114,20 +109,20 @@ class Nurse extends HospitalEmployee {
         this._certifications = certifications;
     };
 }; 
-
 // We create a new instance of the Nurse class. 
-const nurseOlynyk = new Nurse("Olynyk", ['Trauma', 'Pediatrics']);
-console.log(nurseOlynyk); 
+const nurseMaria= new Nurse("Maria", ['Trauma', 'Pediatrics']);
+console.log(nurseMaria);  // logs Nurse { _name: 'Maria', _remainingVacationDays: 20, _certifications: [ 'Trauma', 'Pediatrics' ] }
 
 
-// Inheritance III - When we call extends in a class declaration, all of the parent methods are available to the child class.
+// Inheritance III - 
+// When we call extends in a class declaration, all of the parent methods are available to the child class.
 // As a result, the Nurse class has access to the HospitalEmployee getters and the .takeVacationDays() method.
+nurseMaria.takeVacationDays(5);
+console.log(nurseMaria.remainingVacationDays);  // logs 15
 
-nurseOlynyk.takeVacationDays(5);
-console.log(nurseOlynyk.remainingVacationDays);  // logs 15
 
-// Inheritance IV - In addition to the inherited features, child classes can contain their own properties, getters, setters, and methods.
-
+// Inheritance IV - 
+// In addition to the inherited features, child classes can contain their own properties, getters, setters, and methods.
 class Doctor extends HospitalEmployee {
     constructor (name, certifications) {
         super(name);
@@ -140,7 +135,6 @@ class Doctor extends HospitalEmployee {
         this._certifications.push(newCertification);
     }
 }; 
-
 const doctorJuan = new Doctor ("Juan", ["ingles", "html"]);
 console.log(doctorJuan)
 doctorJuan.addCertification("genetics");
@@ -149,7 +143,8 @@ console.log(doctorJuan.certifications); // logs [ 'ingles', 'html', 'genetics' ]
 
 
 
-// 6. Static Methods- a class to have methods that aren’t available in individual instances, but that you can call directly from the class.
+// 6. Static Methods- 
+// a class to have methods that aren’t available in individual instances, but that you can call directly from the class.
 class Animal {
     constructor(name) {
         this._name = name;
@@ -168,40 +163,11 @@ console.log(Animal.generateName());
 
 
 
-// EXTRA: SOY HENRY PROTOTIPOS 
+// REVIEW
+/* Classes are templates for objects.
+JavaScript calls a constructor method when we create a new instance of a class.
+Inheritance is when we create a parent class with properties and methods that we can extend to child classes.
+We use the extends keyword to create a subclass.
+The super keyword calls the constructor() of a parent class.
+Static methods are called on the class, but not on instances of the class. */
 
-// Los prototipos son un mecanismo por el cual todos los objetos o elementos de Javascript pueden extender sus propiedades y métodos.
-// El proceso en el que los objetos globales de JavaScript le extienden métodos y propiedades a cualquier tipo de dato se denomina herencia.
-
-// Todos los objetos pueden heredar propiedades y métodos por medio de un prototipo. 
-// Gracias a estos prototipos podremos acceder al constructor de cualquier objeto para modificarlo
-
-Array.prototype.mayorQueTres = function () {
-    var arregloModificado = [];
-    for (var i = 0; i < this.length; i++) {
-        if (this[ i ] > 3) {
-            arregloModificado.push(false);
-        } else {
-            arregloModificado.push(this[ i ]);
-        }
-    }
-    return arregloModificado;
-};
-
-var arreglo = [1, 2, 3, 4, 5];
-var nuevoArreglo = arreglo.mayorQueTres();
-console.log(nuevoArreglo);
-
-
-class LatinoAmerica {
-	constructor() {
-		this.paises = [ ];
-	};
-};
-
-LatinoAmerica.prototype.agregarPais = function (pais) {
-    this.paises.push(pais);
-};
-let continente = new LatinoAmerica();
-continente.agregarPais('México');
-console.log(continente.paises);
