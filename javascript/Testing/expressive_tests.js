@@ -105,3 +105,68 @@ assert.notStrictEqual(1, 1); // Error: 1 === 1
 assert.notStrictEqual('1', 1); // OK
 
 
+
+
+// assert.throws
+// assert.throws() is used to test that a function throws an error
+// assert.throws() takes two arguments: a function and an optional error type
+// The function is called and if it throws an error, the test passes
+// If the function does not throw an error, the test fails
+
+
+
+
+
+
+// Example
+
+// Define a rooster
+Rooster = {};
+// Return a morning rooster call
+Rooster.announceDawn = () => {
+    return 'moo!';
+};   
+// Return hour as string
+// Throws Error if hour is not between 0 and 23 inclusive
+Rooster.timeAtDawn = (hour) => {
+    if (hour < 0 || hour > 23) {
+        throw new RangeError;
+    } else {
+        return hour.toString();
+    };
+};
+// Export the Rooster object
+module.exports = Rooster; 
+
+
+
+// Test suite
+const assert = require('assert');
+const Rooster = require('../index');
+
+describe('rooster', () => {
+    describe('.announceDawn', () => {
+        it('returns a rooster call', () => {
+        const expected = 'moo!';
+        const result = Rooster.announceDawn();
+        assert.strictEqual(result, expected);
+        });
+    });
+    describe('.timeAtDawn', () => {
+        it('returns its argument as a string', () => {
+        const expected = '1';
+        const result = Rooster.timeAtDawn(1);
+        assert.strictEqual(result, expected);
+        });
+        it('throws an error if passed a number less than 0', () => {
+        assert.throws(() => {
+            Rooster.timeAtDawn(-1);
+        }, RangeError);
+        });
+        it('throws an error if passed a number greater than 23', () => {
+        assert.throws(() => {
+            Rooster.timeAtDawn(24);
+        }, RangeError);
+        });
+    });
+});
