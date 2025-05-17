@@ -29,13 +29,14 @@ console.log("the");
 
 
 // The Event Loop
-/* The event loop is made up of these parts:
-1. Memory Heap: block of memory where we store objects in an unordered manner.
-2. Call Stack: tracks what function is currently being run in your code.
-3. Event Queue:  list of messages corresponding to functions that are waiting to be processed
-4. Event Loop
-5. Node or Web APIs */
-
+/* When code is executed, it is handled by the heap and call stack, which interact with Node and Web APIs. 
+Those APIs enable concurrency and pass asynchronous messages back to the stack via an event queue. 
+The event queue’s interaction with the call stack is managed by an event loop */
+/* 
+The heap and stack are the parts maintained by the JavaScript engine that run synchronously. 
+The heap is a block of memory where we store objects or pointers to variables. 
+JavaScript variables and objects that are currently in use are stored in the heap. 
+The stack, or call stack, tracks what function is currently being run in your code. */
 console.log("This is the first line of code in app.js.");
 function usingsetTimeout() {
     console.log("I'm going to be queued in the Event Loop.");
