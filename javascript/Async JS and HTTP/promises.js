@@ -127,7 +127,94 @@ promesa2
 
 
 // Chaining Promises
+/* Multiple operations which depend on each other to execute or that must be executed in a certain order. 
+We might make one request to a database and use the data returned to us to make another request */
+// The process of chaining promises together is called composition
+firstPromiseFunction()
+.then((firstResolveValue) => {
+    return secondPromiseFunction(firstResolveValue);
+})
+.then((secondResolveValue) => {
+    console.log(secondResolveValue);
+}); /* Inside the success handler we return a new promise— the result of invoking a second function, 
+secondPromiseFunction() with the first promise’s resolved value. */
+
+checkInventory(order)
+    .then((resolvedValueArray) => {
+        return processPayment(resolvedValueArray);
+    })
+    .then((resolvedValueArray) => {
+        return shipOrder(resolvedValueArray);
+    })
+    .then((successMessage) => {
+        console.log(successMessage);
+    });
 
 
 
 
+
+// Promise.all()
+// The Promise.all() method takes an array of promises and returns a single promise that resolves when all of the promises in the array have resolved.
+// If any of the promises in the array reject, the Promise.all() promise will reject with the reason of the first rejected promise.
+// This is useful when you want to wait for multiple asynchronous operations to complete before proceeding.
+let myPromises = Promise.all([returnsPromiseOne(), returnsPromiseTwo(), returnsPromiseThree()]);
+myPromises
+.then((arrayOfValues) => {
+    console.log(arrayOfValues);  // will print the array of resolved values if each promise resolves successfully.
+})
+.catch((rejectionReason) => {
+    console.log(rejectionReason);  // will print the first rejection message if any promise rejects.
+});
+
+
+//EXAMPLE
+// This is a function that returns true 80% of the time
+// We're using it to simulate a request to the distributor being successful this often
+function restockSuccess() {
+    return (Math.random() > .2);
+}
+// This is a function that checks the availability of an item at a distributor
+const checkAvailability = (itemName, distributorName) => {
+    console.log(`Checking availability of ${itemName} at ${distributorName}...`);
+    return new Promise((resolve, reject) => {
+        setTimeout(() => {
+            if (restockSuccess()) {
+                console.log(`${itemName} are in stock at ${distributorName}`)
+                resolve(itemName);
+            } else {
+                reject(`Error: ${itemName} is unavailable from ${distributorName} at this time.`);
+            }
+        }, 1000);
+    });
+};
+
+const onFulfill = (itemsArray) => {
+    console.log(`Items checked: ${itemsArray}`);
+    console.log(`Every item was available from the distributor. Placing order now.`);
+};
+const onReject = (rejectionReason) => {
+	console.log(rejectionReason);
+};
+
+let checkSunglasses = checkAvailability('sunglasses', 'Favorite Supply Co.');
+let checkPants = checkAvailability('pants', 'Favorite Supply Co.');
+let checkBags = checkAvailability('bags', 'Favorite Supply Co.');
+
+Promise.all([checkSunglasses, checkPants, checkBags])
+.then(onFulfill)
+.catch(onReject)
+
+
+
+
+/* 
+- Promises are JavaScript objects that represent the eventual result of an asynchronous operation.
+- Promises can be in one of three states: pending, resolved, or rejected.
+- A promise is settled if it is either resolved or rejected.
+- We construct a promise by using the new keyword and passing an executor function to the Promise constructor method.
+- setTimeout() is a Node function which delays the execution of a callback function using the event-loop.
+- We use .then() with a success handler callback containing the logic for what should happen if a promise resolves.
+- We use .catch() with a failure handler callback containing the logic for what should happen if a promise rejects.
+- Promise composition enables us to write complex, asynchronous code that’s still readable. We do this by chaining multiple .then()‘s and .catch()‘s.
+- To use promise composition correctly, we have to remember to return promises constructed within a .then(). */
