@@ -7,7 +7,7 @@ or making a request to an external server, like a 3rd party API, take varying am
 Since we aren’t sure when we’ll get this information back, we can use asynchronous code to run these tasks in the background */
 
 // Javascript has the event loop, a specific design that allows it to perform asynchronous tasks even while only using a single thread
-
+// Javascript is single-threaded, meaning it can only do one thing at a time.
 
 
 
