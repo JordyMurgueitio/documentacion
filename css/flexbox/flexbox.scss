@@ -97,6 +97,46 @@
 }
 
 
+// flex-grow - declared on flex it ems.
+// The flex-grow property specifies how much of the remaining space in the flex container should be assigned to the item (the default value is 0).
+// The flex-grow property accepts a number as a value.
+// The higher the number, the more space the item will take up.
+.child {
+    flex-grow: 1; // the item will take up all of the remaining space in the container
+    flex-grow: 2; // the item will take up twice as much space as an item with a value of 1
+}
 
 
+// flex-shrink - declared on flex items.
+// The flex-shrink property specifies how much the item will shrink relative to the other items in the container (the default value is 1).
+// The flex-shrink property accepts a number as a value.
+// The higher the number, the more the item will shrink.
+.child {
+    flex-shrink: 1; // the item will shrink to fit the container
+    flex-shrink: 2; // the item will shrink twice as much as an item with a value of 1
+}
+
+
+// flex-basis - declared on flex items.
+// The flex-basis property specifies the initial size of the item before any space is distributed according to the flex-grow and flex-shrink properties.
+// The flex-basis property accepts a length value (px, em, etc.) or a percentage as a value.
+// The default value is auto, which means the item will be sized according to its content.
+.child {
+    flex-basis: 100px; // the item will be 100 pixels wide
+    flex-basis: 50%; // the item will be 50% of the width of the container
+}
+// flex-basis: auto; // the item will be sized according to its content
+
+
+// flex - declared on flex items.
+// The flex property is a shorthand property for the flex-grow, flex-shrink, and flex-basis properties.
+// The flex property accepts one, two, or three values.
+// The first value is the flex-grow value, the second value is the flex-shrink value, and the third value is the flex-basis value.
+.child {
+    flex: 1; // the item will take up all of the remaining space in the container
+    flex: 1 0 auto; // the item will take up all of the remaining space in the container, will not shrink, and be sized according to its content
+    flex: 1 1 200px; // the item will take up all of the remaining space in the container, shrink to fit the container, and be 200 pixels wide
+    flex: 1 2 100px; // the item will take up all of the remaining space in the container, shrink twice as much as an item with a value of 1, and be 100 pixels wide
+    flex: 1 2 auto; // the item will take up all of the remaining space in the container, shrink twice as much as an item with a value of 1, and be sized according to its content
+}
 
