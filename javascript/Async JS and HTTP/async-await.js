@@ -185,12 +185,58 @@ console.log(rejectValue);
 
 
 // HANDLING INDEPENDENT PROMISES
+// When async function contains multiple promises which are not dependent on the results of one another
+// Both promises are constructed without await. We then await each of their resolutions to print them to the console
+async function concurrent() {
+    const firstPromise = firstAsyncThing();
+    const secondPromise = secondAsyncThing();
+    console.log(await firstPromise, await secondPromise);
+}
+// With our concurrent() function both promises’ asynchronous operations can be run simultaneously
+/* Note: if we have multiple truly independent promises that we would like to execute fully in parallel, 
+we must use individual .then() functions */
+let cookRice = () => {
+    return new Promise ((resolve, reject) => {
+    setTimeout(()=>{
+        resolve('rice');
+    }, 1000);
+    });
+}
+let bakeChicken = () => {
+    return new Promise ((resolve, reject) => {
+    setTimeout(()=>{
+        resolve('chicken');
+    }, 1000);
+    });
+}
+async function serveDinner() {
+    const starchPromise = cookRice();
+    const proteinPromise = bakeChicken();
+    console.log(`Dinner is served. We're having ${await starchPromise} with ${await proteinPromise}`)
+}
+serveDinner(); // Prints: Dinner is served. We're having rice with chicken
 
 
 
 
 
+// Await Promise.all()
+// When we have multiple independent promises and we want to wait for all of them to resolve before continuing
+// We can pass an array of promises as the argument to Promise.all(), and it will return a single promise.
+// This promise’s resolve value will be an array containing the resolved values of each promise from the argument array.
+// If any of the promises in the array are rejected, the entire Promise.all() will be rejected.
+/* Promise.all() is a good choice if multiple asynchronous tasks are all required, 
+but none must wait for any other before executing */
+async function asyncPromAll() {
+    const resultArray = await Promise.all([asyncTask1(), asyncTask2(), asyncTask3(), asyncTask4()]);
+    for (let i = 0; i < resultArray.length; i++){
+        console.log(resultArray[i]); 
+    }
+}
 
-
-
+async function serveDinnerAgain () {
+    const foodArray = await Promise.all([cookRice(), bakeChicken()]);
+    console.log(`Dinner is served. We're having ${foodArray[0]} with ${foodArray[1]}`);
+}
+serveDinnerAgain(); // Prints: Dinner is served. We're having rice with chicken
 
